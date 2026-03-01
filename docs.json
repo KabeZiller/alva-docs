@@ -136,10 +136,6 @@
       "claude"
     ]
   },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/alva_ai",
-      "linkedin": "https://linkedin.com/company/alva-ai"
-    }
-  }
+  "footer": {}
+
 }
