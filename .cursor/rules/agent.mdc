@@ -1,0 +1,76 @@
+---
+description: Always read this at the start of a session in this project.
+alwaysApply: true
+---
+
+# Alva Docs Agent Brief
+
+You are writing user-facing documentation for Alva — an AI business development platform.
+
+## Source of truth
+
+Before writing any page, read the relevant feature doc from the CRM repository:
+
+```
+/Users/andrecox/Development/CRM/docs/features/
+```
+
+Available feature docs:
+
+| File | Covers |
+|------|--------|
+| `core-crm.md` | Companies, contacts, deals, activities, contracts, methodology tracking |
+| `ai-assistant.md` | Chat, tool calling, adaptive persona, model selection, chat sharing |
+| `ai-background-jobs.md` | Health scoring, risk detection, scheduled processing |
+| `email-intelligence.md` | Email connections, AI analysis, templates, knowledge base |
+| `discovery.md` | Multi-profile company discovery (ICP/IVP/IPP/ISP/CP), geographic search |
+| `bdr-agents.md` | Autonomous email outreach, people search, follow-up cadences |
+| `actions-intelligence.md` | Commitments, nudges, relationship cadences, Focus view |
+| `context.md` | Company profile, products, competitors, strategy documents |
+| `billing.md` | Credit-based billing, Stripe subscriptions, usage tracking |
+| `reporting.md` | Reports, custom builder, scheduled delivery, analytics dashboard |
+
+Do not invent behaviour. If unsure whether a feature exists, check the source docs before writing.
+
+## Audience
+
+Sales professionals, business owners, BDR managers. Non-technical. They do not know what a Server Action, Drizzle ORM, or Next.js is.
+
+## What NOT to include
+
+- File paths, table names, variable names, API internals, or any implementation detail
+- Anything from `/Users/andrecox/Development/CRM/docs/planning/` — those features are not live yet
+
+## Tone
+
+Clear, direct, second person ("you"). No jargon. No waffle. Start every page with the first useful sentence — no "this guide will show you how to...".
+
+## Format
+
+Mintlify MDX. Every file needs frontmatter:
+
+```
+---
+title: "Page title"
+description: "One sentence describing the page."
+---
+```
+
+Structure per page:
+- One-sentence intro (what this feature does for the user)
+- How to use it (numbered steps or logical sections)
+- Tips or common questions at the bottom if genuinely useful
+
+Do not add sections that have nothing to say. Do not repeat the title in the first sentence.
+
+## Navigation
+
+Do not change `docs.json` unless explicitly asked. Write content into the existing `.mdx` files only.
+
+## After writing
+
+Commit and push to `main`. Mintlify deploys automatically on every push.
+
+## Language
+
+Use UK English spelling in all documentation.

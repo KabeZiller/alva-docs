@@ -1,88 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Alva",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#3B82F6",
+    "light": "#60A5FA",
+    "dark": "#2563EB"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
@@ -91,32 +16,130 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@alva.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Alva",
+      "href": "https://app.alva.ai"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "getting-started/quickstart",
+              "getting-started/account-setup"
+            ]
+          },
+          {
+            "group": "CRM",
+            "pages": [
+              "crm/companies-and-contacts",
+              "crm/managing-deals",
+              "crm/sales-methodologies",
+              "crm/contracts-and-recurring-revenue"
+            ]
+          },
+          {
+            "group": "Alva AI Assistant",
+            "pages": [
+              "ai-assistant/talking-to-alva",
+              "ai-assistant/what-alva-can-do",
+              "ai-assistant/alva-vs-alva-pro",
+              "ai-assistant/sharing-conversations"
+            ]
+          },
+          {
+            "group": "Discovery",
+            "pages": [
+              "discovery/creating-a-discovery-profile",
+              "discovery/profile-types-explained",
+              "discovery/working-with-your-results"
+            ]
+          },
+          {
+            "group": "AI BDR Agents",
+            "pages": [
+              "bdr-agents/setting-up-your-first-agent",
+              "bdr-agents/configuring-budgets-and-hours",
+              "bdr-agents/reading-the-activity-feed"
+            ]
+          },
+          {
+            "group": "Email",
+            "pages": [
+              "email/connecting-an-email-account",
+              "email/email-signatures",
+              "email/email-templates",
+              "email/understanding-email-analysis"
+            ]
+          },
+          {
+            "group": "Context",
+            "pages": [
+              "context/company-profile",
+              "context/products-and-competitors",
+              "context/strategy-documents"
+            ]
+          },
+          {
+            "group": "Reporting",
+            "pages": [
+              "reporting/standard-reports",
+              "reporting/building-a-custom-report",
+              "reporting/scheduled-report-delivery"
+            ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "billing/understanding-credits",
+              "billing/plans-and-pricing",
+              "billing/buying-credits"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Reference",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Open Alva",
+          "href": "https://app.alva.ai",
+          "icon": "arrow-up-right-from-square"
+        }
+      ]
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "claude"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/alva_ai",
+      "linkedin": "https://linkedin.com/company/alva-ai"
     }
   }
 }
