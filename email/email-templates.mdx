@@ -3,4 +3,90 @@ title: "Email Templates"
 description: "Create and manage reusable email templates for outreach and follow-up."
 ---
 
-<Note>Full content coming soon.</Note>
+Email templates are the building blocks of your outreach. They define what your [BDR agents](/bdr-agents/setting-up-your-first-agent) send, and can also be used when drafting emails with Alva.
+
+## Template groups
+
+Templates are organised into **groups** — think of these as campaigns or sequences. For example:
+
+- "Cold Outreach — Healthcare"
+- "Follow-Up Sequence"
+- "Event Follow-Up"
+
+Go to **Emails → Templates** in the sidebar to manage your templates and groups.
+
+### Creating a group
+
+Click **New Group**, give it a name, and optionally add a description. Groups help you organise templates by purpose and make it easy to assign the right ones to BDR agents.
+
+## Creating a template
+
+Click **New Template** within a group (or create an ungrouped template). Each template has:
+
+- **Name** — an internal name for your reference (e.g. "Initial Outreach — CTO")
+- **Subject** — the email subject line
+- **Body** — the email content
+- **Usage guidance** — optional instructions for when and how to use this template (helps both BDR agents and human team members)
+
+### Merge fields
+
+Templates support merge fields that are automatically replaced with real data when the email is sent:
+
+| Field | What it inserts |
+|-------|----------------|
+| `{{contact.firstName}}` | The contact's first name |
+| `{{contact.lastName}}` | The contact's last name |
+| `{{contact.email}}` | The contact's email address |
+| `{{contact.jobTitle}}` | The contact's job title |
+| `{{company.name}}` | The company name |
+| `{{company.domain}}` | The company's website domain |
+| `{{company.industry}}` | The company's industry |
+| `{{sender.name}}` | Your name (the sender) |
+| `{{sender.email}}` | Your email address |
+
+Merge fields are automatically detected and displayed as badges on the template.
+
+<Warning>
+  If a merge field can't be resolved (e.g. the contact has no job title), the email will be flagged by Alva's safety checks before sending. BDR agents won't send emails with unresolved merge fields.
+</Warning>
+
+## AI-generated templates
+
+You can ask Alva to create templates for you:
+
+- "Create an email template for cold outreach to CTOs in healthcare"
+- "Write a follow-up template for after a demo"
+
+Alva generates the template with appropriate merge fields and saves it to your template library.
+
+## Template variants
+
+Once you have a base template, you can generate **variants** — alternative versions with different approaches, tones, or angles. This is useful for A/B testing or giving BDR agents variety in their outreach.
+
+To generate variants:
+
+1. Open a template
+2. Click **Generate Variants**
+3. Alva creates multiple alternative versions, each with a distinct approach
+4. Review and keep the ones you like
+
+Variants are linked to their parent template, so you can always trace back to the original.
+
+## Using templates with BDR agents
+
+When you [create a BDR agent](/bdr-agents/setting-up-your-first-agent), you assign one or more **template groups** to it. The agent selects the most appropriate template from those groups for each prospect, personalises it using merge fields, and sends it.
+
+<Note>
+  An agent without assigned template groups cannot send emails. Always assign at least one group.
+</Note>
+
+## Email safety checks
+
+Before any email is sent (by an agent or manually), Alva runs a multi-tier safety check:
+
+1. **Merge field check** — ensures no unresolved `{{fields}}` remain
+2. **Placeholder check** — catches AI-generated placeholders like "[insert name here]"
+3. **AI content check** — reviews the email for appropriateness and professionalism
+4. **CTA consistency** — for follow-ups, checks that the call-to-action aligns with the original email
+
+If any check fails, the email is blocked and you're notified of the issue.

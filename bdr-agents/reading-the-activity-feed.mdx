@@ -3,4 +3,118 @@ title: "Reading the Activity Feed"
 description: "Follow everything your BDR agent has done, is doing, and plans to do next."
 ---
 
-<Note>Full content coming soon.</Note>
+Every BDR agent has a detailed activity feed that shows a chronological log of every action it has taken. This is your window into what the agent is doing and how it's performing.
+
+## The agent detail page
+
+Go to **Discovery → AI Agents** and click an agent's name. The detail page shows:
+
+### Stats overview
+
+At the top, you'll see key performance metrics:
+
+- **Emails sent** — total outreach emails dispatched
+- **Contacts found** — new contacts created from research
+- **Budget spent** — how much of the monthly budget has been used (with remaining amount)
+- **Companies processed** — how many companies the agent has worked on
+
+### Agent status
+
+The current state of the agent:
+
+| Status | What it means |
+|--------|--------------|
+| **Active** | Running and processing companies on schedule |
+| **Paused** | Manually paused or budget-exhausted — not processing |
+| **Completed** | All target companies have been processed |
+
+If the agent is active but idle, you'll see the **idle reason** — this tells you why it's waiting (e.g. "outside operating hours", "no companies to process", "budget limit reached").
+
+## The activity feed
+
+Below the stats, the activity feed shows every action in reverse chronological order. Each entry includes:
+
+- **Timestamp** — when the action happened
+- **Action type** — what the agent did (see below)
+- **Company** — which company the action was for
+- **Status** — success, failed, or pending
+- **AI reasoning** — the agent's explanation of why it took that action
+
+### Action types
+
+| Action | What it means |
+|--------|--------------|
+| **Send Email** | The agent sent an outreach email to a contact |
+| **Discover Contacts** | Searched for employees at a company |
+| **Search People** | Looked for specific roles at a company |
+| **Lookup Profile** | Retrieved full profile details for a person |
+| **Find Email** | Looked up a person's email address |
+| **Domain Search** | Searched for contacts and emails at a company's domain |
+| **Create Contact** | Saved a discovered person as a contact |
+| **Update Status** | Changed the outreach status for a company |
+| **Escalate** | Flagged a company for human review |
+| **Draft Reply** | Drafted a reply to a prospect's response |
+
+### AI reasoning
+
+For each action, the agent records its reasoning — why it chose this action, why it picked this contact, or why it's escalating. This transparency lets you understand the agent's decision-making and adjust instructions if needed.
+
+## Outreach per company
+
+Each company the agent targets goes through its own outreach journey. From the activity feed, you can see the progression for any company:
+
+1. **Research** — the agent finds contacts and gathers information
+2. **Outreach** — the agent sends an initial email
+3. **Follow-up** — if no reply, the agent follows up according to the cadence
+4. **Response handling** — when a prospect replies, the agent classifies the intent
+
+### Response classification
+
+When a prospect replies, the agent classifies their intent:
+
+| Intent | What it means |
+|--------|--------------|
+| **Interested** | The prospect is interested — the company may be moved to Lead stage |
+| **Not interested** | A clear decline — the agent stops outreach |
+| **Referral** | The prospect referred you to someone else |
+| **Out of office** | An auto-reply — the agent waits and retries later |
+| **Bounce** | The email bounced — the address is invalid |
+| **Question** | The prospect asked a question — the agent escalates or drafts a reply |
+
+## Handling escalations
+
+When the agent escalates a company, it appears with an **alert badge** in the activity feed and on the [Lead Sheet](/discovery/lead-sheet). Escalations happen when:
+
+- The agent doesn't know how to handle a response
+- The prospect asked a complex question
+- The agent's instructions say to escalate for certain situations
+- The per-company budget would be exceeded by the next action
+
+You'll see the escalation reason in the activity feed. To handle it, review the situation and either:
+
+- **Reply directly** to the prospect (from your email)
+- **Draft a reply** for the agent to send (by editing the draft)
+- **Dismiss** the escalation if no action is needed
+
+## Draft replies
+
+When a prospect replies and the agent has the **Draft Reply** tool enabled, it writes a suggested response for your review. These appear on the [Lead Sheet](/discovery/lead-sheet) under "Drafts to review".
+
+You can:
+
+- **Approve and send** — send the draft as-is
+- **Edit and send** — modify the draft before sending
+- **Discard** — reject the draft and write your own reply
+
+<Tip>
+  Review escalations and draft replies regularly — these are the moments where human judgement makes the biggest difference. The agent handles the volume; you handle the nuance.
+</Tip>
+
+## Controls
+
+From the agent detail page, you can:
+
+- **Pause** — stop the agent temporarily
+- **Resume** — restart a paused agent
+- **Edit** — change instructions, templates, budget, or other settings
+- **Delete** — permanently remove the agent and all its activity history

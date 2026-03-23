@@ -3,4 +3,102 @@ title: "Setting Up Your First Agent"
 description: "Create an AI BDR agent and send your first autonomous outreach campaign."
 ---
 
-<Note>Full content coming soon.</Note>
+AI BDR agents are autonomous outreach workers. You give them a target, templates, and a budget — and they find contacts, research prospects, write personalised emails, and follow up, all on their own.
+
+## Prerequisites
+
+Before creating an agent, you need:
+
+<Steps>
+  <Step title="At least one active Discovery profile">
+    The agent needs companies to target. Create and activate an [ICP or other discovery profile](/discovery/creating-a-discovery-profile) first, and wait for some results to come through.
+  </Step>
+  <Step title="Email templates">
+    Agents send emails based on your [templates](/email/email-templates). Create at least one template group with templates for initial outreach. The agent will use your merge fields and personalise based on the prospect.
+  </Step>
+  <Step title="A connected email account">
+    The agent needs an inbox to send from. [Connect your email](/email/connecting-an-email-account) in Settings → Email Connections.
+  </Step>
+</Steps>
+
+## Creating an agent
+
+Go to **Discovery → AI Agents** and click **Create Agent**.
+
+### Name and instructions
+
+Give your agent a descriptive name (e.g. "Healthcare SaaS Prospector") and write **instructions** that guide its decision-making:
+
+- **Who to target** — which roles or personas (e.g. "Focus on CTOs and VP Engineering")
+- **Contact strategy** — whether to use broad searches or look for specific people
+- **When to escalate** — what situations should be flagged for human review
+
+<Note>
+  Don't include messaging guidance in the instructions — the agent uses your email templates for that. The instructions are about *who* and *when*, not *what to say*.
+</Note>
+
+### Target profiles
+
+Select which discovery profiles the agent should work from. The agent will take companies from these profiles and begin outreach.
+
+### Email templates
+
+Choose which **template groups** the agent can use. These control what the agent sends — it selects the most appropriate template for each prospect and personalises it.
+
+<Warning>
+  An agent without template groups cannot send any emails. Make sure to assign at least one.
+</Warning>
+
+### Email connection
+
+Select which connected email account the agent should send from. This determines the sender address and signature.
+
+### Allowed tools
+
+By default, all tools are enabled. You can restrict which actions the agent is allowed to take:
+
+| Tool | What it does | Cost |
+|------|-------------|------|
+| **Send Email** | Send outreach emails | Free |
+| **Discover Contacts** | Find employees at a company | £0.01 |
+| **Search People** | Find specific people by role at a company | £0.01 |
+| **Lookup Profile** | Get full profile details for a person | £0.01 |
+| **Find Email** | Look up a person's email address | £0.04 |
+| **Domain Email Search** | Find senior contacts and emails at a domain | £0.04 |
+| **Create Contact** | Save discovered contacts to your CRM | Free |
+| **Update Status** | Update outreach status on a company | Free |
+| **Escalate** | Flag a company for human review | Free |
+| **Draft Reply** | Draft a reply to a prospect's response (for your review) | Free |
+
+### Escalation notifications
+
+Optionally, add email addresses to receive notifications when the agent escalates a company for human review.
+
+## Launching the agent
+
+Once configured, save the agent. It starts in **Paused** state. Click **Start** when you're ready for it to begin working.
+
+When active, the agent processes companies on a regular schedule (controlled by its [run pace](/bdr-agents/configuring-budgets-and-hours)). For each company, it:
+
+1. **Researches** the company — searches for contacts and key information
+2. **Finds contacts** — identifies the right people to reach
+3. **Looks up email addresses** — finds verified email addresses for contacts
+4. **Sends personalised outreach** — picks the best template and personalises it
+5. **Tracks responses** — monitors for replies and classifies intent
+6. **Follows up** — sends follow-up emails according to the cadence you set
+7. **Escalates when needed** — flags situations that need human judgement
+
+## What happens after launch
+
+The agent appears on the **Discovery → AI Agents** page with live stats:
+
+- **Emails sent** — total outreach emails dispatched
+- **Contacts found** — new contacts discovered
+- **Budget spent** — how much of the monthly budget has been used
+- **Status** — active, paused, or completed
+
+Click any agent to see its full detail page with the activity feed, outreach breakdown, and performance metrics.
+
+<Tip>
+  Start with a small budget and slow run pace (1 company per run). Monitor the agent's first few actions, review the emails it sends, and adjust templates or instructions before ramping up.
+</Tip>

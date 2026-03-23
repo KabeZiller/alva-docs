@@ -3,4 +3,112 @@ title: "Working With Your Results"
 description: "Review, filter, and act on the companies Alva finds for you."
 ---
 
-<Note>Full content coming soon.</Note>
+Once your discovery profile is active, companies start appearing in your results. This page explains how to review them, decide which to keep, and move them into your CRM.
+
+## Where results appear
+
+Discovery results are accessible from several places:
+
+- **Discovery → Results** — the full results queue across all profiles, with review workflow
+- **Discovery → Companies** — all discovered companies, regardless of approval status
+- **Discovery → Lead Sheet** — companies that have reached Lead stage (ready for sales engagement)
+- **Discovery → Contacts** — contacts found by BDR agents for discovered companies
+
+## The results queue
+
+Go to **Discovery → Results** to see companies waiting for your review.
+
+Each result shows:
+
+- **Company name** and website
+- **Location** — where the company is based
+- **Match score** — how closely the company matches your profile (high, medium, or low confidence)
+- **Match category** — whether it's a "match", "partial match", or "weak match"
+- **Profile** — which discovery profile found this company
+
+### Reviewing results
+
+For each company in the queue, you can:
+
+- **Approve** — accept the company as a good match. It stays in your discovery pipeline for further action.
+- **Reject** — dismiss the company. It won't appear again.
+- **Skip** — leave it for later.
+
+You can review companies one at a time or use the bulk review page to work through many at once.
+
+### Match confidence
+
+Alva scores each discovered company against your profile description:
+
+| Category | What it means |
+|----------|--------------|
+| **Match** | Strong alignment with your profile — this company is a good fit |
+| **Partial match** | Some alignment — worth reviewing but may not be perfect |
+| **Weak match** | Limited alignment — probably not what you're looking for |
+
+You can adjust the **match threshold** on each profile to control how strict the filtering is. A higher threshold means fewer but more relevant results.
+
+## Importing companies into your CRM
+
+Once you've approved companies, you need to **import** them to make them full CRM records.
+
+### Manual import
+
+From the Discovery Companies page, click the import button on any company. This creates a full company record in your CRM with:
+
+- Name, website, domain, and location pre-filled
+- Relationship type set automatically based on the profile type
+- Lifecycle stage set to the first stage for that relationship type (e.g. "Target" for customers)
+
+### Bulk import
+
+You can import multiple approved companies at once from the Discovery Companies page using the bulk action toolbar.
+
+You can also ask Alva: "Import all approved companies from my healthcare ICP" — and it will handle the bulk import for you.
+
+### Auto-import
+
+On each profile, you can enable **auto-import** — this automatically imports high-confidence matches into your CRM without manual review. Useful when you trust the profile description is accurate and want to move fast.
+
+## Duplicate detection
+
+Alva checks for duplicates when importing by matching on **domain**. If a discovered company has the same domain as an existing CRM company:
+
+- The import is skipped (if duplicates are set to skip)
+- Or the existing record is updated with any new information
+
+This means you can run multiple profiles and import from all of them without creating duplicate company records.
+
+## Discovery Companies page
+
+**Discovery → Companies** shows all discovered companies across every profile. You can:
+
+- **Search** by name or domain
+- **Filter** by profile, match category, or lifecycle stage
+- View company details and match reasoning
+- Change a company's lifecycle stage
+- Import into your CRM
+
+## The Lead Sheet
+
+**Discovery → Lead Sheet** shows companies that have reached the **Lead** lifecycle stage — meaning they're ready for active sales engagement. Companies get here either by:
+
+- Being manually promoted to Lead stage
+- Being moved to Lead by a BDR agent after successful outreach
+
+The Lead Sheet prioritises by urgency and shows:
+
+- **Action required** — companies needing your immediate attention
+- **Drafts to review** — BDR agent emails waiting for your approval
+- **Escalated** — companies flagged by the agent for human review
+- **Awaiting reply** — companies where outreach has been sent but no response yet
+
+See the [Lead Sheet](/discovery/lead-sheet) section for more detail.
+
+## Per-company costs
+
+Each company discovered is billed from your credit balance at a tiered rate (£0.10–£0.20 per company depending on volume). Rejected companies are also billed — the cost covers the search and AI matching, not just the accepted results.
+
+<Tip>
+  Start with a small geography and a well-written profile description. Review the first batch of results, refine your categories if needed, then expand to more locations.
+</Tip>

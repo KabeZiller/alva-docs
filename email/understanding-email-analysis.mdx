@@ -3,4 +3,102 @@ title: "Understanding Email Analysis"
 description: "See how Alva reads your emails to surface commitments, sentiment, and next steps."
 ---
 
-<Note>Full content coming soon.</Note>
+When you [connect your email](/email/connecting-an-email-account), Alva analyses every conversation automatically. This page explains what Alva looks for and where the results appear.
+
+## What Alva analyses
+
+For every email, Alva evaluates:
+
+### Sentiment
+
+How positive or negative the conversation is. Sentiment is tracked over time, so you can see if a deal's tone is improving or deteriorating.
+
+### Intent
+
+What the sender is trying to do:
+
+- **Request** — asking for something (a meeting, information, a proposal)
+- **Question** — asking a question that needs an answer
+- **Commitment** — promising to do something
+- **Update** — sharing information or a status change
+- **Objection** — raising a concern or pushback
+
+### Urgency
+
+How time-sensitive the email is — low, medium, or high.
+
+### Buying signals
+
+Phrases and patterns that suggest the prospect is moving towards a purchase:
+
+- Asking about pricing or contracts
+- Requesting a demo or trial
+- Involving additional stakeholders
+- Discussing implementation timelines
+
+### Risk signals
+
+Patterns that suggest the deal might be in trouble:
+
+- Delays or postponements
+- Reduced engagement
+- Mentions of competitors
+- Budget concerns
+- Stakeholder changes
+
+### Questions
+
+Alva detects questions asked by prospects and tracks whether they've been answered. Unanswered questions are flagged — these often represent blockers that need attention.
+
+## Direction-aware analysis
+
+Alva analyses **inbound** and **outbound** emails differently:
+
+- **Inbound emails** (from prospects) are analysed for intent, buying signals, and questions
+- **Outbound emails** (from your team) are analysed for what was promised, what questions were addressed, and follow-up commitments
+
+This distinction matters because the same phrases carry different meaning depending on who said them.
+
+## Methodology evidence
+
+If you're using a sales methodology (MEDDPICC, BANT, or SPICED), Alva extracts **methodology evidence** from emails. For example:
+
+- A prospect mentioning their budget → BANT "Budget" evidence
+- A prospect describing their pain point → MEDDPICC "Identified Pain" evidence
+- A prospect discussing their decision process → MEDDPICC "Decision Process" evidence
+
+When Alva finds evidence, it appears as a **suggestion badge** on the deal's methodology tracker. Click to review and apply it with one click — no manual typing needed.
+
+## Where results appear
+
+### On email records
+
+Each email in the system shows:
+
+- **Direction badge** — inbound or outbound
+- **Question count** — how many questions were detected and how many are addressed
+- **Entity links** — direct links to the related deal, contact, and company
+
+### On deal pages
+
+The deal detail page includes an **Email Intelligence Panel** summarising:
+
+- All buying signals detected across emails
+- All risk signals
+- Outstanding commitments
+- Unanswered questions
+- Sentiment trend over time
+
+### On the Emails page
+
+Go to **Inbox** in the sidebar to see all emails with their analysis results. You can filter and search across all conversations.
+
+## Chronological processing
+
+Alva processes emails in chronological order within each thread. This ensures it has proper context — it knows what was said earlier before analysing a later reply. This is especially important for question tracking (knowing which questions have been addressed by subsequent emails).
+
+## How it feeds into deal health
+
+Email analysis is a major input to [deal health scoring](/crm/managing-deals). Deals with positive sentiment, active engagement, and no unanswered questions score higher. Deals with risk signals, negative sentiment, or long gaps between emails score lower.
+
+This all happens automatically — you just need to keep having conversations, and Alva keeps your CRM intelligence up to date.

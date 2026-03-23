@@ -1,0 +1,81 @@
+---
+title: "Importing Data"
+description: "Upload a CSV file to import companies and contacts into your CRM."
+---
+
+If you have existing data in spreadsheets or another CRM, you can import it into Alva using the CSV import wizard.
+
+## Starting an import
+
+Go to **Companies** and click the **Import** button in the top-right corner. This opens the import wizard.
+
+## The import wizard
+
+### Step 1: Upload your file
+
+Drag and drop a CSV file or click to browse. The wizard reads your file and shows a preview of the data.
+
+### Step 2: Choose record type
+
+Select what you're importing:
+
+- **Companies** — business records with name, domain, industry, etc.
+- **Contacts** — people records with name, email, job title, etc.
+
+### Step 3: Map your fields
+
+The wizard shows your CSV column headers and lets you map them to Alva fields. For example:
+
+| Your CSV column | Maps to |
+|----------------|---------|
+| "Company Name" | Name |
+| "Website" | Domain |
+| "Sector" | Industry |
+| "City" | Location |
+
+Alva suggests mappings automatically based on your column names — you just confirm or adjust them.
+
+### Step 4: Handle duplicates
+
+Choose what happens when an imported record matches an existing one (based on domain for companies, email for contacts):
+
+| Option | What it does |
+|--------|-------------|
+| **Skip** | Don't import the duplicate — keep the existing record |
+| **Update** | Merge new data into the existing record |
+| **Create new** | Import it as a separate record regardless |
+
+### Step 5: Apply tags
+
+Optionally, select tags to apply to all imported records. This is useful for marking the source — e.g. "Imported from HubSpot" or "Trade Show 2026". You can create new tags during the import.
+
+### Step 6: Review and import
+
+Review your settings and click **Import**. The wizard processes your file and shows results:
+
+- **Imported** — how many records were created
+- **Updated** — how many existing records were updated
+- **Skipped** — how many duplicates were skipped
+- **Failed** — any rows that couldn't be processed (with reasons)
+
+## Import templates
+
+If you import regularly (e.g. weekly list uploads), you can **save your field mappings as a template**. Next time, select the template and the mapping is applied automatically.
+
+Templates are managed from the import page — you can save, load, and delete them.
+
+## Import history
+
+Every import is logged. You can view your import history from the import page, showing the filename, record counts, and when it was run.
+
+## Importing via Alva
+
+You can also import by pasting CSV data directly into the Alva chat:
+
+> "Import these companies: [paste CSV data]"
+
+Alva will suggest field mappings and handle the import conversationally.
+
+<Tip>
+  Clean your CSV before importing — remove blank rows, ensure consistent formatting, and check that email addresses and domains are valid. This reduces failed rows and duplicate issues.
+</Tip>

@@ -1,0 +1,49 @@
+---
+title: "AI Settings"
+description: "Configure how Alva's AI features work for your account."
+---
+
+AI Settings let you control which AI features are active, how often they run, and how much they're allowed to spend. These are account-wide settings managed by admins.
+
+## Accessing AI settings
+
+Go to **Settings → AI Settings**.
+
+## Feature toggles
+
+You can enable or disable individual AI features:
+
+| Feature | What it does |
+|---------|-------------|
+| **Deal health scoring** | Automatically scores every deal from 0–100 |
+| **Risk detection** | Flags deals that show risk signals |
+| **Notifications** | Sends in-app alerts when risks are detected |
+| **Email analysis** | Analyses email conversations for sentiment, signals, and evidence |
+| **Background insights** | Generates periodic AI insights about your pipeline |
+
+Turning off a feature stops it from running and consuming credits. Existing data (health scores, insights) remains — it just won't be updated.
+
+## Budget controls
+
+Set limits on how much AI features can spend:
+
+- **Daily budget cap** — maximum credits AI background features can use per day
+- **Monthly budget cap** — maximum credits for the billing period
+
+When a budget cap is reached, background AI features pause automatically. Interactive chat with Alva continues to work — budgets only apply to automated background processing.
+
+## Processing frequency
+
+Control how often background features run:
+
+| Setting | Options |
+|---------|---------|
+| **Health score refresh** | Hourly, every 6 hours, daily, or weekly |
+| **Risk detection** | Hourly, daily, or weekly |
+| **Email analysis** | As emails arrive, or batched daily |
+
+Less frequent processing uses fewer credits but means data is less current. For most accounts, the default settings strike a good balance.
+
+<Tip>
+  If you're on a limited plan, set background features to daily or weekly rather than hourly. This significantly reduces credit usage while still keeping your data reasonably current.
+</Tip>

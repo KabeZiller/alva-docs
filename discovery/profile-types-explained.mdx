@@ -3,4 +3,106 @@ title: "Profile Types Explained"
 description: "Understand the five discovery profile types: ICP, IVP, IPP, ISP, and CP."
 ---
 
-<Note>Full content coming soon.</Note>
+Alva supports five types of discovery profile, each designed to find a different kind of company. The profile type determines how discovered companies are categorised, what lifecycle stages they follow, and where they appear in your CRM.
+
+## The five profile types
+
+### ICP — Ideal Customer Profile
+
+**Purpose:** Find companies that would be ideal customers for your products or services.
+
+**Example description:** "Mid-market B2B SaaS companies with 50–500 employees in the UK that sell to healthcare providers and need CRM software."
+
+**When discovered companies are imported:**
+- Relationship type is set to **Customer**
+- Lifecycle stages: Target → Prospect → Lead → Customer
+- Companies appear in the **CRM** module
+
+This is the most common profile type and the starting point for most sales teams.
+
+---
+
+### IVP — Ideal Vendor Profile
+
+**Purpose:** Find companies that would be ideal vendors — companies you might buy from.
+
+**Example description:** "SaaS platforms that provide data enrichment, email verification, or CRM integration tools."
+
+**When discovered companies are imported:**
+- Relationship type is set to **Vendor**
+- Lifecycle stages: Target → Evaluating → Negotiating → Vendor
+- Companies appear in the **VRM** (Vendor Relationship Management) module
+
+Use this when you're sourcing vendors for your own tech stack, services, or supply chain.
+
+---
+
+### IPP — Ideal Partner Profile
+
+**Purpose:** Find companies that would be ideal strategic or channel partners.
+
+**Example description:** "Digital agencies that could resell our platform to their clients, ideally with 20–100 employees."
+
+**When discovered companies are imported:**
+- Relationship type is set to **Partner**
+- Lifecycle stages: Target → Engaging → Negotiating → Partner
+- Companies appear in the **PRM** (Partner Relationship Management) module
+
+Useful for building referral networks, reseller channels, or co-marketing partnerships.
+
+---
+
+### ISP — Ideal Supplier Profile
+
+**Purpose:** Find companies that could supply products or services to your business.
+
+**Example description:** "Plumbers and electricians that work on domestic projects and could join our installer network."
+
+**When discovered companies are imported:**
+- Relationship type is set to **Supplier**
+- Lifecycle stages: Target → Evaluating → Negotiating → Supplier
+- Companies appear in the **SRM** (Supplier Relationship Management) module
+
+Use this when you need to build a supply chain, a network of subcontractors, or a pool of service providers.
+
+---
+
+### CP — Competitor Profile
+
+**Purpose:** Find companies that are direct competitors in your market.
+
+**Example description:** "CRM platforms targeting SME sales teams in the UK, especially those with AI features."
+
+**When discovered companies are imported:**
+- Relationship type is set to **Competitor**
+- Companies are **automatically linked to your competitors table** in the Context section
+- This populates battle card data that Alva uses in deal analysis
+
+Use this for competitive intelligence gathering. Discovered competitors are added to your competitor database where you can track their strengths, weaknesses, and differentiation.
+
+---
+
+## How profile type affects the workflow
+
+| Feature | ICP | IVP | IPP | ISP | CP |
+|---------|-----|-----|-----|-----|-----|
+| CRM module | CRM | VRM | PRM | SRM | — |
+| Pipeline view | Deals | Vendor Pipeline | Partner Pipeline | Supplier Pipeline | — |
+| BDR agents | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Auto-links to | — | — | — | — | Competitors table |
+
+<Note>
+  BDR agents can target any profile type except Competitor Profiles. You wouldn't typically send automated outreach to competitors.
+</Note>
+
+## Choosing the right profile type
+
+Ask yourself: **what is my relationship with these companies?**
+
+- If you want to **sell to them** → ICP
+- If you want to **buy from them** → IVP
+- If you want to **partner with them** → IPP
+- If you want them to **supply to you** → ISP
+- If they **compete with you** → CP
+
+You can run multiple profiles of different types simultaneously. A typical setup might be one ICP for finding customers, one CP for tracking competitors, and one IPP for building a partner channel.

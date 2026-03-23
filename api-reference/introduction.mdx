@@ -3,4 +3,121 @@ title: "API Reference"
 description: "Integrate Alva into your own tools and workflows using the REST API."
 ---
 
-<Note>Full API documentation coming soon.</Note>
+Alva provides a RESTful API for integrating with external applications, automation platforms (e.g. Zapier), and custom workflows.
+
+## Overview
+
+- **Base URL:** `https://app.alvahq.com/api/v1`
+- **Format:** JSON request and response bodies
+- **Authentication:** Bearer token (API keys)
+- **Rate limit:** 100 requests per minute per API key
+- **Specification:** OpenAPI 3.1
+
+## Authentication
+
+All API requests require a Bearer token. Create API keys at **Settings → Developer**.
+
+```bash
+curl -H "Authorization: Bearer alva_sk_your_key_here" \
+  https://app.alvahq.com/api/v1/me
+```
+
+### API key format
+
+Keys follow the format: `alva_sk_{32 hex characters}`
+
+The full key is shown **once** on creation. Store it securely — it cannot be retrieved later.
+
+### Scopes
+
+API keys have granular scopes that control what they can access:
+
+| Scope | What it allows |
+|-------|---------------|
+| `companies:read` | List and get companies |
+| `companies:write` | Create, update, and delete companies |
+| `contacts:read` | List and get contacts |
+| `contacts:write` | Create, update, and delete contacts |
+| `deals:read` | List and get deals (including methodology data) |
+| `deals:write` | Create, update, and delete deals |
+| `activities:read` | List and get activities |
+| `activities:write` | Create and update activities |
+| `pipeline:read` | List pipeline stages and methodologies |
+
+## Available endpoints
+
+### Companies
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/companies` | List companies (paginated) |
+| `POST` | `/api/v1/companies` | Create a company |
+| `GET` | `/api/v1/companies/:id` | Get a company |
+| `PATCH` | `/api/v1/companies/:id` | Update a company |
+| `DELETE` | `/api/v1/companies/:id` | Delete a company |
+
+### Contacts
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/contacts` | List contacts (paginated) |
+| `POST` | `/api/v1/contacts` | Create a contact |
+| `GET` | `/api/v1/contacts/:id` | Get a contact |
+| `PATCH` | `/api/v1/contacts/:id` | Update a contact |
+| `DELETE` | `/api/v1/contacts/:id` | Delete a contact |
+
+### Deals
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/deals` | List deals (paginated) |
+| `POST` | `/api/v1/deals` | Create a deal |
+| `GET` | `/api/v1/deals/:id` | Get a deal (includes methodology data) |
+| `PATCH` | `/api/v1/deals/:id` | Update a deal |
+| `DELETE` | `/api/v1/deals/:id` | Delete a deal |
+
+### Activities
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/activities` | List activities (paginated) |
+| `POST` | `/api/v1/activities` | Create an activity |
+| `GET` | `/api/v1/activities/:id` | Get an activity |
+| `PATCH` | `/api/v1/activities/:id` | Update an activity |
+
+### Metadata
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/pipeline/stages` | List pipeline stages and methodologies |
+| `GET` | `/api/v1/me` | Get current API key and account info |
+
+## Rate limiting
+
+All responses include rate limit headers:
+
+| Header | Description |
+|--------|------------|
+| `X-RateLimit-Limit` | Maximum requests per minute |
+| `X-RateLimit-Remaining` | Remaining requests in the current window |
+| `X-RateLimit-Reset` | When the limit resets (Unix timestamp) |
+
+If you exceed the limit, you'll receive a `429 Too Many Requests` response with a `Retry-After` header.
+
+## Managing API keys
+
+Go to **Settings → Developer** (admin only) to:
+
+- Create new keys with a name, selected scopes, and optional expiry
+- View active keys with their prefix, scopes, and last-used time
+- Revoke keys that are no longer needed
+
+## OpenAPI specification
+
+The full OpenAPI 3.1 specification is available at:
+
+```
+GET /api/v1/openapi
+```
+
+You can use this to auto-generate client libraries, import into Postman, or power other API tools.

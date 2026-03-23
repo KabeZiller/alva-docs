@@ -3,4 +3,93 @@ title: "Configuring Budgets and Hours"
 description: "Control how much your agent spends and when it is allowed to run."
 ---
 
-<Note>Full content coming soon.</Note>
+BDR agents run autonomously, so it's important to set clear boundaries on spending and scheduling. You configure these when creating the agent and can adjust them at any time from the agent's edit page.
+
+## Monthly budget
+
+Every agent has a **monthly budget** that caps how much it can spend. Once the budget is exhausted, the agent pauses automatically until the next billing cycle.
+
+The default budget is **£100/month**. You can set this to any amount that suits your campaign.
+
+### What counts towards the budget
+
+Most agent actions are free. The paid actions are external data lookups:
+
+| Action | Cost per use |
+|--------|-------------|
+| Discover contacts (broad employee search) | £0.01 |
+| Search People (role-specific search) | £0.01 |
+| Lookup Profile (full profile details) | £0.01 |
+| Find Email (email address lookup) | £0.04 |
+| Domain Email Search (contacts + emails at a domain) | £0.04 |
+
+Sending emails, creating contacts, updating statuses, escalating, and drafting replies are all **free**.
+
+### Per-company budget tiers
+
+The agent can also limit how much it spends on each individual company, based on how well the company matches your profile:
+
+| Match score | Default per-company budget |
+|------------|---------------------------|
+| 90–100% match | £1.00 |
+| 80–89% match | £0.75 |
+| 70–79% match | £0.50 |
+| Below 70% match | £0.25 |
+
+This means the agent invests more in high-confidence matches and less on borderline ones. You can customise these tiers.
+
+## Operating hours
+
+You can restrict when the agent sends emails so outreach lands during business hours:
+
+- **Enabled/Disabled** — toggle operating hours on or off. When disabled, the agent runs 24/7.
+- **Timezone** — the timezone for the schedule (default: Europe/London)
+- **Start and end time** — e.g. 09:00 to 17:00
+- **Active days** — which days of the week the agent is allowed to run (default: Monday–Friday)
+
+<Tip>
+  Setting operating hours in the prospect's timezone ensures emails arrive during business hours, which improves open rates. Choose the timezone where most of your target companies are based.
+</Tip>
+
+When the agent hits a time outside its operating hours, it simply pauses until the next active window. No work is lost — it picks up where it left off.
+
+## Run pace
+
+The **run pace** controls how many companies the agent processes per cycle:
+
+- **Default:** 1 company per run
+- **Recommended for testing:** 1 company per run (lets you review each interaction)
+- **After confidence builds:** Increase to 3–5 companies per run
+
+A lower pace gives you more control and visibility. A higher pace means faster outreach but requires more trust in the agent's configuration.
+
+## Follow-up cadence
+
+Configure how the agent follows up with prospects who haven't replied:
+
+| Setting | Default | What it controls |
+|---------|---------|-----------------|
+| **Min days between follow-ups** | 3 days | Minimum gap between follow-up emails to the same person |
+| **Max follow-ups per contact** | 2 | How many follow-up emails before the agent stops |
+| **Follow-up template groups** | None | Specific templates for follow-ups (if different from initial outreach) |
+| **Dormant re-evaluation** | 90 days | How long before the agent revisits a company that went quiet |
+
+<Note>
+  The follow-up cadence applies per contact, not per company. If the agent finds multiple contacts at the same company, each gets their own follow-up sequence.
+</Note>
+
+## Adjusting settings on a live agent
+
+You can edit any of these settings while the agent is running — click the agent name in **Discovery → AI Agents**, then click **Edit**.
+
+Changes take effect on the next processing cycle. The agent won't interrupt an action already in progress, but will use the new settings for everything going forward.
+
+## When the budget runs out
+
+If the agent hits its monthly budget limit:
+
+1. The agent **pauses automatically**
+2. You receive a notification (if escalation emails are configured)
+3. The agent resumes at the start of the next month, or when you manually increase the budget
+
+You can also manually pause and resume agents at any time from the agent detail page.

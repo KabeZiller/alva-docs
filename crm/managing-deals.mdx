@@ -3,4 +3,142 @@ title: "Managing Deals"
 description: "Track deals through your pipeline and keep them moving forward."
 ---
 
-<Note>Full content coming soon.</Note>
+Deals represent the opportunities you're working on. Every deal moves through a pipeline of stages, and Alva continuously monitors each one — scoring its health, detecting risks, and telling you what needs attention.
+
+## Creating a deal
+
+Go to **Deals** and click **New Deal** in the top-right corner.
+
+When creating a deal, you'll set:
+
+- **Deal name** — a short description (e.g. "Acme Corp — Enterprise Platform")
+- **Company** — which company this deal is with
+- **Contact** — the primary contact for this deal
+- **Stage** — where the deal is right now (defaults to Discovery)
+- **Value** — the deal amount
+- **Probability** — your estimated chance of winning (percentage)
+- **Expected close date** — when you expect the deal to close
+- **Methodology** — which sales methodology to track against (MEDDPICC, BANT, or SPICED)
+- **Notes** — any additional context
+
+## Pipeline stages
+
+Every deal moves through six stages:
+
+| Stage | What it means |
+|-------|--------------|
+| **Discovery** | You're learning about the prospect's needs |
+| **Qualification** | You're determining whether this is a real opportunity |
+| **Proposal** | You've presented a solution and pricing |
+| **Negotiation** | You're working through terms and contracts |
+| **Closed Won** | The deal is done — you won it |
+| **Closed Lost** | The deal is over — you lost it |
+
+### The Kanban board
+
+The **Deals** page shows your pipeline as a Kanban board — each stage is a column, and deals are cards you can drag between columns. Drag a deal from one stage to the next as it progresses.
+
+You can also search deals using the search bar at the top of the page.
+
+Each deal card on the board shows:
+
+- Deal name and company
+- Deal value
+- Expected close date
+- **Health score** — a coloured badge showing the AI-assessed health (see below)
+
+### Switching to table view
+
+If you prefer a list, you can switch between the Kanban board and a table view using the toggle at the top of the page.
+
+## Deal detail page
+
+Click any deal to open its full detail page. This is where most of the action happens:
+
+### Overview section
+
+At the top you'll see the deal's key information — name, company, contact, value, stage, probability, and close date. Click **Edit** to update any of these.
+
+### Health score
+
+Alva automatically scores every deal from **0 to 100** based on multiple factors:
+
+- How complete your methodology data is
+- Email engagement and sentiment
+- How long the deal has been in its current stage
+- Whether there are recent activities
+- Risk signals from email analysis
+
+The score appears as a coloured badge:
+- **Green (70–100)** — healthy, on track
+- **Amber (40–69)** — needs attention
+- **Red (0–39)** — at risk
+
+Health scores are recalculated automatically in the background. You don't need to do anything — just keep your deal up to date and Alva takes care of the scoring.
+
+### Methodology tracker
+
+Below the overview, you'll see the methodology tracker for your chosen methodology. This shows each criterion as a field you can fill in, with a completion percentage.
+
+See [Sales Methodologies](/crm/sales-methodologies) for details on each methodology.
+
+<Tip>
+  If you have email connected, Alva can detect methodology evidence in your email conversations and suggest updates. You'll see a **suggestion badge** appear next to methodology fields — click to review and apply with one click.
+</Tip>
+
+### Email intelligence
+
+If you've [connected your email](/email/connecting-an-email-account), the deal page shows:
+
+- **Emails** — all email conversations related to this deal
+- **Email intelligence panel** — a summary of buying signals, risk signals, commitments, unanswered questions, and sentiment trends detected across all emails
+
+### Activities
+
+A timeline of all interactions logged against this deal — calls, meetings, emails, notes, and tasks. You can log new activities directly from this page.
+
+### Commitments
+
+Track promises and action items on the deal. Each commitment has a due date and appears in your [Focus](/getting-started/focus) view when it's due or overdue.
+
+### Products and competitors
+
+You can link products and competitors to a deal to track what you're selling and who you're competing against. This information feeds into Alva's analysis and briefings.
+
+### Deal briefings
+
+Click **Generate Briefing** to have Alva create a comprehensive PDF briefing for the deal — useful before a call or meeting. The briefing includes deal context, health assessment, methodology status, email intelligence, and recommended next steps.
+
+Previous briefings are saved and accessible from the deal page.
+
+---
+
+## Risk detection
+
+Alva runs automated risk detection rules in the background and sends you notifications when deals need attention. The five main risk signals are:
+
+1. **Going dark** — no email activity or logged interactions for an extended period
+2. **Low health score** — the deal's health has dropped below a threshold
+3. **Incomplete methodology** — key qualification criteria are missing
+4. **Stale stage** — the deal has been in the same stage for too long
+5. **Negative sentiment** — email sentiment has turned negative
+
+When a risk is detected, you'll see a notification in the [notification centre](/getting-started/account-setup) and the deal's health score will reflect it.
+
+---
+
+## Win/loss tracking
+
+When you move a deal to **Closed Won** or **Closed Lost**, you can record:
+
+- **Win/loss reasons** — why you won or lost
+- **Competitor** — who you were competing against
+- **Actual close date** — when the deal actually closed
+
+This data feeds into Alva's analytics and helps you understand patterns over time.
+
+---
+
+## Creating a contract from a deal
+
+When a deal reaches **Closed Won**, you can create a [contract](/crm/contracts-and-recurring-revenue) directly from the deal page. The contract inherits the deal's company, value, and contact, and its status is automatically set to **Active**.

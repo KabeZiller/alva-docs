@@ -3,4 +3,38 @@ title: "Email Signatures"
 description: "Set up the signature Alva uses when sending emails on your behalf."
 ---
 
-<Note>Full content coming soon.</Note>
+Email signatures are appended to every email Alva sends — whether from the chat panel, a BDR agent, or a manual compose. You can create multiple signatures and set a default.
+
+## Creating a signature
+
+Go to **Settings → Email Connections** and scroll down to the **Signatures** section. Click **New Signature**.
+
+The signature editor supports:
+
+- **Rich text formatting** — bold, italic, links, images, and custom HTML
+- **Visual editor** — a WYSIWYG editor for designing your signature
+- **HTML view** — switch to raw HTML for precise control
+- **Preview** — see exactly how the signature will look
+
+## Merge fields
+
+You can insert merge fields that are replaced automatically when the email is sent:
+
+| Field | What it inserts |
+|-------|----------------|
+| `{{sender.name}}` | The display name configured for the email connection |
+| `{{sender.email}}` | The email address of the connection |
+
+Click the merge field buttons below the editor to insert them at your cursor position.
+
+## Setting a default
+
+Toggle the **Default** switch on any signature to make it the default. The default signature is used automatically when Alva sends emails. You can only have one default at a time.
+
+## Testing your signature
+
+Click **Send Test Email** to send a test message to yourself with the signature attached. This lets you verify the formatting looks correct in your email client before using it in real outreach.
+
+## Multiple signatures
+
+You can create multiple signatures for different purposes — for example, a formal signature for initial outreach and a shorter one for follow-ups. When creating BDR agents or drafting emails, the default signature is used unless you specify otherwise.

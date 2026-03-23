@@ -3,4 +3,116 @@ title: "Creating a Discovery Profile"
 description: "Set up a profile to find companies that match your ideal customer, vendor, or partner."
 ---
 
-<Note>Full content coming soon.</Note>
+Discovery profiles tell Alva what kind of companies to search for. You describe what you're looking for in natural language, choose the geography to search across, and Alva finds matching companies automatically.
+
+## What is a discovery profile?
+
+A profile is a set of search parameters:
+
+- **Profile type** — what kind of companies you're looking for (customers, vendors, partners, suppliers, or competitors). See [Profile Types Explained](/discovery/profile-types-explained).
+- **Description** — a natural language description of your ideal target
+- **Geography** — which regions, countries, or cities to search in
+- **Match threshold** — how closely a company needs to match to be included
+
+Alva uses your description to extract search categories, then systematically searches across your chosen geography to find matching companies.
+
+## Creating a profile
+
+Go to **Discovery → Search Profiles** and click **Create New Profile**.
+
+### Step 1: Choose your profile type
+
+Select one of the five profile types:
+
+| Type | Code | What it finds |
+|------|------|--------------|
+| Ideal Customer Profile | ICP | Potential customers for your products |
+| Ideal Vendor Profile | IVP | Vendors you might buy from |
+| Ideal Partner Profile | IPP | Strategic or channel partners |
+| Ideal Supplier Profile | ISP | Suppliers to your business |
+| Competitor Profile | CP | Competitors in your market |
+
+### Step 2: Describe what you're looking for
+
+Write a natural language description of your ideal target. Be as specific as you can — Alva uses this to extract search categories.
+
+**Good description:**
+> "Mid-market B2B SaaS companies in the healthcare space, ideally with 50–500 employees, that sell to hospitals and clinics. We're looking for companies that need CRM software."
+
+**Too vague:**
+> "Software companies"
+
+<Tip>
+  The more detail you provide, the more relevant the results. Include industry, company size, what they sell, who their customers are, and any other qualifying criteria.
+</Tip>
+
+### Step 3: Choose your geography
+
+Select the regions and locations to search across. Alva's database covers over **4.3 million locations** worldwide.
+
+You can select:
+- Entire countries
+- Regions (e.g. South East England, California)
+- Individual cities or towns
+
+Alva uses **round-robin geographic diversity** when searching, so results are spread across your chosen locations rather than concentrated in one area.
+
+### Step 4: Review categories
+
+After you submit your description, Alva extracts **search categories** — specific terms it will use to find companies. You'll see these listed on the profile page and can:
+
+- **Delete individual categories** that don't look right
+- **Re-extract categories** if you've updated your description
+- **Reset to draft** to start over
+
+## Profile statuses
+
+| Status | What it means |
+|--------|--------------|
+| **Draft** | Profile created but not yet activated. You can still edit the description and categories. |
+| **Active** | Alva is actively searching for companies. New results appear in your queue. |
+| **Paused** | Searching is temporarily stopped. You can resume at any time. |
+| **Completed** | All searches have been executed across the chosen geography. |
+
+## Activating a profile
+
+Once you're happy with the description, categories, and geography, click **Activate** to start the search. Alva begins finding companies immediately.
+
+## How searching works
+
+Alva uses a **lazy search generation** system:
+
+1. When you activate a profile, a buffer of ~200 search queries is generated
+2. These queries are executed by background workers
+3. As the buffer depletes, more queries are automatically generated
+4. This continues until all geographic areas have been covered
+
+This approach avoids generating thousands of queries upfront and keeps the system responsive. You can see the progress on the profile detail page — the number of queries generated, executed, and the overall completion percentage.
+
+## Managing active profiles
+
+From the profile detail page, you can:
+
+- **Pause** — temporarily stop searching (useful if you need to review results before more come in)
+- **Resume** — restart a paused profile
+- **Edit** — change the description or settings (while in draft)
+- **Delete** — remove the profile and all its results
+- **Adjust match threshold** — change how strictly companies need to match
+- **Adjust throttle speed** — control how fast searches run
+- **Toggle auto-import** — automatically import high-confidence matches into your CRM
+
+## Per-company billing
+
+Each company discovered is billed at a tiered rate:
+
+| Volume | Price per company |
+|--------|------------------|
+| First 1,000 | £0.20 |
+| 1,001–5,000 | £0.15 |
+| 5,001+ | £0.10 |
+
+This is deducted from your credit balance. You can see discovery costs broken down in **Settings → Usage**.
+
+<Tip>
+  You can also create discovery profiles by asking Alva: "Set up an ICP for mid-market SaaS companies in the UK." Alva will walk you through the options conversationally.
+</Tip>

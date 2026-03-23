@@ -3,4 +3,133 @@ title: "Companies and Contacts"
 description: "Add and manage the companies and people in your pipeline."
 ---
 
-<Note>Full content coming soon.</Note>
+Companies and contacts are the foundation of your CRM. Every deal, activity, and email conversation connects back to a company or contact record.
+
+## Companies
+
+### Adding a company
+
+Go to **Companies** and click **New Company** in the top-right corner. Fill in the details you have — at minimum, you need a **company name**.
+
+Available fields include:
+
+- **Name** — the company name (required)
+- **Domain** — their website domain (e.g. `acme.com`)
+- **Website** — full URL
+- **Industry** — what they do
+- **Location** — where they're based
+- **Employee count** and **revenue** — for sizing
+- **Description** — any notes or context
+- **Tags** — for your own categorisation (see [Tags](/crm/tags))
+
+<Tip>
+  If you have many companies to add at once, use the **Import** button to upload a CSV file. See [Importing Data](/crm/importing-data) for details.
+</Tip>
+
+### Company detail page
+
+Click any company to open its detail page. You'll see:
+
+- **Overview** — name, domain, industry, location, and key stats
+- **Contacts** — everyone linked to this company
+- **Deals** — all deals associated with the company, with stage and value
+- **Activities** — a chronological timeline of calls, meetings, emails, and notes
+- **Emails** — all email conversations involving this company (if email is connected)
+- **Commitments** — things you've promised to do, with due dates
+- **Cadence** — follow-up cadence settings for staying in touch
+- **Discovery activity** — if the company was found via Discovery, shows BDR outreach history and AI agent actions
+
+You can edit a company at any time by clicking the **Edit** button.
+
+### Searching and filtering
+
+The Companies page includes a search bar that filters by **name**, **domain**, or **industry**. Type and press Enter to filter the list.
+
+If you're using the [module switcher](/crm/modules-and-relationships), the companies list automatically filters to show only companies matching the active module's relationship type — for example, switching to VRM shows only vendors.
+
+### Relationship types
+
+Every company can have a relationship type that describes how they relate to your business:
+
+| Type | What it means |
+|------|--------------|
+| **Customer** | A company that buys from you |
+| **Vendor** | A company you buy from |
+| **Partner** | A company you partner with |
+| **Supplier** | A company that supplies to you |
+| **Competitor** | A direct competitor |
+
+Relationship types are set automatically when companies are imported from [Discovery](/discovery/creating-a-discovery-profile) profiles, or you can set them manually.
+
+### Lifecycle stages
+
+Each relationship type has its own lifecycle stages that describe where the company is in your relationship:
+
+| Relationship | Stages |
+|-------------|--------|
+| Customer | Target → Prospect → Lead → Customer |
+| Vendor | Target → Evaluating → Negotiating → Vendor |
+| Partner | Target → Engaging → Negotiating → Partner |
+| Supplier | Target → Evaluating → Negotiating → Supplier |
+
+You can change a company's lifecycle stage from its detail page using the dropdown selector.
+
+---
+
+## Contacts
+
+### Adding a contact
+
+Go to **Contacts** and click **Add Contact**. You can also add contacts directly from a company's detail page.
+
+Available fields include:
+
+- **First name** and **Last name**
+- **Email address**
+- **Phone number**
+- **Job title**
+- **Social profiles** (e.g. LinkedIn URL)
+- **Company** — link them to an existing company
+- **Location**
+
+### Contact detail page
+
+Click any contact to see their full profile:
+
+- **Overview** — name, role, email, phone, social links
+- **Company** — the company they belong to (clickable)
+- **Deals** — deals they're involved in
+- **Activities** — timeline of interactions with this contact
+- **Emails** — all email conversations with this person
+- **Commitments** — promises and action items linked to this contact
+- **Cadence** — follow-up rhythm for staying in touch
+
+### Linking contacts to companies
+
+Contacts are linked to companies when you create them. A single company can have many contacts, and you can see all linked contacts from the company detail page.
+
+---
+
+## Activities
+
+Activities track every interaction you have with companies and contacts. You can log activities from any company, contact, or deal detail page using the **Log Activity** button.
+
+Activity types include:
+
+- **Call** — a phone call
+- **Meeting** — an in-person or virtual meeting
+- **Email** — an email exchange (also logged automatically when email is connected)
+- **Note** — an internal note or observation
+- **Task** — something that needs to be done
+
+Each activity records the date, a description, and which company, contact, and deal it relates to.
+
+---
+
+## Deleting records
+
+You can delete a company or contact from their detail page. Deleting a company does **not** automatically delete its linked contacts — they remain in your CRM and can be reassigned.
+
+<Warning>
+  Deletion is permanent. Make sure you no longer need the record before deleting it.
+</Warning>

@@ -35,7 +35,11 @@
             "pages": [
               "index",
               "getting-started/quickstart",
-              "getting-started/account-setup"
+              "getting-started/account-setup",
+              "getting-started/dashboard",
+              "getting-started/focus",
+              "getting-started/setup-checklist",
+              "getting-started/keyboard-shortcuts"
             ]
           },
           {
@@ -44,7 +48,10 @@
               "crm/companies-and-contacts",
               "crm/managing-deals",
               "crm/sales-methodologies",
-              "crm/contracts-and-recurring-revenue"
+              "crm/contracts-and-recurring-revenue",
+              "crm/importing-data",
+              "crm/tags",
+              "crm/modules-and-relationships"
             ]
           },
           {
@@ -53,7 +60,8 @@
               "ai-assistant/talking-to-alva",
               "ai-assistant/what-alva-can-do",
               "ai-assistant/alva-vs-alva-pro",
-              "ai-assistant/sharing-conversations"
+              "ai-assistant/sharing-conversations",
+              "ai-assistant/ai-settings"
             ]
           },
           {
@@ -61,7 +69,10 @@
             "pages": [
               "discovery/creating-a-discovery-profile",
               "discovery/profile-types-explained",
-              "discovery/working-with-your-results"
+              "discovery/working-with-your-results",
+              "discovery/discovery-companies",
+              "discovery/discovery-contacts",
+              "discovery/lead-sheet"
             ]
           },
           {
@@ -78,7 +89,8 @@
               "email/connecting-an-email-account",
               "email/email-signatures",
               "email/email-templates",
-              "email/understanding-email-analysis"
+              "email/understanding-email-analysis",
+              "email/knowledge-base"
             ]
           },
           {
@@ -94,7 +106,8 @@
             "pages": [
               "reporting/standard-reports",
               "reporting/building-a-custom-report",
-              "reporting/scheduled-report-delivery"
+              "reporting/scheduled-report-delivery",
+              "reporting/analytics-dashboard"
             ]
           },
           {
