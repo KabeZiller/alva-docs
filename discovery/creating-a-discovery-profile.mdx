@@ -34,17 +34,32 @@ Select one of the five profile types:
 
 ### Step 2: Describe what you're looking for
 
-Write a natural language description of your ideal target. Be as specific as you can — Alva uses this to extract search categories.
+Write a short, natural language description of the type of company you're looking for. Keep it to **1–2 sentences** (50 words max).
 
-**Good description:**
-> "Mid-market B2B SaaS companies in the healthcare space, ideally with 50–500 employees, that sell to hospitals and clinics. We're looking for companies that need CRM software."
+The key principle: **describe what the company IS, not what it needs or why it would buy from you.** Alva finds companies by searching business directories and reading company websites — so your description should match what a company would say about itself on its own website.
 
-**Too vague:**
-> "Software companies"
+<CardGroup cols={2}>
+  <Card title="Good descriptions" icon="check">
+    - "Architectural firms working on residential or commercial projects"
+    - "Marketing agencies serving B2B technology companies"
+    - "Plumbing and heating contractors serving residential customers"
+    - "Mid-sized manufacturing companies in the automotive sector"
+  </Card>
+  <Card title="Bad descriptions" icon="xmark">
+    - "Companies that need CRM software" — needs/pain points aren't on websites
+    - "Firms with 50–500 employees" — employee counts are rarely on websites
+    - "Companies using Salesforce" — internal tech stacks aren't on websites
+    - "Businesses that are currently recruiting" — hiring status isn't on websites
+  </Card>
+</CardGroup>
+
+**Broader is better.** A broader description finds more companies — you can always filter and refine the results later. An overly specific description will reject most companies, even good prospects.
 
 <Tip>
-  The more detail you provide, the more relevant the results. Include industry, company size, what they sell, who their customers are, and any other qualifying criteria.
+  Think of it this way: "Would a company matching my description have these words on their About Us page?" If yes, it's a good description. If no, simplify it.
 </Tip>
+
+When you enter your description, Alva runs a **validation check** that flags any criteria that can't be matched — such as pain points, technology needs, or employee counts — and suggests an improved version.
 
 ### Step 3: Choose your geography
 
@@ -80,14 +95,9 @@ Once you're happy with the description, categories, and geography, click **Activ
 
 ## How searching works
 
-Alva uses a **lazy search generation** system:
+When you activate a profile, Alva begins searching across your chosen geography automatically. Searches are generated and executed in the background — you don't need to do anything.
 
-1. When you activate a profile, a buffer of ~200 search queries is generated
-2. These queries are executed by background workers
-3. As the buffer depletes, more queries are automatically generated
-4. This continues until all geographic areas have been covered
-
-This approach avoids generating thousands of queries upfront and keeps the system responsive. You can see the progress on the profile detail page — the number of queries generated, executed, and the overall completion percentage.
+You can see the progress on the profile detail page, including the number of searches completed and the overall completion percentage. Alva works through your geography systematically, spreading results across locations rather than exhausting one area before moving to the next.
 
 ## Managing active profiles
 
@@ -114,5 +124,5 @@ Each company discovered is billed at a tiered rate:
 This is deducted from your credit balance. You can see discovery costs broken down in **Settings → Usage**.
 
 <Tip>
-  You can also create discovery profiles by asking Alva: "Set up an ICP for mid-market SaaS companies in the UK." Alva will walk you through the options conversationally.
+  You can also create discovery profiles by asking Alva: "Set up an ICP for marketing agencies in the UK." Alva will walk you through the options conversationally and check that your description will work.
 </Tip>
