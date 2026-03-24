@@ -148,6 +148,11 @@
       "claude"
     ]
   },
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.alvahq.com"
+    }
+  },
   "footer": {}
 
 }
