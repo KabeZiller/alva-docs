@@ -3,7 +3,7 @@ title: "Understanding Credits"
 description: "Learn how Alva's credit system works and what uses credits."
 ---
 
-Alva uses a credit-based billing system. Credits are dollar-backed and displayed as tokens in the interface. Every AI-powered action in Alva costs credits — conversations with Alva, background analysis, discovery searches, and BDR agent actions.
+Alva uses a credit-based billing system. Credits are dollar-backed and displayed as tokens in the interface. Every AI-powered action in Alva costs credits — conversations with Alva, background analysis, discovery searches, and enrichment.
 
 ## How credits work
 
@@ -30,11 +30,13 @@ These run automatically and cost credits:
 
 Each company found by a discovery profile costs credits. The rate is tiered — the more companies you discover, the lower the per-company cost. See **Settings → Billing** for current pricing.
 
+### Enrichment
+
+When a company is imported, Alva automatically [enriches](/discovery/enrichment) it — searching for contacts, email addresses, and ranking them by seniority. This process uses credits for the data lookups and AI processing involved.
+
 ### BDR agent actions
 
-Most BDR actions are free, but external data lookups cost credits:
-
-Paid actions include contact discovery queries, email lookups, and domain searches. The cost for each is shown in the agent configuration screen and on the **Settings → Usage** page.
+All BDR agent tools (sending emails, creating contacts, escalating, drafting replies) are **free**. The agent uses a small amount of credits for AI processing when evaluating each company.
 
 ### Email safety checks
 
@@ -50,5 +52,5 @@ Go to **Settings → Usage** for a detailed breakdown:
 - **Trend over time** — how your usage is growing
 
 <Tip>
-  If your credits are running low, the first thing to check is BDR agent activity — an agent processing many companies can use credits quickly. Pause agents if needed while you top up.
+  If your credits are running low, check the per-feature breakdown on the Usage page. Discovery searches and enrichment are typically the largest credit consumers. You can pause discovery profiles or BDR agents while you top up.
 </Tip>

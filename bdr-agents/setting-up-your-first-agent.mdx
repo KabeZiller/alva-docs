@@ -3,7 +3,9 @@ title: "Setting Up Your First Agent"
 description: "Create an AI BDR agent and send your first autonomous outreach campaign."
 ---
 
-AI BDR agents are autonomous outreach workers. You give them a target, templates, and a budget — and they find contacts, research prospects, write personalised emails, and follow up, all on their own.
+AI BDR agents are autonomous outreach workers. You give them a target, templates, and a budget — and they write personalised emails, follow up, and handle responses, all on their own.
+
+Before an agent works on a company, that company is automatically [enriched](/discovery/enrichment) — Alva finds contacts, email addresses, and ranks them by seniority so the agent can focus on what it does best: outreach.
 
 ## Prerequisites
 
@@ -29,8 +31,8 @@ Go to **Discovery → AI Agents** and click **Create Agent**.
 
 Give your agent a descriptive name (e.g. "Healthcare Agency Prospector") and write **instructions** that guide its decision-making:
 
-- **Who to target** — which roles or personas (e.g. "Focus on CTOs and VP Engineering")
-- **Contact strategy** — whether to use broad searches or look for specific people
+- **Who to prioritise** — which roles or personas (e.g. "Focus on CTOs and VP Engineering")
+- **Tone guidance** — any specific tone or style to follow beyond your templates
 - **When to escalate** — what situations should be flagged for human review
 
 <Note>
@@ -60,17 +62,10 @@ By default, all tools are enabled. You can restrict which actions the agent is a
 | Tool | What it does | Cost |
 |------|-------------|------|
 | **Send Email** | Send outreach emails | Free |
-| **Discover Contacts** | Find employees at a company | Per-use credit cost |
-| **Search People** | Find specific people by role at a company | Per-use credit cost |
-| **Lookup Profile** | Get full profile details for a person | Per-use credit cost |
-| **Find Email** | Look up a person's email address | Per-use credit cost |
-| **Domain Email Search** | Find senior contacts and emails at a domain | Per-use credit cost |
-| **Create Contact** | Save discovered contacts to your CRM | Free |
+| **Create Contact** | Save contacts to your CRM | Free |
 | **Update Status** | Update outreach status on a company | Free |
 | **Escalate** | Flag a company for human review | Free |
 | **Draft Reply** | Draft a reply to a prospect's response (for your review) | Free |
-
-The exact cost per tool is shown on the agent configuration screen when you select tools.
 
 ### Escalation notifications
 
@@ -82,20 +77,18 @@ Once configured, save the agent. It starts in **Paused** state. Click **Start** 
 
 When active, the agent processes companies on a regular schedule (controlled by its [run pace](/bdr-agents/configuring-budgets-and-hours)). For each company, it:
 
-1. **Researches** the company — searches for contacts and key information
-2. **Finds contacts** — identifies the right people to reach
-3. **Looks up email addresses** — finds verified email addresses for contacts
-4. **Sends personalised outreach** — picks the best template and personalises it
-5. **Tracks responses** — monitors for replies and classifies intent
-6. **Follows up** — sends follow-up emails according to the cadence you set
-7. **Escalates when needed** — flags situations that need human judgement
+1. **Checks enrichment** — ensures the company has been [enriched](/discovery/enrichment) with contacts and emails
+2. **Evaluates contacts** — reviews the available contacts, prioritising economic buyers and senior decision-makers
+3. **Sends personalised outreach** — picks the best template and personalises it for the chosen contact
+4. **Tracks responses** — monitors for replies and classifies intent
+5. **Follows up** — sends follow-up emails according to the cadence you set
+6. **Escalates when needed** — flags situations that need human judgement
 
 ## What happens after launch
 
 The agent appears on the **Discovery → AI Agents** page with live stats:
 
 - **Emails sent** — total outreach emails dispatched
-- **Contacts found** — new contacts discovered
 - **Budget spent** — how much of the monthly budget has been used
 - **Status** — active, paused, or completed
 

@@ -1,9 +1,9 @@
 ---
 title: "Discovery Contacts"
-description: "View contacts found by BDR agents during outreach research."
+description: "View contacts found during enrichment for discovered companies."
 ---
 
-As BDR agents research companies, they discover contacts — the people who work at those companies. The Discovery Contacts page shows all of these in one place.
+When companies are imported from discovery, Alva automatically [enriches](/discovery/enrichment) them — finding contacts, email addresses, and ranking them by seniority. The Discovery Contacts page shows all of these contacts in one place.
 
 ## Accessing the page
 
@@ -15,26 +15,27 @@ Each contact shows:
 
 - **Name** — first and last name
 - **Job title** — their role at the company
-- **Email address** — if found during research
+- **Email address** — if found during enrichment
 - **Company** — which company they belong to
-- **Source** — which BDR agent discovered them
+- **Seniority ranking** — how they rank compared to other contacts at the same company (1 = most senior)
+- **Economic buyer** — whether they match the economic buyer role defined in your discovery profile
 - **Status** — whether they've been contacted, replied, or are pending
 
-## How contacts are discovered
+## How contacts are found
 
-BDR agents find contacts through their research tools:
+Contacts are discovered automatically as part of the [enrichment process](/discovery/enrichment) that runs when a company is imported into your CRM:
 
-1. **Contact discovery** — broad search for employees at a company
-2. **People search** — targeted search for specific roles (e.g. "CTO", "Head of Sales")
-3. **Profile lookup** — detailed information about a specific person
-4. **Email lookup** — finding a verified email address for a contact
+1. **Email and contact search** — Alva searches for people and email addresses associated with the company's domain
+2. **Data cleansing** — AI reviews the results, removing placeholder or nonsensical records and merging duplicates
+3. **Seniority ranking** — each contact is ranked by decision-making authority and relevance, so the most valuable contacts are prioritised
+4. **Economic buyer flagging** — if your discovery profile specifies an economic buyer role (e.g. "CEO", "Head of Operations"), matching contacts are highlighted
 
-All of this happens automatically as part of the agent's outreach workflow.
+This all happens before a [BDR agent](/bdr-agents/setting-up-your-first-agent) begins outreach, so the agent starts with clean, ranked data.
 
 ## Linking to CRM contacts
 
-When a BDR agent creates a contact, it's saved in the discovery system. If the company is later imported into your CRM, the contact can be linked to the CRM record.
+When enrichment creates a contact, it's automatically saved as a CRM contact record linked to the company. You can view and manage them from the company's detail page as well as from this central contacts view.
 
 ## Viewing outreach history
 
-Click any contact to see their outreach history — emails sent by the agent, responses received, and the current status of the conversation.
+Click any contact to see their outreach history — emails sent by a BDR agent, responses received, and the current status of the conversation.

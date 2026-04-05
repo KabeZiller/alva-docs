@@ -1,0 +1,71 @@
+---
+title: "Enrichment"
+description: "How Alva automatically finds contacts, emails, and key information for your discovered companies."
+---
+
+When a company is imported into your CRM from discovery, Alva automatically enriches it — finding contacts, email addresses, and preparing the company for outreach. This happens in the background so you don't have to do anything.
+
+## What enrichment does
+
+For each imported company, the enrichment process:
+
+1. **Cleans up the company name** — formats the company name properly based on available information, so your outreach looks professional
+2. **Searches for contacts** — finds people who work at the company, along with their job titles and email addresses
+3. **Removes bad data** — AI reviews the contacts found and removes placeholder names, duplicates, and records that aren't real people
+4. **Ranks contacts by seniority** — each contact is ranked by decision-making authority and relevance, so the most valuable contacts appear first
+5. **Flags economic buyers** — if your discovery profile specifies an economic buyer role (e.g. "CEO", "Managing Director"), matching contacts are highlighted
+
+## When enrichment runs
+
+Enrichment runs automatically when:
+
+- A company is imported from the Discovery Results page
+- A company is bulk-imported from Discovery Companies
+- Auto-import is enabled and a high-confidence match is found
+
+You don't need to trigger it manually — it starts within seconds of import.
+
+## Enrichment status
+
+Each company shows an enrichment status so you know where it stands:
+
+| Status | What it means |
+|--------|--------------|
+| **Pending** | Queued for enrichment — will start shortly |
+| **Enriching** | Enrichment is currently running |
+| **Enriched** | Complete — contacts and emails have been found |
+| **No results** | Complete — no contacts could be found at this company |
+| **Failed** | Something went wrong — the company can be re-enriched |
+
+<Note>
+  AI BDR agents only work on companies that have completed enrichment (status: **Enriched** or **No results**). Companies that are still pending or enriching are automatically skipped and checked again later.
+</Note>
+
+## What you'll see after enrichment
+
+Once enrichment completes, the company's detail page will show:
+
+- **Contacts** — the people found at the company, ranked by seniority with economic buyers highlighted
+- **Email addresses** — personal emails on contact records, plus any generic company inboxes (e.g. info@, hello@) added to the company record
+- **Email pattern** — if one was detected (e.g. firstname.lastname@company.com), it's stored on the company record
+- **Activity log** — a timeline entry summarising what enrichment found
+
+All of this data is immediately available to [BDR agents](/bdr-agents/setting-up-your-first-agent) for outreach.
+
+## Economic buyer
+
+If your discovery profile includes an **economic buyer** role (configured in the profile's enrichment settings), contacts whose title matches that role are flagged as economic buyers. This means:
+
+- They appear with a special highlight on the company's contact list
+- BDR agents prioritise them when choosing who to email first
+- They're easy to spot when reviewing contacts manually
+
+Common economic buyer roles include CEO, Managing Director, Head of Operations, or CFO — whatever role typically makes purchasing decisions for your product.
+
+## Costs
+
+Enrichment uses credits from your balance. The cost covers the data lookups used to find contacts and email addresses, plus the AI processing for data cleansing and ranking. See **Settings → Usage** for a breakdown of enrichment costs.
+
+<Tip>
+  Enrichment only runs once per company. If you want to re-enrich a company (e.g. to find new contacts), you can trigger it again from the company's detail page.
+</Tip>
