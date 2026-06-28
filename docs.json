@@ -94,6 +94,16 @@
             ]
           },
           {
+            "group": "Calling",
+            "pages": [
+              "calling/making-calls",
+              "calling/phone-numbers",
+              "calling/calling-sessions",
+              "calling/call-outcomes-and-insights",
+              "calling/practice-mode"
+            ]
+          },
+          {
             "group": "Context",
             "pages": [
               "context/company-profile",
