@@ -1,0 +1,153 @@
+---
+title: "People Search"
+description: "Find people by their job title — regardless of company — and pull their verified emails straight into your CRM."
+---
+
+Most Search Agents find **companies** first, then look for contacts inside them. **People Search** works the other way round: you tell Alva the roles you sell to — "Chief Information Security Officer", "Head of Operations", "VP of Finance" — and it finds those people across companies of any sector, reveals their verified emails, and imports them into your CRM ready for outreach.
+
+Use People Search when the **job title matters more than the company**. If you sell to a specific role wherever it sits, this is the fastest way to build a targeted contact list.
+
+<Note>
+  People Search is a mode of the same Search Agent system as company discovery. It reuses the same activate, pause, resume, and results workflow — the difference is what you search for and how it's billed.
+</Note>
+
+## People search vs. company search
+
+| | Company search | People search |
+|---|----------------|---------------|
+| **You describe** | The kind of company (sector, services, market) | The job titles you want to reach |
+| **Alva finds** | Companies, then contacts within them | People in that role, at any company |
+| **Best for** | Targeting a market or industry | Targeting a role wherever it sits |
+| **Result** | Companies scored by fit, contacts found by enrichment | People with verified emails, imported directly |
+
+See [Creating a Discovery Profile](/discovery/creating-a-discovery-profile) for the company-led mode.
+
+## Creating a people search
+
+Go to **Discovery → Search Agents** and click **Create New Search Agent**, then choose **Find people**.
+
+### Job titles (required)
+
+Enter one or more job titles you want to reach — for example `CISO`, `Chief Information Security Officer`, `Head of Security`. Alva matches people whose current title matches what you enter.
+
+<Tip>
+  Turn on **Include similar titles** to widen the net to closely related roles (e.g. searching "Head of Security" will also surface "Security Director" and "VP Security"). Leave it off when you need an exact match.
+</Tip>
+
+### Optional filters
+
+Narrow the search with any combination of:
+
+| Filter | What it does |
+|--------|--------------|
+| **Seniority** | Restrict to seniority levels (e.g. C-suite, VP, Director, Manager) |
+| **Person location** | Where the person is based |
+| **Company location** | Where the person's company is headquartered |
+| **Company size** | Employee-count bands (e.g. 50–200, 200–1,000) |
+| **Industry / keywords** | The sectors or keywords the company should match |
+
+The more filters you add, the tighter and more relevant your results — but the fewer people will match. Start broader and narrow later if you're getting too many low-quality matches.
+
+### Result limit
+
+Every people search has a **result limit** (default: **25**). The search **pauses automatically when it reaches the limit** rather than running unbounded — this is your main cost-control dial.
+
+The recommended workflow:
+
+<Steps>
+  <Step title="Start small">
+    Set a low limit — say 10 — when you first activate the search.
+  </Step>
+  <Step title="Review the results">
+    Check the contacts that were imported. Are they the right people? Are the emails what you expected?
+  </Step>
+  <Step title="Raise the limit">
+    Happy with the quality? Increase the limit on the profile page. The search **resumes automatically** and runs until it reaches the new limit.
+  </Step>
+</Steps>
+
+<Note>
+  People searches have no throttle or speed control. Pace is governed entirely by the result limit — the search stops as soon as the limit is reached.
+</Note>
+
+### Ideal Company Profile (optional)
+
+You can add an optional **Ideal Company Profile** — a short, plain-language description of the kind of company you'd ideally reach these people at. Alva uses it to **score** each person's company for fit after import, so your best-fit contacts can be prioritised for outreach.
+
+This is scoring, not filtering: a low score never stops a contact being imported (see [Match scoring](#match-scoring) below). The brief follows the same rules as a company search description — it can only ask for things that can be determined from a company's website, so avoid criteria like headcount, funding, or technology stack. See [Creating a Discovery Profile](/discovery/creating-a-discovery-profile#step-2-describe-what-youre-looking-for) for what makes a good description.
+
+## What gets imported
+
+When the search runs, Alva reveals the verified email for each matching person and imports them into your CRM automatically:
+
+- **Contacts** are created with their name, job title, verified email, and company.
+- **Companies** are created (or matched to an existing record by domain, so you never get duplicates).
+- Each imported company runs through the standard [enrichment](/discovery/enrichment) pipeline, including a website summary if one is missing.
+- Contacts appear in **Discovery → Contacts** alongside contacts found by other means.
+
+<Note>
+  People Search reveals **verified emails only** — it never pulls phone numbers. Only people who have a discoverable email are enriched and imported, so you never pay for empty records.
+</Note>
+
+Some emails come back marked **verified** and others **unverified**. Both are imported, but [BDR agents](/bdr-agents/setting-up-your-first-agent) only auto-send to high-confidence addresses — unverified emails are kept for you to use manually rather than sent to automatically.
+
+## Match scoring
+
+If you set an Ideal Company Profile, each contact's company is scored **0–100** for fit shortly after import, and given a category:
+
+| Category | Meaning |
+|----------|---------|
+| **Match** | Strong fit with your ideal company brief |
+| **Review** | Partial fit — worth a look |
+| **No match** | Weak fit against the brief |
+
+The score appears as a **% match badge** and a Profile Match Analysis card on the company's detail page — the same display as company-led results.
+
+Key things to know:
+
+- **Nothing is ever discarded.** Unlike company search, a low score never holds a contact back — every matching person is still imported. The score only informs priority.
+- **BDR agents use the score to prioritise.** Agents work through the best-fit companies first. You can also set a [minimum match score](/bdr-agents/setting-up-your-first-agent) on an agent so it skips low-fit companies automatically.
+- **No brief means no score.** If you don't set an Ideal Company Profile, companies are left unscored rather than assumed to be a perfect match.
+
+## Editing a search
+
+You can edit a people search's criteria (titles, seniority, locations, size, industry, result limit) while it's in **draft** or **paused**. Pause an active search first.
+
+Saving changes returns the search to draft so that re-activating runs cleanly against the new criteria. Contacts already imported stay in your CRM — they're real people you've paid to reveal. To find **more** people with the new criteria, raise the result limit above the current count and re-activate.
+
+<Note>
+  You're never charged twice for the same person. If a search re-encounters someone you've already imported, they're skipped — no repeat billing.
+</Note>
+
+## How duplicates are avoided
+
+People Search removes duplicates at several points, so you don't pay twice or clutter your CRM:
+
+- **Before revealing an email**, people Alva has already returned to you are skipped — no repeat charge.
+- **On import**, anyone whose email already exists as a CRM contact is skipped.
+- **Companies** are grouped so each organisation becomes a single CRM company, matched to existing records by domain.
+
+## Managing People Search with Alva
+
+You can create and manage a people search conversationally — just ask [Alva](/ai-assistant/talking-to-alva):
+
+- *"Find me CISOs at UK fintechs and get their emails."*
+- *"Set up a people search for Heads of Operations at logistics companies in Germany, limit 20."*
+- *"Pause my security-officers search."*
+- *"Raise the limit on my CISO search to 50."*
+
+Alva asks clarifying questions when a request could mean either a company search or a people search, and sets up the right one for you.
+
+## Costs
+
+People Search is designed so you only pay for results you can use:
+
+- **Searching is free.** Finding matching people costs nothing.
+- **You only pay per verified email revealed** — and only for people who actually have an email. You're never billed for empty results.
+- **No repeat charges** for people you've already imported.
+
+Billing appears under enrichment usage. See **Settings → Usage** for a breakdown, and [Understanding Credits](/billing/understanding-credits) for how billing works overall.
+
+<Tip>
+  The result limit is your budget dial. Start at 10, confirm the contacts are on target, then raise it — the search picks up automatically where it left off.
+</Tip>

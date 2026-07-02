@@ -67,6 +67,7 @@
             "group": "Discovery",
             "pages": [
               "discovery/creating-a-discovery-profile",
+              "discovery/people-search",
               "discovery/profile-types-explained",
               "discovery/working-with-your-results",
               "discovery/discovery-companies",

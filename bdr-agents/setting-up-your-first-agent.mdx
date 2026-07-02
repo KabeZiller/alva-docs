@@ -41,7 +41,17 @@ Give your agent a descriptive name (e.g. "Healthcare Agency Prospector") and wri
 
 ### Target profiles
 
-Select which discovery profiles the agent should work from. The agent will take companies from these profiles and begin outreach.
+Select which discovery profiles the agent should work from. The agent will take companies from these profiles and begin outreach. This includes both company searches and [People Searches](/discovery/people-search).
+
+#### Minimum match score
+
+Optionally set a **minimum match score** (1–100). When set, the agent ignores companies scoring below that threshold — even ones already imported — and works through the rest in match-score order (best fit first).
+
+This is most useful with a [People Search](/discovery/people-search), where contacts are imported *before* their companies are scored for fit. A weak-fit company can land in your CRM before it's been judged; a minimum match score lets the agent skip those low-scoring companies automatically, without you removing them by hand.
+
+<Note>
+  Leave the minimum match score off to work on every matched company. Companies that haven't been scored yet are never filtered out — outreach is only skipped for companies whose score is known and below your threshold.
+</Note>
 
 ### Email templates
 
