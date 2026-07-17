@@ -17,6 +17,10 @@ All agent actions — sending emails, creating contacts, updating statuses, esca
 
 The agent's budget covers the AI processing that happens behind the scenes when the agent evaluates each company and decides what to do. Contact discovery and enrichment are billed separately as part of the [enrichment process](/discovery/enrichment).
 
+<Note>
+  **Personalised agents spend more per company than Template agents.** They do extra work — refreshing [prospect intel](/bdr-agents/personalised-outreach#prospect-intel-refresh), composing original copy, and running safety checks — so budget accordingly. Most of the heavier spend is during [setup and testing](/bdr-agents/personalised-outreach#a-note-on-cost); steady-state running is more modest.
+</Note>
+
 ### Per-company budget tiers
 
 The agent can also limit how much it spends on each individual company, based on how well the company matches your profile. Higher-confidence matches get a larger per-company budget, while borderline matches get less. You can customise these tiers on the agent edit page.
@@ -46,6 +50,10 @@ The **run pace** controls how many companies the agent processes per cycle:
 
 A lower pace gives you more control and visibility. A higher pace means faster outreach but requires more trust in the agent's configuration.
 
+<Tip>
+  Pair a slow run pace with [simulation mode](/bdr-agents/how-the-agent-works#simulation-mode) (an agent with no connected email account) to review each decision before any real email is sent.
+</Tip>
+
 ## Follow-up cadence
 
 Configure how the agent follows up with prospects who haven't replied:
@@ -59,6 +67,10 @@ Configure how the agent follows up with prospects who haven't replied:
 
 <Note>
   The follow-up cadence applies per contact, not per company. If the agent finds multiple contacts at the same company, each gets their own follow-up sequence.
+</Note>
+
+<Note>
+  In **Template** mode, follow-ups reuse your templates (or a constrained variation). In **Personalised** mode, follow-ups can introduce **new offers and angles** from your [playbook](/bdr-agents/personalised-outreach#multi-offer-follow-ups) so a sequence stays fresh rather than repeating the same ask.
 </Note>
 
 ## Adjusting settings on a live agent

@@ -1,0 +1,104 @@
+---
+title: "Finding Funded & High-Growth Companies"
+description: "Target companies by funding stage, size, growth, and listing status — then enrich and prioritise them for outreach."
+---
+
+Some of your best prospects aren't defined by *where* they are but by *what stage* they're at — recently funded startups, fast-growing scale-ups, or established public companies in a sector. The **Funded & high-growth companies** Search Agent finds companies by their firmographic profile rather than by reading their website area-by-area.
+
+It's one of two ways to search for companies. The other — [Local & service businesses](/discovery/creating-a-discovery-profile) — is best for local, service, and bricks-and-mortar firms found by area. This page covers the funded/high-growth engine.
+
+<Note>
+  Choose **Funded & high-growth companies** when you're targeting companies by funding, growth, size band, or "tech/startup" characteristics — for example "Series B fintechs in London" or "high-growth SaaS with 200–500 staff". Choose **Local & service businesses** when you're targeting a trade or service in an area, like "roofers in Surrey".
+</Note>
+
+## Creating the search
+
+Go to **Discovery → Search Agents**, click **Create New Search Agent**, choose **Find companies**, then switch the toggle to **Funded & high-growth companies**.
+
+### Pipeline
+
+Pick which [profile type](/discovery/profile-types-explained) matched companies should land in — Customer (ICP), Vendor (IVP), Partner (IPP), Supplier (ISP), or Competitor (CP). This decides which pipeline and module the companies appear in, exactly as it does for other Search Agents.
+
+### Search details
+
+Define what you're looking for with structured filters. **At least one filter is required.**
+
+| Filter | What it does |
+|--------|-------------|
+| **What kind of company** | The industry or category to search within (e.g. Artificial Intelligence, Fintech, SaaS) |
+| **Location** | Company headquarters location (optional) |
+
+### Advanced filters
+
+Open **Advanced filters** to narrow further. All are optional and stack together:
+
+| Filter | Options |
+|--------|---------|
+| **Funding stage** | Seed, Series A–E+, or IPO / Public |
+| **Company size** | Employee-count bands, from 1–10 up to 10,000+ |
+| **Listing status** | Private, public, or delisted |
+| **Minimum growth score** | A 0–100 growth signal — set a floor to focus on faster-growing companies |
+
+<Tip>
+  Start with just an industry (and maybe a location), check the match count, then add advanced filters one at a time to tighten the list. Over-filtering early can leave you with very few matches.
+</Tip>
+
+### Live match count
+
+As you build your filters, the form shows a live estimate — **"~N companies match"** — so you can gauge how broad or narrow your search is *before* you create it. Use it to strike the right balance between reach and relevance.
+
+### Who to enrich (People)
+
+Like other Search Agents, you can tell enrichment **who to look for** at each matched company — primary and fallback job functions, and your ideal economic buyer. You can also opt into deeper contact sourcing. See [Enrichment](/discovery/enrichment#controlling-who-enrichment-targets) and [Enrichment Profiles](/discovery/enrichment-profiles) for the full detail.
+
+## Ideal Company Profile (optional, for scoring)
+
+The structured filters do the hard filtering. On top of that, you can add an optional **Ideal Company Profile** — a short, plain-language description of your ideal company. Alva uses it to **score** how well each matched company fits, purely so you can prioritise the best-fit companies for outreach.
+
+This is scoring, not filtering — a low score **never** discards a company. The brief follows the same rules as any Search Agent description: it can only ask for things determinable from a company's website (company type, industry, market, broad size tier), not headcount numbers, funding, technology stack, or hiring status. Alva validates it and suggests a fix if it contains something unmatchable. See [what makes a good description](/discovery/creating-a-discovery-profile#step-2-describe-what-youre-looking-for).
+
+<Tip>
+  Leave the brief blank to skip scoring entirely. If you set one, matched companies get a **% match** badge and a Profile Match Analysis card on their detail page — the same display as other scored results.
+</Tip>
+
+## Result limit (your cost dial)
+
+This engine is **bounded by a result limit** (default **25**) rather than by geography. The search runs until it has imported that many companies, then **pauses automatically** so you can review before spending more.
+
+<Steps>
+  <Step title="Start small">
+    Leave the limit low — say 25 — when you first activate.
+  </Step>
+  <Step title="Review what came in">
+    Check the companies and contacts that were imported. Are they the right fit?
+  </Step>
+  <Step title="Raise the limit">
+    Happy? Increase the limit on the Search Agent page and the search **resumes automatically**, picking up where it left off.
+  </Step>
+</Steps>
+
+<Note>
+  This engine has **no geography spread or throttle-speed** setting — those apply only to the [Local & service businesses](/discovery/creating-a-discovery-profile) engine. Here, pace is governed entirely by the result limit.
+</Note>
+
+## What happens after import
+
+Each matched company is imported and then runs through the standard [enrichment](/discovery/enrichment) pipeline — contacts, emails, seniority ranking, and (if you set an Ideal Company Profile) a fit score. Once enriched, companies are ready for a [BDR agent](/bdr-agents/overview) to work through, best-fit first.
+
+## Editing a search
+
+Edit the filters, brief, or result limit while the search is in **draft** or **paused** (pause it first if it's active). Saving returns it to draft so re-activating runs cleanly against the new criteria. Companies already imported stay in your CRM — to find **more** under the new criteria, raise the result limit above the current count and re-activate. You're never charged twice for the same company.
+
+## Costs
+
+Each company found uses credits, and enrichment is charged per company when contacts are found (plus the optional deeper [Tier 2 Contact Search](/discovery/enrichment-profiles#tier-2-contact-search) if you switch it on). The result limit keeps this predictable — you only ever spend up to the number of companies you've asked for. See **Settings → Usage** for a live breakdown and [Understanding Credits](/billing/understanding-credits) for how billing works.
+
+## Managing with Alva
+
+You can set this up conversationally — just ask [Alva](/ai-assistant/talking-to-alva):
+
+- *"Find Series B AI companies in London."*
+- *"Set up a search for VC-backed cyber startups with 50–200 staff."*
+- *"Raise the limit on my fintech search to 100."*
+
+Alva picks the right engine for you: firmographic requests like these become a Funded & high-growth search, while "roofers in Surrey" becomes a [Local & service businesses](/discovery/creating-a-discovery-profile) search and "find me CISOs" becomes a [People Search](/discovery/people-search). If a request is ambiguous, Alva asks one quick question first.

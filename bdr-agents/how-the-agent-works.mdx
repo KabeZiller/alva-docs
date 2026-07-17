@@ -1,0 +1,63 @@
+---
+title: "How the Agent Chooses Who to Work On"
+description: "The order agents work through companies, who they contact first, and how to test safely."
+---
+
+Both Template and Personalised agents follow the same logic for deciding which companies to work on next and who to contact at each one. Understanding this helps you predict what your agent will do and get the most out of it.
+
+## Only enriched companies
+
+An agent only works on companies that have finished [enrichment](/discovery/enrichment). Companies still being enriched — or that failed enrichment — are skipped until they're ready. This guarantees the agent always has contacts and emails to work with before it tries to reach out.
+
+## Who the agent contacts first
+
+Each time an agent runs, it fills its batch of companies in two bands, in this order:
+
+<Steps>
+  <Step title="Never-touched companies first">
+    Companies from the agent's linked profile(s) that it has **never contacted before** take priority. This stops high-fit new companies from waiting behind a backlog of follow-ups.
+  </Step>
+  <Step title="Due follow-ups second">
+    Only if there's still room in the batch, the agent revisits companies whose next follow-up or re-evaluation is due.
+  </Step>
+</Steps>
+
+Within each band, companies are ordered by **match score, best fit first**. Companies that haven't been scored yet come after scored ones, but are never excluded just for lacking a score.
+
+<Note>
+  This "new-first" ordering applies to **every** agent, Template and Personalised alike. It means a freshly discovered, high-fit company gets attention quickly rather than sitting behind a full queue of in-progress sequences.
+</Note>
+
+## Minimum match score
+
+Each agent can have an optional **minimum match score** (1–100). When set, the agent ignores any company scoring below it — including companies already imported — and works through the rest.
+
+This is most useful with a [People Search](/discovery/people-search), which imports contacts *before* their companies are scored for fit. A weak-fit company can land in your CRM before it's been judged; a minimum match score lets the agent skip those low scorers automatically, without you removing them by hand.
+
+- **Default is no threshold** — the agent works on every matched company.
+- **Unscored companies are never filtered out** — the floor only skips companies whose score is known and below it, so outreach is never blocked while scoring is still pending.
+- Set it (or clear it) from the agent's **Target Profiles** settings, or just ask Alva.
+
+## Who it contacts at each company
+
+When an agent reaches a company, it chooses the best contact to approach using two signals produced during [enrichment](/discovery/enrichment):
+
+1. **Economic buyers first** — contacts whose role matches your profile's economic-buyer definition are prioritised.
+2. **Seniority ranking** — remaining contacts are ordered by seniority and relevance, most senior first.
+
+The agent focuses on the people most likely to make a decision, rather than emailing everyone at a company.
+
+## Simulation mode
+
+An agent **without a connected email account runs in simulation mode**. It does everything a live agent does — evaluates companies, chooses contacts, and composes emails (including full Personalised copy and all safety checks) — but **never sends anything**. The activity feed records what it *would* have done.
+
+This is the safest way to trial a new agent:
+
+- Watch a Template agent pick contacts and choose templates before letting it send.
+- Exercise a Personalised agent's full compose-and-check pipeline without any risk of a real email going out.
+
+When you're happy, connect an email account to the agent and it starts sending for real.
+
+<Tip>
+  Combine simulation mode with a slow [run pace](/bdr-agents/configuring-budgets-and-hours#run-pace) of 1 company per run to review each decision in detail before scaling up.
+</Tip>

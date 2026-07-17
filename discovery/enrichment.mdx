@@ -25,6 +25,28 @@ Enrichment runs automatically when:
 
 You don't need to trigger it manually — it starts within seconds of import.
 
+## Controlling who enrichment targets
+
+Enrichment runs automatically, but you decide **who** it looks for. Every [Search Agent](/discovery/creating-a-discovery-profile) has a **People** section where you set:
+
+| Setting | What it controls |
+|---------|-----------------|
+| **Primary job functions** | The roles to prioritise when finding contacts (e.g. Head of Marketing, VP Sales) |
+| **Secondary job functions** | Fallback roles to use if the primary ones aren't found |
+| **Economic buyer** | The ideal decision-maker title (e.g. CEO, CFO) — matching contacts are flagged and prioritised |
+
+Set these when you create a company [Search Agent](/discovery/creating-a-discovery-profile) so every company it finds is enriched with the right people in mind. For companies you import **yourself** (CSV or manual), apply the same targeting with a reusable [Enrichment Profile](/discovery/enrichment-profiles).
+
+<Note>
+  Leave the job functions blank and enrichment still finds contacts — it just won't prioritise any particular role. Setting them gives you far more relevant contacts.
+</Note>
+
+### Tier 2 Contact Search
+
+Base enrichment (finding contacts and emails) is **included**. For companies where you want to go deeper, **Tier 2 Contact Search** is an optional layer that finds **more** contacts and reveals **more verified emails** — and, if you choose, **mobile numbers** — at an additional per-contact cost.
+
+It's **off by default** and only runs when you switch it on. See [Enrichment Profiles → Tier 2 Contact Search](/discovery/enrichment-profiles#tier-2-contact-search) for the full detail, including how to limit it to your best-fit companies.
+
 ## Enrichment status
 
 Each company shows an enrichment status so you know where it stands:

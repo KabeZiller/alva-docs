@@ -67,11 +67,13 @@
             "group": "Discovery",
             "pages": [
               "discovery/creating-a-discovery-profile",
+              "discovery/company-intelligence",
               "discovery/people-search",
               "discovery/profile-types-explained",
               "discovery/working-with-your-results",
               "discovery/discovery-companies",
               "discovery/enrichment",
+              "discovery/enrichment-profiles",
               "discovery/discovery-contacts",
               "discovery/lead-sheet"
             ]
@@ -79,8 +81,12 @@
           {
             "group": "AI BDR Agents",
             "pages": [
+              "bdr-agents/overview",
               "bdr-agents/setting-up-your-first-agent",
+              "bdr-agents/personalised-outreach",
+              "bdr-agents/how-the-agent-works",
               "bdr-agents/configuring-budgets-and-hours",
+              "bdr-agents/managing-replies",
               "bdr-agents/reading-the-activity-feed"
             ]
           },

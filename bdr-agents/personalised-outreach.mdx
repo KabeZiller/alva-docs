@@ -1,0 +1,95 @@
+---
+title: "Personalised Outreach"
+description: "The playbook, previews, and activation checklist behind a Personalised BDR agent."
+---
+
+A **Personalised** agent writes its own copy rather than sending fixed templates. Instead of picking a template, it composes each email from a **playbook** you define — your tone, the offers you want to lead with, and the things it must always or never say — grounded in what it knows about the specific prospect.
+
+This makes Personalised agents far more flexible than Template agents, but also more involved to set up correctly.
+
+<Warning>
+  **Set up your Personalised agent through [Alva](/ai-assistant/talking-to-alva).** Alva is fully briefed on how these agents should be configured — it builds the playbook with you, runs sample previews, and only lets the agent go live once everything is in place. Building one from scratch in the Agent Creation UI is **not encouraged**. Once it exists, small tweaks in the UI (budget, hours, adjusting an offer) are fine.
+
+  Just open the chat and say, for example: _"Set up a Personalised BDR agent for my healthcare ICP."_
+</Warning>
+
+## The playbook
+
+The playbook is the heart of a Personalised agent. It lives **on the agent itself** (not in your Templates screen) and is a **hybrid** of structured guidance and free-form notes, so you get the reliability of clear rules with the flexibility of writing in your own words.
+
+| Part of the playbook | What it's for |
+|----------------------|---------------|
+| **Tone** | How the copy should sound — e.g. warm and direct, formal, playful-but-professional |
+| **Offers** | The angles or value propositions the agent can lead with. Each offer has a name, the angle itself, and optional proof points. The agent can drip different offers across a follow-up sequence. |
+| **Must include** | Points that should appear in outreach (e.g. a specific credential or compliance note) |
+| **Never claim** | Claims the agent must never make — your guardrail against overreach |
+| **CTA style** | How the call to action should feel — e.g. a soft "worth a quick chat?" vs a concrete meeting request |
+| **Length hint** | Roughly how long emails should be |
+| **Free-form notes** | Anything else in your own words — context, do's and don'ts, phrasing you like |
+
+<Tip>
+  You don't have to fill in every field. A useful playbook needs at least **one offer** and either a **tone** or some **free-form notes**. Alva will help you flesh out the rest.
+</Tip>
+
+### Multi-offer follow-ups
+
+Unlike Template follow-ups, a Personalised agent can **introduce new angles across the sequence**. If the first email led with one offer and got no reply, a follow-up might try a different offer or proof point from your playbook rather than simply repeating the original ask. This keeps a sequence feeling fresh and human instead of nagging.
+
+## Prospect intel refresh
+
+Personalised agents can **refresh what they know about a prospect before writing** — pulling a fresh summary of the company's website and public profile so the copy reflects the prospect as they are today, not stale CRM data.
+
+- This is **on by default** for Personalised agents. You can turn it off.
+- On first outreach it gathers fresh context; later on it only tops up when the stored summary is thin or missing.
+- It never blocks outreach — if a refresh can't complete, the agent simply composes from whatever it already has.
+- The small amount of processing involved is covered by the agent's [budget](/bdr-agents/configuring-budgets-and-hours#monthly-budget).
+
+<Note>
+  Template agents don't use prospect intel refresh — they rely on your templates and merge fields.
+</Note>
+
+## Previewing before you launch
+
+Before a Personalised agent sends anything, you can ask Alva to **preview** what it would write. Previews are samples only — **nothing is ever sent to a prospect**.
+
+- Alva composes sample emails for a few real companies from your profile (**3 by default**).
+- You read the copy exactly as the prospect would receive it.
+- Tell Alva what you liked, what you didn't, and what to tweak — then preview again.
+- Each round rotates through different companies so you're not always seeing the same names.
+
+<Tip>
+  Treat previews as a conversation. Loop with Alva — "make it shorter", "lead with the second offer", "drop that claim" — until the copy consistently sounds right. Alva won't declare the agent ready to activate on your behalf; that's your call.
+</Tip>
+
+## Going live
+
+A Personalised agent will only activate once it passes a **hard checklist**. This protects you from launching an agent that would send weak or broken outreach. To go live, the agent needs:
+
+<Steps>
+  <Step title="A connected email account">
+    Required to send for real. (Without one, the agent can still run in [simulation mode](/bdr-agents/how-the-agent-works#simulation-mode).)
+  </Step>
+  <Step title="A linked profile with eligible companies">
+    At least one enriched, eligible company to work on.
+  </Step>
+  <Step title="A complete playbook">
+    At least one offer, plus a tone or free-form notes.
+  </Step>
+  <Step title="A successful preview">
+    You've run at least one preview so you (and the agent) know the copy is right.
+  </Step>
+</Steps>
+
+If escalation notifications are switched on, the agent also needs at least one recipient to notify. Once the checklist passes, Alva (or you, from the agent card) can flip the agent to **Active**.
+
+<Note>
+  If anything's missing, the agent card shows exactly what's outstanding, and Alva will tell you what's left before it lets the agent go live.
+</Note>
+
+## A note on cost
+
+Personalised agents do more thinking than Template agents — researching the prospect, composing original copy, and running safety checks — so setting one up and testing it properly uses more credits than a Template agent. Alva will give you a one-off, currency-aware heads-up early on so there are no surprises. Most of that spend is **one-time setup and testing**, not a recurring fee, and it buys you materially stronger outreach. See [Understanding credits](/billing/understanding-credits).
+
+## After launch
+
+Once live, a Personalised agent behaves like any other agent — it works through companies in [new-first order](/bdr-agents/how-the-agent-works#who-the-agent-contacts-first), follows its [budget and hours](/bdr-agents/configuring-budgets-and-hours), escalates genuine replies, and steps aside when you [take over](/bdr-agents/managing-replies#taking-over-a-conversation). You can keep refining the playbook with Alva at any time.
