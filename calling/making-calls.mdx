@@ -3,22 +3,22 @@ title: "Making Calls"
 description: "Call prospects from your browser, with every call recorded, transcribed, and logged to the CRM."
 ---
 
-Alva has a built-in dialler, so you can call prospects straight from your browser — no headset software, no separate phone, no copying numbers between apps. Every call is recorded, transcribed, and logged against the right contact and company automatically, so your CRM stays up to date without any manual note-taking.
+Alva has a built-in dialler, so you can call prospects straight from your browser — no headset software, no separate phone, no copying numbers between apps. Every call can be recorded, transcribed, and logged against the right contact and company, so your CRM stays up to date without manual note-taking.
 
-Before you start, make sure your account has at least one [phone number](/calling/phone-numbers).
+Before you start, an admin needs to switch on calling and add at least one [phone number](/calling/phone-numbers).
 
 ## The dialler
 
-The dialler lives in the bottom-right corner of every page. Click the green phone button to open it.
+The dialler sits in the bottom-right corner of every page. Click the green phone button to open it.
 
-- **To** — type the number you want to call, or have it filled in automatically with click-to-dial (see below)
+- **To** — type the number you want to call, or have it filled in for you with click-to-dial (see below)
 - **From** — choose which of your [numbers](/calling/phone-numbers) to call from; your default is selected for you
 - **Keypad** — enter digits before the call, or send tones (for example to navigate a phone menu) once connected
 
 Press the green **Call** button to dial. While you're connected you can **mute** yourself, send keypad tones, and see a live call timer, then **hang up** when you're done.
 
 <Note>
-  Calls are paid for from your credit balance. If your balance is too low, the dialler will ask you to top up before placing the call. You can buy credits in **Settings → Billing**.
+  Calls are paid for from your credit balance. If your balance is below the minimum needed for a call, the dialler won't place it and asks you to top up first. See [Buying credits](/billing/buying-credits).
 </Note>
 
 ## Click-to-dial
@@ -31,22 +31,22 @@ You rarely need to type a number. Wherever a phone number appears on a contact o
 
 ## Logging the outcome
 
-When a call ends, Alva asks you to log an **outcome** — for example *Pitched – Interested*, *Voicemail*, or *Callback Requested*. Choosing an outcome:
+When a call ends, the dialler asks you to choose a **call outcome** — for example **Pitched - Interested**, **Voicemail**, or **Callback Requested**. Choosing an outcome:
 
 - Records the result against the call
-- Adds the call to the contact, company, and deal timelines automatically
-- Feeds your calling stats and reports
+- Adds the call to the contact, company, and deal timelines
+- Feeds your calling session stats
 
-See [Call Outcomes & Insights](/calling/call-outcomes-and-insights) for the full list of outcomes and what Alva does with each call afterwards.
+A call without an outcome doesn't appear on the timelines, so it's worth logging one every time. See [Call outcomes and insights](/calling/call-outcomes-and-insights) for the full list and what Alva does with each call afterwards.
 
 ## Recording and transcripts
 
-By default, every outbound call is **recorded** and **transcribed** automatically. (An admin can switch either off for the whole account in **Settings → Telephony**.)
+By default, every outbound call is **recorded** and **transcribed**. An admin can switch either off for the whole account in **Settings → Telephony → Call Settings**.
 
-A few minutes after a call ends, you'll find on the call record:
+Shortly after a call ends, you'll find on the call record:
 
 - **Audio** — play the recording back in your browser
-- **Transcript** — a tidy, speaker-separated transcript showing your lines and the prospect's lines side by side
+- **Transcript** — a speaker-separated transcript showing your lines and the prospect's lines in order
 
 While Alva is still processing, you'll see a *Recording…* or *Transcribing…* indicator that updates on its own — no need to refresh.
 
@@ -54,8 +54,29 @@ While Alva is still processing, you'll see a *Recording…* or *Transcribing…*
 
 ### Call log
 
-Go to **Calls** in the sidebar to see your call log — every outbound call with its contact, company, date, duration, outcome, and links to the recording and transcript. Click any call to open its full detail page, with the recording player, the transcript, and the linked company and contact.
+Click **Call Log** in the sidebar to see every outbound call on your account, newest first, with its contact, company, caller, date, duration, outcome, and links to the recording and transcript. The log shows 50 calls a page; use **Previous** and **Next** to page through the rest.
+
+Click any call to open its detail page, with the recording player, the transcript, and the linked company and contact.
+
+The call log holds outbound calls placed through Alva. Calls that prospects make to your Alva numbers are [forwarded](/calling/phone-numbers#forwarding-inbound-calls) to your own phone and don't appear here.
 
 ### On contacts and companies
 
-Each contact and company has a **Recent Calls** card showing the latest calls to that record, so the full calling history sits right alongside everything else you know about them.
+Each contact and company has a **Recent Calls** card showing the latest calls to that record, so the calling history sits alongside everything else you know about them.
+
+## Text messages
+
+Each contact and company also has a **Messages** panel showing the SMS conversation with that record. Click the message icon next to a phone number to send an SMS from one of your SMS-capable Alva numbers. Replies are matched back to the contact or company by phone number, so the conversation stays on the record.
+
+To send texts, your account needs at least one number that supports SMS — see [Phone numbers](/calling/phone-numbers#adding-a-number).
+
+## Ask Alva about your calls
+
+[Alva](/ai-assistant/talking-to-alva) can answer questions about your call log and fill in the gaps afterwards. For example:
+
+- "How many calls did I make this week, and how many connected?"
+- "Show me the transcript of my last call with Sarah at Acme."
+- "What objections came up on yesterday's calls?"
+- "I spoke to James earlier — log it as Callback Requested and note that he wants a demo next Tuesday."
+
+Alva can list calls, open a call's transcript and analysis, and record an outcome and notes after the fact. Alva never places calls — dialling always happens in your browser, through the dialler.

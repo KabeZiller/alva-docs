@@ -1,21 +1,23 @@
 ---
-title: "Contracts and Recurring Revenue"
+title: "Contracts and recurring revenue"
 description: "Track contracts, renewal dates, and recurring revenue in Alva."
 ---
 
-Contracts track your ongoing customer relationships after a deal is won. They're where you manage ARR, MRR, renewals, and revenue changes over time.
+Contracts track your ongoing customer relationships once a deal is won. They're where you manage ARR, MRR, renewals, and changes in revenue over time.
 
 ## Creating a contract
 
-There are two ways to create a contract:
+### From a deal
 
-### From a closed deal
+Any deal that doesn't have a contract yet shows a **Create Contract** button. The contract is filled in with the deal's company and primary contact, and linked to the deal. Its status is **Active** if the deal is **Closed Won**, and **Pending** otherwise.
 
-When a deal moves to **Closed Won**, you can create a contract directly from the deal page. The contract inherits the deal's company, value, and contact, and its status is set to **Active** automatically.
+### On its own
 
-### Standalone
+Go to **Contracts** in the sidebar (under CRM) and click **New Contract**. You can still link it to a deal with **Link to Deal (Optional)**. A contract created this way starts as **Active**.
 
-Go to **Contracts** in the sidebar (under CRM) and click **New Contract**. Fill in the details manually.
+### With Alva
+
+Ask Alva: "Create a contract for Acme — £24k a year, billed quarterly, starting 1 December." She can link it to the deal it came from and a primary contact.
 
 ## Contract fields
 
@@ -23,59 +25,59 @@ Go to **Contracts** in the sidebar (under CRM) and click **New Contract**. Fill 
 |-------|------------|
 | **Name** | A descriptive name for the contract |
 | **Company** | The company the contract is with |
-| **Primary contact** | The main contact for this contract |
-| **Owner** | The team member responsible |
-| **ARR** | Annual Recurring Revenue |
-| **MRR** | Monthly Recurring Revenue (auto-calculated from ARR) |
-| **Billing frequency** | Monthly, quarterly, annual, biannual, or custom |
-| **Contract start date** | When the contract begins |
-| **Contract end date** | When the contract expires (if applicable) |
+| **Primary Contact** | The main contact for this contract |
+| **Link to Deal** | The deal the contract came from (optional) |
+| **Service Level** | The tier or level of service |
+| **ARR** | Annual recurring revenue |
+| **Monthly Recurring Revenue (MRR)** | Worked out automatically from the ARR |
+| **Billing Frequency** | Monthly, quarterly, annual, bi-annual, or custom |
+| **Contract Start Date** | When the contract begins |
+| **Contract End Date** | When the contract ends, if it has an end date |
 | **Auto-renew** | Whether the contract renews automatically |
-| **Service level** | The tier or level of service |
-| **Notes** | Any additional context |
+| **Notes** | Any extra context |
+
+The person who creates the contract becomes its owner. You can change a contract's **Status** when you edit it.
 
 ## Contract statuses
 
 | Status | What it means |
 |--------|--------------|
-| **Active** | The contract is live and generating revenue |
-| **Pending** | The contract is agreed but not yet started (e.g. linked to a deal that hasn't closed) |
-| **Cancelled** | The customer cancelled the contract |
-| **Expired** | The contract end date has passed |
+| **Active** | The contract is live and earning revenue |
+| **Pending** | The contract is agreed but not yet live — for example, its deal hasn't closed yet |
 | **Suspended** | The contract is temporarily on hold |
+| **Cancelled** | The customer cancelled |
+| **Expired** | The contract has ended |
 
 ## Revenue tracking
 
 ### ARR and MRR
 
-When you set the **ARR** (Annual Recurring Revenue), the **MRR** (Monthly Recurring Revenue) is calculated automatically by dividing by 12.
+When you set the **ARR**, the **MRR** is worked out automatically by dividing by 12.
 
 ### Expansion and contraction
 
-You can record revenue changes on a contract:
+Each contract keeps its original ARR alongside any **expansion** (the customer spends more — an upsell, more seats, a higher tier) and **contraction** (the customer spends less). These appear on the contract's page, so you can see net revenue movement over time.
 
-- **Expansion** — the customer increased their spend (upsell, more seats, higher tier)
-- **Contraction** — the customer reduced their spend (downgrade, fewer seats)
+To change a contract's value, ask Alva — for example, "Acme have added 10 seats, take their contract to £30k." She updates the ARR and records the difference as expansion or contraction automatically.
 
-These are tracked separately so you can see net revenue movement over time. The initial ARR is preserved for comparison.
+### Cancelling
+
+Ask Alva to cancel a contract and she'll ask for the reason and confirm before she does it. A cancelled contract's ARR is recorded as churn. You can also change the status to **Cancelled** when you edit the contract.
 
 ## Renewals
 
-The **next renewal date** is set to the contract end date by default. If **auto-renew** is enabled, the contract continues automatically; if not, you'll want to track the renewal and create a new deal for the renewal negotiation.
+The **next renewal date** is set to the contract end date. If **Auto-renew** is on, the contract continues automatically. If not, keep an eye on the renewal date and start a new deal for the renewal conversation.
 
 ## Searching and filtering
 
-The Contracts page supports:
+The Contracts page lets you:
 
-- **Search** — by contract name or company name
-- **Filter by status** — show only active, pending, cancelled, etc.
+- **Search** contracts by name or company
+- **Filter by status** — show only active, pending, cancelled, or expired contracts
 
-## Linking deals to contracts
+## Linking deals and contracts
 
-When a contract is created from a deal, the deal is automatically linked. This means:
+When a contract is created from a deal, or linked to one, the two are connected:
 
-- The deal's type is set to "subscription_initial"
-- The deal page shows the linked contract
-- The contract page shows the originating deal
-
-Future renewal or expansion deals can also be linked to the same contract, giving you a complete revenue history.
+- The deal page shows the linked contract, with its status, ARR, MRR, billing frequency, and renewal date
+- The contract page lists its related deals

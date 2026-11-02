@@ -1,73 +1,78 @@
 ---
 title: "Enrichment Profiles"
-description: "Reusable contact-targeting settings you can apply to companies you import yourself — plus deeper Tier 2 sourcing."
+description: "Reusable contact targeting for companies you import yourself — plus deeper Tier 2 sourcing on the Pro plan."
 ---
 
-When a company comes from a Search Agent, [enrichment](/discovery/enrichment) runs automatically and uses that agent's targeting to decide **who** to find. But when you bring companies in yourself — a CSV upload, a single manual add, or a company you created by hand — there's no Search Agent behind them to say who matters.
+When a company comes from a Search Agent, [enrichment](/discovery/enrichment) uses that agent's settings to decide **who** to find. But when you bring companies in yourself — a CSV upload, a single company added by hand — there's no Search Agent behind them to say who matters.
 
-An **Enrichment Profile** solves that: it's a reusable, named set of contact-targeting settings you can attach to any company so enrichment knows exactly who to look for.
+An **Enrichment Profile** fills that gap: a named, reusable set of contact-targeting settings you can link to any company so enrichment knows who to look for.
 
 ## When to use one
 
 - You've **imported companies from a spreadsheet** and want them enriched with the right contacts.
-- You **added a company manually** and want Alva to find its decision-makers.
-- You want to apply the **same targeting repeatedly** across different batches of companies without re-typing it each time.
+- You **added a company by hand** and want Alva to find its decision-makers.
+- You want to apply the **same targeting repeatedly** across different batches without retyping it.
 
 <Note>
-  Companies discovered by a Search Agent already carry that agent's enrichment targeting, so they don't need an Enrichment Profile. Enrichment Profiles are for companies that arrive **outside** of a Search Agent.
+  Companies found by a Search Agent already carry that agent's targeting, so they don't need an Enrichment Profile.
 </Note>
 
 ## Creating an Enrichment Profile
 
-Go to **Discovery → Search Agents**, click **Create New Search Agent**, and choose **Add Enrichment Profile**. Give it a clear name (e.g. "UK Fintech Decision-Makers") and set your targeting:
+Go to **Discovery → Search Agents** and click **Add Enrichment Profile**. Give it a clear name (e.g. "UK Fintech Decision-Makers") and set your targeting in the **People** section:
 
 | Setting | What it controls |
 |---------|-----------------|
-| **Enable enrichment** | Whether contacts are found automatically for linked companies |
-| **Primary job functions** | The roles to prioritise when finding contacts (e.g. Head of Marketing, VP Sales) |
-| **Secondary job functions** | Fallback roles to use if the primary ones aren't found |
-| **Economic buyer** | The ideal decision-maker title (e.g. CEO, CFO, Managing Director) — these contacts are flagged and prioritised |
-| **Tier 2 Contact Search** | Optional deeper sourcing — see [below](#tier-2-contact-search) |
+| **Enable Enrichment** | Whether contacts are found for linked companies |
+| **Primary Job Functions** | The roles to prioritise (e.g. Head of Marketing, VP Sales) |
+| **Secondary Job Functions** | Fallback roles if the primary ones aren't found |
+| **Economic Buyer** | The ideal decision-maker title (e.g. CEO, CFO, Managing Director) — these contacts are flagged and prioritised |
+| **Tier 2 Contact Search** | Optional deeper sourcing on the Pro plan — see [below](#tier-2-contact-search) |
 
-An Enrichment Profile holds targeting only — it doesn't search for companies itself. It appears in your Search Agents list alongside your other agents so it's easy to find and edit.
+An Enrichment Profile holds targeting only — it never searches for companies. It appears in your Search Agents list with an **Enrichment** badge, so it's easy to find and edit.
 
-## Linking a profile to companies
+## Linking a profile to a company
 
-Once created, attach the profile to the companies you want enriched:
+Open the company's page. Companies you added yourself show an enrichment profile selector beside the enrichment badge:
 
-- From a **company's detail page**, choose the Enrichment Profile to apply, then enrich.
-- When **importing companies**, apply a profile so the whole batch is enriched with the same targeting.
+1. Choose the Enrichment Profile from the list (or **Create an enrichment profile** if you don't have one yet).
+2. Click **Run Enrichment** (or **Retry Enrichment** if it has run before).
 
-Linked companies then run through the standard [enrichment pipeline](/discovery/enrichment) — finding contacts, cleaning the data, ranking by seniority, and flagging your economic buyer — just like discovered companies.
+The company then goes through the standard [enrichment process](/discovery/enrichment) — finding contacts, cleaning the data, ranking by seniority, and flagging your economic buyer.
+
+You can also ask Alva: *"Link my UK Fintech Decision-Makers profile to Acme Ltd and enrich it."*
 
 ## Tier 2 Contact Search
 
-Base enrichment finds contacts and emails associated with a company and is **included**. **Tier 2 Contact Search** is an optional, deeper layer that finds **more** contacts and reveals **more verified emails** — and, if you choose, **mobile numbers**.
+Base enrichment finds the contacts and emails associated with a company's website, and runs on every plan. **Tier 2 Contact Search** is an optional, deeper layer that finds **more** contacts and reveals **more verified emails** — and, if you choose, **mobile numbers** and direct dials.
 
 <Warning>
-  Tier 2 adds a **per-contact cost** on top of base enrichment, and revealing mobile numbers costs more than emails. It's **off by default** and only ever runs when you switch it on. Base enrichment alone is enough for most outreach.
+  Tier 2 adds a **per-contact cost** on top of base enrichment, and mobile numbers cost more than emails. It's **off by default** and only runs when you switch it on. Base enrichment alone is enough for most outreach.
 </Warning>
 
-When you enable Tier 2 you can choose:
+When you switch Tier 2 on, you choose:
 
-- **Reveal email addresses** — find more verified emails (a small per-email cost).
-- **Reveal mobile numbers** — add direct mobile numbers (a larger per-mobile cost).
-
-For Search Agents that **score** company fit (see [Funded & high-growth companies](/discovery/company-intelligence) and [People Search](/discovery/people-search)), you can also restrict Tier 2 to companies **above a match-score threshold**, so you only pay for deeper sourcing on your best-fit companies.
+- **Reveal email addresses** — find more verified emails
+- **Reveal mobile numbers** — add direct mobile numbers
+- **Only for companies matching at least** a match score — so you only pay for deeper sourcing on your best fits. Leave it blank to run Tier 2 for every company.
 
 <Note>
-  Automatic contact enrichment — including Tier 2 — requires a **Pro plan**. On other plans the People settings are visible but locked, with an upgrade prompt.
+  While a minimum match score is set, companies **without** a score are skipped too. If you later **lower** the minimum on a Search Agent, the **People** card offers **Run people search again**, which runs Tier 2 for already-imported companies that now qualify. It doesn't repeat the base email search, and new emails and mobiles are charged as usual.
+</Note>
+
+<Note>
+  Tier 2 Contact Search needs the **Pro plan**. On other plans the Tier 2 option is locked with the message "Base enrichment still runs" — every other People setting works as normal.
 </Note>
 
 ## Managing with Alva
 
-You can create and apply Enrichment Profiles conversationally. Ask [Alva](/ai-assistant/talking-to-alva):
+You can create and apply Enrichment Profiles by asking [Alva](/ai-assistant/talking-to-alva):
 
 - *"Create an enrichment profile targeting heads of operations and CFOs."*
 - *"Enrich this company looking for its marketing decision-makers."*
 
-Alva never switches on Tier 2 — or mobile reveal in particular — unless you explicitly ask for deeper contact sourcing, so you stay in control of spend.
+Alva never switches on Tier 2 — or mobile numbers in particular — unless you explicitly ask for deeper contact sourcing, so you stay in control of spend.
 
 ## Costs
 
-Base enrichment is charged per company when contacts are found. Tier 2 adds a per-contact cost only for the emails or mobiles it reveals — you never pay for empty results. See **Settings → Usage** for a breakdown and [Understanding Credits](/billing/understanding-credits) for how billing works overall.
+Base enrichment is charged per company when contacts are found. Tier 2 adds a per-contact cost only for the emails or mobiles it actually reveals — you never pay for empty results. See **Settings → Usage** for a breakdown and [Understanding credits](/billing/understanding-credits) for how billing works.

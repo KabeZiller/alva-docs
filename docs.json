@@ -22,7 +22,7 @@
     "primary": {
       "type": "button",
       "label": "Open Alva",
-      "href": "https://alvahq.com"
+      "href": "https://app.alvahq.com"
     }
   },
   "navigation": {
@@ -35,11 +35,24 @@
             "pages": [
               "index",
               "getting-started/quickstart",
+              "getting-started/website-demo",
               "getting-started/account-setup",
               "getting-started/dashboard",
               "getting-started/focus",
               "getting-started/setup-checklist",
               "getting-started/keyboard-shortcuts"
+            ]
+          },
+          {
+            "group": "Alva",
+            "pages": [
+              "ai-assistant/talking-to-alva",
+              "ai-assistant/what-alva-can-do",
+              "ai-assistant/alva-by-email",
+              "ai-assistant/agenda-and-weekly-report",
+              "ai-assistant/documents",
+              "ai-assistant/sharing-conversations",
+              "ai-assistant/ai-settings"
             ]
           },
           {
@@ -55,15 +68,6 @@
             ]
           },
           {
-            "group": "Alva AI Assistant",
-            "pages": [
-              "ai-assistant/talking-to-alva",
-              "ai-assistant/what-alva-can-do",
-              "ai-assistant/sharing-conversations",
-              "ai-assistant/ai-settings"
-            ]
-          },
-          {
             "group": "Discovery",
             "pages": [
               "discovery/creating-a-discovery-profile",
@@ -75,7 +79,9 @@
               "discovery/enrichment",
               "discovery/enrichment-profiles",
               "discovery/discovery-contacts",
-              "discovery/lead-sheet"
+              "discovery/lead-sheet",
+              "discovery/signals",
+              "discovery/pulse"
             ]
           },
           {
@@ -87,17 +93,31 @@
               "bdr-agents/how-the-agent-works",
               "bdr-agents/configuring-budgets-and-hours",
               "bdr-agents/managing-replies",
-              "bdr-agents/reading-the-activity-feed"
+              "bdr-agents/reading-the-activity-feed",
+              "bdr-agents/ops-room"
             ]
           },
           {
             "group": "Email",
             "pages": [
               "email/connecting-an-email-account",
+              "email/outreach-mailboxes",
+              "email/sending-health-and-limits",
               "email/email-signatures",
               "email/email-templates",
-              "email/understanding-email-analysis",
-              "email/knowledge-base"
+              "email/email-block-list",
+              "email/understanding-email-analysis"
+            ]
+          },
+          {
+            "group": "Advertising",
+            "pages": [
+              "advertising/overview",
+              "advertising/connecting-linkedin",
+              "advertising/creating-a-campaign",
+              "advertising/ad-images",
+              "advertising/leads-and-results",
+              "advertising/landing-pages"
             ]
           },
           {
@@ -106,8 +126,7 @@
               "calling/making-calls",
               "calling/phone-numbers",
               "calling/calling-sessions",
-              "calling/call-outcomes-and-insights",
-              "calling/practice-mode"
+              "calling/call-outcomes-and-insights"
             ]
           },
           {
@@ -115,13 +134,14 @@
             "pages": [
               "context/company-profile",
               "context/products-and-competitors",
-              "context/strategy-documents"
+              "context/strategy-documents",
+              "email/knowledge-base"
             ]
           },
           {
             "group": "Reporting",
             "pages": [
-              "reporting/standard-reports",
+              "reporting/outreach-reporting",
               "reporting/building-a-custom-report",
               "reporting/scheduled-report-delivery",
               "reporting/analytics-dashboard"
@@ -132,7 +152,8 @@
             "pages": [
               "billing/understanding-credits",
               "billing/plans-and-pricing",
-              "billing/buying-credits"
+              "billing/buying-credits",
+              "billing/add-ons"
             ]
           }
         ]
@@ -153,7 +174,7 @@
       "anchors": [
         {
           "anchor": "Open Alva",
-          "href": "https://alvahq.com",
+          "href": "https://app.alvahq.com",
           "icon": "arrow-up-right-from-square"
         }
       ]
@@ -162,15 +183,12 @@
   "contextual": {
     "options": [
       "copy",
-      "view",
-      "claude"
+      "view"
     ]
   },
   "seo": {
     "metatags": {
       "canonical": "https://docs.alvahq.com"
     }
-  },
-  "footer": {}
-
+  }
 }

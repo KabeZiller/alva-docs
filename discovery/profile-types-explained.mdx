@@ -1,12 +1,12 @@
 ---
 title: "Profile Types Explained"
-description: "Understand the five discovery profile types: ICP, IVP, IPP, ISP, and CP."
+description: "The five profile types — ICP, IVP, IPP, ISP, and CP — and how each one decides where companies land."
 ---
 
-Alva supports five profile types, each designed for a different kind of company relationship. The profile type determines how discovered companies are categorised, what lifecycle stages they follow, and where they appear in your CRM.
+Every Search Agent has a profile type. It describes your **relationship** with the companies the agent finds, and decides which pipeline they land in, which lifecycle stages they follow, and which module of your CRM they appear in.
 
 <Note>
-  Profile type is about the **relationship** (and therefore the pipeline companies land in), not about *how* you search. You choose a profile type whichever [company Search Agent](/discovery/creating-a-discovery-profile) you use — [Local & service businesses](/discovery/creating-a-discovery-profile) or [Funded & high-growth companies](/discovery/company-intelligence).
+  Profile type is about the relationship, not *how* you search. You choose one for every kind of Search Agent — [Local & service businesses](/discovery/creating-a-discovery-profile), [Funded & high-growth companies](/discovery/company-intelligence), and [People Search](/discovery/people-search).
 </Note>
 
 ## The five profile types
@@ -17,7 +17,7 @@ Alva supports five profile types, each designed for a different kind of company 
 
 **Example description:** "Marketing agencies serving B2B technology companies"
 
-**When discovered companies are imported:**
+**When companies are imported:**
 - Relationship type is set to **Customer**
 - Lifecycle stages: Target → Prospect → Lead → Customer
 - Companies appear in the **CRM** module
@@ -28,31 +28,29 @@ This is the most common profile type and the starting point for most sales teams
 
 ### IVP — Ideal Vendor Profile
 
-**Purpose:** Find companies that would be ideal vendors — companies that could sell or distribute your products and services.
+**Purpose:** Find companies that could sell, distribute, or resell your products and services.
 
 **Example description:** "IT resellers and managed service providers serving small businesses"
 
-**When discovered companies are imported:**
+**When companies are imported:**
 - Relationship type is set to **Vendor**
 - Lifecycle stages: Target → Evaluating → Negotiating → Vendor
 - Companies appear in the **VRM** (Vendor Relationship Management) module
-
-Use this when you're building a network of companies that sell, distribute, or resell your products and services.
 
 ---
 
 ### IPP — Ideal Partner Profile
 
-**Purpose:** Find companies that would be ideal strategic or channel partners.
+**Purpose:** Find strategic or channel partners.
 
 **Example description:** "Digital agencies offering web design and development services to small businesses"
 
-**When discovered companies are imported:**
+**When companies are imported:**
 - Relationship type is set to **Partner**
 - Lifecycle stages: Target → Engaging → Negotiating → Partner
 - Companies appear in the **PRM** (Partner Relationship Management) module
 
-Useful for building referral networks, reseller channels, or co-marketing partnerships.
+Useful for referral networks, reseller channels, or co-marketing partnerships.
 
 ---
 
@@ -62,27 +60,27 @@ Useful for building referral networks, reseller channels, or co-marketing partne
 
 **Example description:** "Plumbing and heating contractors serving residential customers"
 
-**When discovered companies are imported:**
+**When companies are imported:**
 - Relationship type is set to **Supplier**
 - Lifecycle stages: Target → Evaluating → Negotiating → Supplier
 - Companies appear in the **SRM** (Supplier Relationship Management) module
 
-Use this when you need to build a supply chain, a network of subcontractors, or a pool of service providers.
+Use this to build a supply chain, a network of subcontractors, or a pool of service providers.
 
 ---
 
 ### CP — Competitor Profile
 
-**Purpose:** Find companies that are direct competitors in your market.
+**Purpose:** Find companies that compete with you.
 
 **Example description:** "Sales and CRM software companies serving small and mid-sized businesses"
 
-**When discovered companies are imported:**
+**When companies are found:**
 - Relationship type is set to **Competitor**
-- Companies are **automatically linked to your competitors table** in the Context section
-- This populates battle card data that Alva uses in deal analysis
+- Companies are **added to your competitors** in **Context → Competitors**
+- Alva uses them for competitive intelligence and in deal analysis
 
-Use this for competitive intelligence gathering. Discovered competitors are added to your competitor database where you can track their strengths, weaknesses, and differentiation.
+Use this for competitive research. Competitors don't have a pipeline in the [Discovery Pipeline](/discovery/discovery-companies), and BDR Agents can't target them.
 
 ---
 
@@ -91,13 +89,18 @@ Use this for competitive intelligence gathering. Discovered competitors are adde
 | Feature | ICP | IVP | IPP | ISP | CP |
 |---------|-----|-----|-----|-----|-----|
 | CRM module | CRM | VRM | PRM | SRM | — |
-| Pipeline view | Deals | Vendor Pipeline | Partner Pipeline | Supplier Pipeline | — |
-| BDR agents | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Auto-links to | — | — | — | — | Competitors table |
+| Discovery Pipeline tab | Customers | Vendors | Partners | Suppliers | — |
+| BDR Agents can target it | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Available for Signals | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Also added to | — | — | — | — | Context → Competitors |
 
 <Note>
-  BDR agents can target any profile type except Competitor Profiles. You wouldn't typically send automated outreach to competitors.
+  When you create a BDR Agent, Competitor Profiles aren't offered as targets — you wouldn't normally send automated outreach to competitors.
 </Note>
+
+## Signals use the same relationships
+
+[Signals](/discovery/signals) (closed beta, Pro) find companies because something has just happened to them, such as a funding round. When you create a signal, you choose what the companies would be to you — customer, partner, vendor, or supplier — and the companies it adds follow the same stages and land in the same pipeline as a Search Agent of that type.
 
 ## Choosing the right profile type
 
@@ -106,7 +109,7 @@ Ask yourself: **what is my relationship with these companies?**
 - If you want to **sell to them** → ICP
 - If you want them to **sell your products** → IVP
 - If you want to **partner with them** → IPP
-- If you want them to **supply to you** → ISP
+- If you want them to **supply you** → ISP
 - If they **compete with you** → CP
 
-You can run multiple profiles of different types simultaneously. A typical setup might be one ICP for finding customers, one CP for tracking competitors, and one IPP for building a partner channel.
+You can run several Search Agents of different types at once. A typical set-up might be one ICP for finding customers, one CP for tracking competitors, and one IPP for building a partner channel.

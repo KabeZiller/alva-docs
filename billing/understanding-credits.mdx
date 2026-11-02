@@ -1,60 +1,81 @@
 ---
-title: "Understanding Credits"
-description: "Learn how Alva's credit system works and what uses credits."
+title: "Understanding credits"
+description: "How Alva's credit works: your balance in money, the starter credit, auto top-up, what uses credit and how to keep spending predictable."
 ---
 
-Alva uses a credit-based billing system. Credits are dollar-backed and displayed as tokens in the interface. Every AI-powered action in Alva costs credits — conversations with Alva, background analysis, discovery searches, and enrichment.
+You pay for what Alva does. Every piece of AI work — a reply in chat, an enriched company, an email a BDR agent writes — uses a little credit from your account's balance. Spend rises when your campaigns are busy and falls when things are quiet, and you decide the ceiling.
 
-## How credits work
+## Your balance is shown in money
 
-- Your plan includes a **monthly credit allocation** that refreshes each billing cycle
-- Credits are deducted automatically as you use AI features
-- You can purchase **additional credits** at any time — these never expire
-- Your balance is visible at **Settings → Billing**
+Your credit balance is shown in your billing currency — pounds, dollars or euros — not in points or units. You'll find it on the **Credit Balance** card at **Settings → Billing & Subscription**.
 
-## What uses credits
+## How new accounts start
 
-### AI conversations
+<Steps>
+  <Step title="Starter credit">
+    Every new account starts on **Pay as you go** with a starter credit, so you can try Alva properly without a card. There's no time limit — use it at your own pace. The Credit Balance card shows how much starter credit is left.
+  </Step>
+  <Step title="A saved card with auto top-up">
+    When you're ready, save a card and switch on [auto top-up](/billing/buying-credits#auto-top-up). Your balance is topped up automatically when it runs low, never beyond the monthly limit you set.
+  </Step>
+  <Step title="Pro, when it pays">
+    If you use Alva heavily, [Pro](/billing/plans-and-pricing) gives you more work for your money and opens extra features. Alva tells you when your own spending says Pro would save you money.
+  </Step>
+</Steps>
 
-Every message to Alva costs credits based on the length of the conversation. Longer conversations cost more because more context is processed, but continuing an existing conversation is cheaper than starting a new one.
+## When credit runs out
 
-### Background AI processing
+If your balance runs out, Alva's work pauses cleanly — nothing fails halfway through or is lost. Search Agents, BDR agents and Alva's own scheduled work wait until there's credit again, then carry on.
 
-These run automatically and cost credits:
+Admins get **one** email about it. If there's no card on the account, the email has an **Add a card** link that sets up your card, monthly limit and auto top-up in one step. The dashboard shows the same message with an **Add a card** button.
 
-- **Deal health scoring** — periodic recalculation of every deal's health
-- **Risk detection** — checking for deals that need attention
-- **Email analysis** — processing new emails for sentiment, signals, and entities
+## What uses credit
 
-### Discovery
+| Area | What uses credit |
+|------|------------------|
+| **Alva** | Chat conversations, emails to Alva, and her scheduled agenda work |
+| **Discovery** | Each company a Search Agent finds |
+| **Enrichment** | Finding contacts and email addresses for a company, cleaning up the data and scoring how well it matches your search |
+| **People searches and contact details** | Each verified email a people search reveals, and any mobile numbers or contact details you reveal |
+| **BDR agents** | The AI decisions an agent makes about each company, the emails it writes and sends, and the safety check on each email before it goes |
+| **Email** | Email analysis, AI reply drafts, spam scoring and inbox placement tests |
+| **Signals and Pulse** | Each search, preview and run |
+| **Calling** | Call minutes, recordings and transcription, plus the AI analysis after each call |
+| **Advertising** | Each ad image Alva makes or edits |
+| **Background AI** | Deal health scoring, risk alerts and the other features in [AI settings](/ai-assistant/ai-settings) |
 
-Each company found by a discovery profile costs credits. The rate is tiered — the more companies you discover, the lower the per-company cost. See **Settings → Billing** for current pricing.
+Alva asks before anything that costs a noticeable amount, such as revealing contact details or running a placement test, and tells you what it will cost.
 
-### Enrichment
+<Note>
+  Recurring charges for things like phone numbers and outreach mailboxes are billed separately as [add-ons](/billing/add-ons), not taken from your credit.
+</Note>
 
-When a company is imported, Alva automatically [enriches](/discovery/enrichment) it — searching for contacts, email addresses, and ranking them by seniority. This process uses credits for the data lookups and AI processing involved.
+## What's included on every plan, and what needs Pro
 
-### People Search
+Everyday enrichment — finding contacts and emails for the companies you import, and scoring them against your search — runs on every plan, paid in credit like everything else.
 
-A [People Search](/discovery/people-search) is **free to run** — finding matching people costs nothing. You're only charged when Alva reveals a person's verified email, and only for people who actually have one, so you never pay for empty results. Use the search's **result limit** to cap how many emails it reveals.
+These features need **Pro**:
 
-### BDR agent actions
+- [Tier 2 contact search](/discovery/enrichment-profiles#tier-2-contact-search), and revealing contact emails and mobile numbers
+- [Pulse](/discovery/pulse)
+- [Signals](/discovery/signals) (closed beta)
+- [Calling sessions](/calling/calling-sessions)
+- Starting a BDR agent, on new accounts. Building, editing and previewing agents are open to everyone
 
-All BDR agent tools (sending emails, creating contacts, escalating, drafting replies) are **free**. The agent uses a small amount of credits for AI processing when evaluating each company.
+## Keeping spending predictable
 
-### Email safety checks
+- **Feature budgets** — set a monthly limit for Search Agents, BDR agents and Pulse in [AI settings](/ai-assistant/ai-settings#feature-budgets). Each pauses when it reaches its limit.
+- **BDR agent budgets** — each agent has its own monthly budget. See [Configuring budgets and hours](/bdr-agents/configuring-budgets-and-hours).
+- **Auto top-up limit** — auto top-up never charges more than your monthly limit.
+- **Alva's agenda caps** — daily and per-run caps on Alva's scheduled work, at **Settings → Alva Agenda**.
 
-The AI content safety check that runs before BDR agents send emails costs a small amount of credits per check.
+## Seeing where credit goes
 
-## Monitoring your usage
+- **Settings → Billing & Subscription** shows your balance and a **Usage – Last 30 Days** chart by feature, including the average cost of each company discovered and enriched.
+- **Settings → Usage** lists every request with the feature, a description and its cost.
 
-Go to **Settings → Usage** for a detailed breakdown:
-
-- **Total spend** — how much you've used this billing period
-- **Per-feature breakdown** — which features are using the most credits
-- **Detailed usage logs** — individual AI requests with cost breakdowns
-- **Trend over time** — how your usage is growing
+You can also ask Alva — "what have we spent this month?" or "what's using the most credit?".
 
 <Tip>
-  If your credits are running low, check the per-feature breakdown on the Usage page. Discovery searches and enrichment are typically the largest credit consumers. You can pause discovery profiles or BDR agents while you top up.
+  If credit is going faster than you expected, check the usage chart. Search Agents and BDR agents are usually the biggest users. Lower a feature budget or pause a search while you decide.
 </Tip>

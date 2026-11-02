@@ -1,63 +1,109 @@
 ---
 title: "How the Agent Chooses Who to Work On"
-description: "The order agents work through companies, who they contact first, and how to test safely."
+description: "The order agents work through companies, who they contact, which addresses they skip, and the checks every email passes."
 ---
 
-Both Template and Personalised agents follow the same logic for deciding which companies to work on next and who to contact at each one. Understanding this helps you predict what your agent will do and get the most out of it.
+Template and Personalised agents follow the same logic for deciding which companies to work on next, who to contact at each one and whether an email is safe to send. Understanding this helps you predict what your agent will do and get the most out of it.
 
 ## Only enriched companies
 
-An agent only works on companies that have finished [enrichment](/discovery/enrichment). Companies still being enriched — or that failed enrichment — are skipped until they're ready. This guarantees the agent always has contacts and emails to work with before it tries to reach out.
+An agent only works on companies that have finished [enrichment](/discovery/enrichment). Companies still being enriched, or that failed enrichment, are skipped until they're ready.
+
+Companies marked **No website** are eligible too. Their contact search couldn't run, but the person your Search Agent found is already a contact, so the agent has someone to write to.
 
 ## Who the agent contacts first
 
-Each time an agent runs, it fills its batch of companies in two bands, in this order:
+Each cycle, an agent fills its batch of companies in two bands, in this order:
 
 <Steps>
   <Step title="Never-touched companies first">
-    Companies from the agent's linked profile(s) that it has **never contacted before** take priority. This stops high-fit new companies from waiting behind a backlog of follow-ups.
+    Companies from the agent's linked Search Agents that it has **never worked on before** take priority. This stops high-fit new companies from waiting behind a backlog of follow-ups.
   </Step>
   <Step title="Due follow-ups second">
-    Only if there's still room in the batch, the agent revisits companies whose next follow-up or re-evaluation is due.
+    Only if there's still room in the batch, the agent revisits companies whose next follow-up is due.
   </Step>
 </Steps>
 
 Within each band, companies are ordered by **match score, best fit first**. Companies that haven't been scored yet come after scored ones, but are never excluded just for lacking a score.
 
-<Note>
-  This "new-first" ordering applies to **every** agent, Template and Personalised alike. It means a freshly discovered, high-fit company gets attention quickly rather than sitting behind a full queue of in-progress sequences.
-</Note>
+### When another agent has already been in touch
+
+If you run more than one agent over the same companies and **Don't send to previously contacted emails** is on (the default), the never-touched band is ordered like this:
+
+1. **Companies no other agent has emailed**, as long as they have an address to write to.
+2. **Companies another agent has emailed** but where a contact or company inbox is still unused.
+3. **Companies where every address has already been emailed** by another agent, or that have no address at all, are skipped.
+
+This lets a second agent work the same Search Agent without re-mailing people the first one already contacted.
+
+### Standing down
+
+An agent **stands down** on a company another agent is already handling: when that company is already a lead, is being handled by a person, or has sent a genuine reply. It skips the company without spending anything, so the prospect never gets two parallel conversations.
+
+### Signal profiles
+
+When an agent links a [signal](/discovery/signals) profile, new companies are ordered first by **how recent their signal event is** (newest first; for an event still to come, the soonest first), then by match score. An event loses its edge with time; a match score doesn't. Companies from the agent's other Search Agents follow in their usual score order. Due follow-ups are unaffected.
 
 ## Minimum match score
 
-Each agent can have an optional **minimum match score** (1–100). When set, the agent ignores any company scoring below it — including companies already imported — and works through the rest.
+Each agent can have an optional **minimum match score** (1–100). When set, the agent ignores any company scoring below it, including companies already imported, and works through the rest.
 
-This is most useful with a [People Search](/discovery/people-search), which imports contacts *before* their companies are scored for fit. A weak-fit company can land in your CRM before it's been judged; a minimum match score lets the agent skip those low scorers automatically, without you removing them by hand.
+This is most useful with a [People Search](/discovery/people-search), which imports contacts *before* their companies are scored for fit. A minimum match score lets the agent skip low scorers automatically, without you removing them by hand.
 
-- **Default is no threshold** — the agent works on every matched company.
-- **Unscored companies are never filtered out** — the floor only skips companies whose score is known and below it, so outreach is never blocked while scoring is still pending.
-- Set it (or clear it) from the agent's **Target Profiles** settings, or just ask Alva.
+- **Default is no threshold**: the agent works on every matched company.
+- **Unscored companies are never filtered out**: the floor only skips companies whose score is known and below it.
+- Set it (or clear it) from the agent's **Target Profiles** card, or ask Alva.
 
 ## Who it contacts at each company
 
-When an agent reaches a company, it chooses the best contact to approach using two signals produced during [enrichment](/discovery/enrichment):
+When an agent reaches a company, it chooses the best contact using two signals from [enrichment](/discovery/enrichment):
 
-1. **Economic buyers first** — contacts whose role matches your profile's economic-buyer definition are prioritised.
-2. **Seniority ranking** — remaining contacts are ordered by seniority and relevance, most senior first.
+1. **Economic buyers first**: contacts whose role matches your Search Agent's economic-buyer definition.
+2. **Seniority ranking**: remaining contacts are ordered by seniority and relevance, most senior first.
 
-The agent focuses on the people most likely to make a decision, rather than emailing everyone at a company.
+If a contact doesn't reply after the maximum number of follow-ups, the agent moves on to the next contact at the company.
 
-## Simulation mode
+## Addresses the agent won't use
 
-An agent **without a connected email account runs in simulation mode**. It does everything a live agent does — evaluates companies, chooses contacts, and composes emails (including full Personalised copy and all safety checks) — but **never sends anything**. The activity feed records what it *would* have done.
+Some addresses are skipped automatically, whatever your instructions say:
 
-This is the safest way to trial a new agent:
-
-- Watch a Template agent pick contacts and choose templates before letting it send.
-- Exercise a Personalised agent's full compose-and-check pipeline without any risk of a real email going out.
-
-When you're happy, connect an email account to the agent and it starts sending for real.
+- **Generic inboxes**, depending on the agent's **Generic addresses** setting. With **Restricted** (the default for customer prospecting), the agent skips shared inboxes at companies over roughly 200 staff, prefers them at very small companies, only uses common ones (info, hello, contact, enquiries, sales, partnerships, hi, team, office), and sends at most one follow-up to them. With **Open** (the default for partner, vendor and supplier outreach), shared inboxes are fair game.
+- **Operational addresses** such as postmaster@, noreply@, HR and support inboxes. These are never emailed.
+- **Company addresses on the wrong domain.** If enrichment found a company inbox on a domain the company doesn't own (often a guessed .com when the real site is .co.uk), the agent won't use it: it would almost certainly bounce. Named contacts on a different domain are allowed but treated as second choice, and personal mailboxes are never judged on domain.
+- **Anything on your [Email Block List](/email/email-block-list)**, addresses that have bounced before, and contacts who have asked not to be contacted.
+- **Addresses another agent has already emailed**, when **Don't send to previously contacted emails** is on.
 
 <Tip>
-  Combine simulation mode with a slow [run pace](/bdr-agents/configuring-budgets-and-hours#run-pace) of 1 company per run to review each decision in detail before scaling up.
+  If a company genuinely runs email on a separate domain from its website, add the address to a contact record. Contact addresses are trusted; bare company addresses on another domain aren't.
 </Tip>
+
+## The spam-score check
+
+Every email is scored from 0 to 100 for inbox placement (100 is clean) before it's sent, exactly as it will go out, including the sending account's signature.
+
+| Score | What happens |
+|-------|--------------|
+| **85 and above** | Sends as clean |
+| **70–84** | Sends, with warnings recorded |
+| **Below 70** | Blocked |
+
+A few problems, such as link shorteners, a fake "Re:" on a first email or look-alike characters, always block, whatever the score.
+
+When an email is blocked, the agent is told exactly what to fix and **rewrites it straight away**; the rewrite is scored again. If the same company's emails are blocked three times, the agent pauses outreach to that company for 7 days and leaves a note asking for a human review. Every block is recorded in the [activity feed](/bdr-agents/reading-the-activity-feed#blocked-emails).
+
+Problems the agent can't fix in the email body, such as a heavy signature or open tracking, are flagged separately so you can fix them in **Settings → Email Connections** or on the agent.
+
+## Other checks before sending
+
+Before each send, the agent also confirms:
+
+- The company is still inside the agent's [operating hours](/bdr-agents/configuring-budgets-and-hours#operating-hours).
+- A sending account has quota left today and isn't marked **Do not send** in [sending health](/email/sending-health-and-limits).
+- Your account is within any [new-account sending limits](/email/sending-health-and-limits).
+
+## Trying an agent safely
+
+Every email agent needs at least one sending account, so an agent you start sends real email. To see the writing before anything goes out:
+
+- For a **Personalised** agent, ask Alva for a [preview](/bdr-agents/personalised-outreach#previewing-before-you-launch). Nothing is sent, and every sample is spam-scored.
+- For any agent, start at a [run pace](/bdr-agents/configuring-budgets-and-hours#run-pace) of 1 company per cycle and review each decision in the [activity feed](/bdr-agents/reading-the-activity-feed) before scaling up.

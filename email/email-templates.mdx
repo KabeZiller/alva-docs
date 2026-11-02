@@ -1,92 +1,108 @@
 ---
 title: "Email Templates"
-description: "Create and manage reusable email templates for outreach and follow-up."
+description: "Create reusable email templates for outreach, with merge fields, variants and a spam check on every save."
 ---
 
-Email templates are the building blocks of your outreach. They define what your [BDR agents](/bdr-agents/setting-up-your-first-agent) send, and can also be used when drafting emails with Alva.
+Email templates are the building blocks of Template-mode outreach. They define what your [BDR agents](/bdr-agents/overview) send, and you can use them when writing emails yourself.
+
+Go to **Templates** in the sidebar to manage your templates and groups.
 
 ## Template groups
 
-Templates are organised into **groups** — think of these as campaigns or sequences. For example:
+Templates are organised into **groups** — think of each as a campaign or sequence. For example:
 
 - "Cold Outreach — Healthcare"
 - "Follow-Up Sequence"
 - "Event Follow-Up"
 
-Go to **Emails → Templates** in the sidebar to manage your templates and groups.
-
-### Creating a group
-
-Click **New Group**, give it a name, and optionally add a description. Groups help you organise templates by purpose and make it easy to assign the right ones to BDR agents.
+To create a group, click **+** next to **Template Groups**, then give it a **Name**, an optional **Description** and a **Colour**. You assign groups to BDR agents, so keep each group focused on one purpose.
 
 ## Creating a template
 
-Click **New Template** within a group (or create an ungrouped template). Each template has:
+Select a group and click **New**. Each template has:
 
-- **Name** — an internal name for your reference (e.g. "Initial Outreach — CTO")
-- **Subject** — the email subject line
-- **Body** — the email content
-- **Usage guidance** — optional instructions for when and how to use this template (helps both BDR agents and human team members)
+- **Template Name** — for your reference, such as "Initial Outreach — CTO"
+- **Group** — the group it belongs to, or **No group**
+- **When to Use** — guidance that helps BDR agents pick the right template, such as "Use when you only have a generic address like info@"
+- **Subject Line** and **Email Body**
+
+Click **Create** (or **Save** when editing). The **Preview** tab shows the email with sample data filled in.
 
 ### Merge fields
 
-Templates support merge fields that are automatically replaced with real data when the email is sent:
+Merge fields are replaced with real data when the email is sent. Click a field in the **Merge Fields** panel to insert it.
 
-| Field | What it inserts |
-|-------|----------------|
-| `{{contact.firstName}}` | The contact's first name |
-| `{{contact.lastName}}` | The contact's last name |
-| `{{contact.email}}` | The contact's email address |
-| `{{contact.jobTitle}}` | The contact's job title |
-| `{{company.name}}` | The company name |
-| `{{company.domain}}` | The company's website domain |
-| `{{company.industry}}` | The company's industry |
-| `{{sender.name}}` | Your name (the sender) |
-| `{{sender.email}}` | Your email address |
+| Group | Fields |
+|-------|--------|
+| **Contact** | `{{contact.firstName}}`, `{{contact.lastName}}`, `{{contact.fullName}}`, `{{contact.jobTitle}}`, `{{contact.email}}` |
+| **Company** | `{{company.name}}`, `{{company.industry}}`, `{{company.website}}` |
+| **Sender** | `{{sender.name}}`, `{{sender.jobTitle}}`, `{{sender.email}}` |
+| **Other** | `{{today}}` (e.g. 1 February 2026), `{{todayShort}}` (e.g. 01/02/26) |
 
-Merge fields are automatically detected and displayed as badges on the template.
+**Custom fields.** If your account has custom fields on companies or contacts (set up in **Settings → Custom Fields**), they appear as **Company (custom)** and **Contact (custom)** groups, for example `{{company.custom.region}}`.
+
+**Signal fields.** On accounts with [Signals](/discovery/signals), a **Signal** group adds `{{signal.hook}}` (what happened), `{{signal.date}}` (when it happened) and `{{signal.reference}}` (the organisation it was found through). They're filled from the company's latest signal in the last 45 days. Only use them in templates for agents working signal companies — anywhere else, the email is held back.
 
 <Warning>
-  If a merge field can't be resolved (e.g. the contact has no job title), the email will be flagged by Alva's safety checks before sending. BDR agents won't send emails with unresolved merge fields.
+  If a merge field can't be filled — for example, the contact has no job title — the agent won't send the email.
 </Warning>
 
-## AI-generated templates
+### Spintax
 
-You can ask Alva to create templates for you:
+Add variety by writing alternatives in curly brackets, separated by `|`:
 
-- "Create an email template for cold outreach to CTOs in healthcare"
-- "Write a follow-up template for after a demo"
+```
+{Hi|Hello|Hey} {{contact.firstName}},
+```
 
-Alva generates the template with appropriate merge fields and saves it to your template library.
+Each email picks one option at random, so not every prospect gets identical wording.
 
-## Template variants
+## Spam score
 
-Once you have a base template, you can generate **variants** — alternative versions with different approaches, tones, or angles. This is useful for A/B testing or giving BDR agents variety in their outreach.
+Every template is scored from 0 to 100 for how likely it is to reach the inbox, each time you save it. Click **Spam Score** to check before saving.
 
-To generate variants:
+| Score | Result |
+|-------|--------|
+| **85–100** | Saves — likely to reach the inbox |
+| **70–84** | Saves, with warnings about spam risk |
+| **Below 70** | **Won't save.** The findings show what to change, with a fix for each |
+
+The template check can't see which mailbox will send it, so it's scored without a signature. When an agent sends, the email is scored again with the real signature, so that score can be lower. See [spam score on every email](/email/sending-health-and-limits#spam-score-on-every-email).
+
+## Generating templates with AI
+
+Click **AI Generate**, describe what the email should achieve, then choose a **Purpose** (such as Cold Outreach, Follow Up or Demo Request) and a **Tone**. Alva writes the template with suitable merge fields. If the first draft fails the spam check, she rewrites it before showing it to you.
+
+## Variants
+
+Variants are alternative versions of a template, each with a different approach, subject line and wording. They give BDR agents variety and let you see which angle works best.
 
 1. Open a template
-2. Click **Generate Variants**
-3. Alva creates multiple alternative versions, each with a distinct approach
-4. Review and keep the ones you like
+2. Click **Create Variants**
+3. Choose how many you want (up to 20 at a time)
+4. Review the new versions, each marked **Variant**, and delete any you don't like
 
-Variants are linked to their parent template, so you can always trace back to the original.
+Each variant is spam-checked like any other template.
+
+## Sending a test
+
+Click **Send Test**, choose the mailbox to send from and who to send it to. The test goes out as a real email so you can see it in your inbox.
 
 ## Using templates with BDR agents
 
-When you [create a BDR agent](/bdr-agents/setting-up-your-first-agent), you assign one or more **template groups** to it. The agent selects the most appropriate template from those groups for each prospect, personalises it using merge fields, and sends it.
+When you [create a Template-mode agent](/bdr-agents/setting-up-your-first-agent), you assign one or more template groups to it. For each prospect, the agent picks the most suitable template from those groups (using your **When to Use** guidance), fills in the merge fields and sends it.
 
 <Note>
-  An agent without assigned template groups cannot send emails. Always assign at least one group.
+  A Template-mode agent with no template groups can't send emails. Always assign at least one group.
 </Note>
 
-## Email safety checks
+## Ask Alva
 
-Before any email is sent (by an agent or manually), Alva runs a multi-tier safety check:
+Alva can write, edit and organise templates in chat:
 
-1. **Merge field check** — ensures no unresolved `{{fields}}` remain
-2. **Placeholder check** — catches AI-generated placeholders like "[insert name here]"
-3. **AI content check** — reviews the email for appropriateness and professionalism
-4. **CTA consistency** — for follow-ups, checks that the call-to-action aligns with the original email
+- "Write a cold outreach template for CTOs in healthcare"
+- "Create three variants of my Initial Outreach template"
+- "Move these templates into the Q4 Campaign group"
+- "Send me a test of the follow-up template"
 
-If any check fails, the email is blocked and you're notified of the issue.
+**Already have your own copy?** Paste the subject and body into the chat and ask Alva to save it as a template. She saves it word for word, without rewriting it. It still has to pass the spam check — if it doesn't, she shows you what to fix and offers to make the changes.

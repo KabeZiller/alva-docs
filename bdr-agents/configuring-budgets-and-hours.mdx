@@ -1,90 +1,104 @@
 ---
 title: "Configuring Budgets and Hours"
-description: "Control how much your agent spends and when it is allowed to run."
+description: "Control how much your agent spends, when it works, how fast it goes and how it follows up."
 ---
 
-BDR agents run autonomously, so it's important to set clear boundaries on spending and scheduling. You configure these when creating the agent and can adjust them at any time from the agent's edit page.
+BDR agents run autonomously, so it's important to set clear boundaries on spending, scheduling and pace. You configure these when creating the agent and can change them at any time with **Edit Configuration**.
 
 ## Monthly budget
 
-Every agent has a **monthly budget** that caps how much it can spend. Once the budget is exhausted, the agent pauses automatically until the next billing cycle.
+Every agent has a **Monthly Budget Limit**, set with a slider on the **Budget Configuration** card. It's the most the agent can spend in a calendar month across all companies.
 
-You set the monthly budget when creating the agent and can change it at any time. Choose an amount that suits your campaign — start conservatively and increase as you gain confidence in the agent's performance.
+When the agent has used its monthly budget, it **stays Active but skips its work** until the budget resets. Nothing is sent and nothing more is spent. The budget resets automatically at the start of each calendar month. To carry on sooner, raise the limit, or choose **Reset Monthly Budget** from the agent's **⋯** menu to set this month's spend back to zero.
+
+The agent also needs credits on your account to run. See [Understanding credits](/billing/understanding-credits).
 
 ### What counts towards the budget
 
-All agent actions — sending emails, creating contacts, updating statuses, escalating, and drafting replies — are **free**.
+The agent's actions themselves (sending emails, creating contacts, updating statuses, escalating and drafting replies) are **free**.
 
-The agent's budget covers the AI processing that happens behind the scenes when the agent evaluates each company and decides what to do. Contact discovery and enrichment are billed separately as part of the [enrichment process](/discovery/enrichment).
+The budget covers the AI processing behind the scenes when the agent evaluates each company and decides what to do. Finding contacts and emails is billed separately as part of [enrichment](/discovery/enrichment).
 
 <Note>
-  **Personalised agents spend more per company than Template agents.** They do extra work — refreshing [prospect intel](/bdr-agents/personalised-outreach#prospect-intel-refresh), composing original copy, and running safety checks — so budget accordingly. Most of the heavier spend is during [setup and testing](/bdr-agents/personalised-outreach#a-note-on-cost); steady-state running is more modest.
+  **Personalised agents spend more per company than Template agents.** They do extra work (refreshing [prospect intel](/bdr-agents/personalised-outreach#prospect-intel-refresh), composing original copy and running extra checks), so budget accordingly. Most of the heavier spend is during [setup and testing](/bdr-agents/personalised-outreach#a-note-on-cost).
 </Note>
 
 ### Per-company budget tiers
 
-The agent can also limit how much it spends on each individual company, based on how well the company matches your profile. Higher-confidence matches get a larger per-company budget, while borderline matches get less. You can customise these tiers on the agent edit page.
+**Per-Company Budget Tiers** limit how much the agent spends on any one company, based on its match score. Higher-scoring companies get a bigger allowance; borderline matches get less. By default there are four tiers: 90–100%, 80–89%, 70–79% and below 70%. You can edit the amounts, change the ranges, and add or remove tiers.
+
+The **Cost by Company** card on the agent's page shows where the money has gone.
 
 ## Operating hours
 
-You can restrict when the agent sends emails so outreach lands during business hours:
+Switch on **Operating Hours** to restrict when the agent works, so outreach lands during business hours. When it's off, the agent works around the clock.
 
-- **Enabled/Disabled** — toggle operating hours on or off. When disabled, the agent runs 24/7.
-- **Timezone** — the timezone for the schedule (default: Europe/London)
-- **Start and end time** — e.g. 09:00 to 17:00
-- **Active days** — which days of the week the agent is allowed to run (default: Monday–Friday)
+- **Timezone**: the timezone for the schedule (default London)
+- **Use company HQ timezone**: apply your hours in each company's own headquarters timezone instead (see below)
+- **Start Time** and **End Time**: for example 09:00 to 17:00
+- **Active Days**: which days of the week the agent may work (default Monday to Friday). **Weekdays only** and **Every day** are quick presets.
+
+Outside its hours, the agent waits for the next window. No work is lost; it picks up where it left off. Replies from prospects are always handled straight away, and **Run Now** isn't restricted by operating hours.
+
+### Use company HQ timezone
+
+Your prospects may be spread across the world. Switch on **Use company HQ timezone** and the agent applies your start time, end time and days in **each company's** local time, worked out from the company's headquarters location. A company in New York is emailed during New York business hours and a company in London during London business hours, from the same agent.
+
+When this is on, the **Timezone** field becomes **Fallback timezone**: it's used for any company whose HQ location can't be worked out.
 
 <Tip>
-  Setting operating hours in the prospect's timezone ensures emails arrive during business hours, which improves open rates. Choose the timezone where most of your target companies are based.
+  With a single timezone, the whole agent pauses outside the window. With company HQ timezones, the agent keeps running and simply holds each company until it's inside its own local hours.
 </Tip>
-
-When the agent hits a time outside its operating hours, it simply pauses until the next active window. No work is lost — it picks up where it left off.
 
 ## Run pace
 
-The **run pace** controls how many companies the agent processes per cycle:
+**Run Pace** sets how many companies the agent evaluates per **10-minute cycle**:
 
-- **Default:** 1 company per run
-- **Recommended for testing:** 1 company per run (lets you review each interaction)
-- **After confidence builds:** Increase to 3–5 companies per run
+- **Range:** 1 to 100 companies per cycle
+- **Default:** 1 company per cycle, the slowest pace, ideal for reviewing each decision
+- **2–10:** a careful pace for monitoring a new agent
+- **11–50:** a normal pace for an agent you've checked
+- **Over 50:** only when you're confident in the agent's behaviour
 
-A lower pace gives you more control and visibility. A higher pace means faster outreach but requires more trust in the agent's configuration.
+A higher pace means faster outreach, but the agent is always capped by its monthly budget and by how many emails its sending accounts can send each day.
 
-<Tip>
-  Pair a slow run pace with [simulation mode](/bdr-agents/how-the-agent-works#simulation-mode) (an agent with no connected email account) to review each decision before any real email is sent.
-</Tip>
+You can also choose **Run Now (5 companies)** from the agent's **⋯** menu to process a batch straight away.
 
 ## Follow-up cadence
 
-Configure how the agent follows up with prospects who haven't replied:
+The **Follow-up Cadence** card has its own switch. With follow-ups off, the agent sends only the first email to each contact.
 
 | Setting | Default | What it controls |
 |---------|---------|-----------------|
-| **Min days between follow-ups** | 3 days | Minimum gap between follow-up emails to the same person |
-| **Max follow-ups per contact** | 2 | How many follow-up emails before the agent stops |
-| **Follow-up template groups** | None | Specific templates for follow-ups (if different from initial outreach) |
-| **Dormant re-evaluation** | 90 days | How long before the agent revisits a company that went quiet |
+| **Minimum days before follow-up** | 3 days | How long to wait after an unanswered email before sending the next |
+| **Maximum follow-ups per contact** | 2 | How many unanswered follow-ups before the agent moves on to the next contact at the company |
+| **Follow-up Template Groups** | None (optional) | Templates to use for follow-ups |
+
+If you don't choose any follow-up templates, the agent **writes its own brief follow-ups** (up to 75 words), on the same topic as the first email.
 
 <Note>
-  The follow-up cadence applies per contact, not per company. If the agent finds multiple contacts at the same company, each gets their own follow-up sequence.
+  The cadence applies per contact, not per company. If the agent works several contacts at the same company, each gets their own sequence. Follow-ups reply in the same email thread as the original.
 </Note>
 
 <Note>
-  In **Template** mode, follow-ups reuse your templates (or a constrained variation). In **Personalised** mode, follow-ups can introduce **new offers and angles** from your [playbook](/bdr-agents/personalised-outreach#multi-offer-follow-ups) so a sequence stays fresh rather than repeating the same ask.
+  In **Personalised** mode, follow-ups can introduce **new offers and angles** from your [playbook](/bdr-agents/personalised-outreach#multi-offer-follow-ups) so a sequence stays fresh rather than repeating the same ask.
 </Note>
 
-## Adjusting settings on a live agent
+## Sending limits
 
-You can edit any of these settings while the agent is running — click the agent name in **Discovery → AI Agents**, then click **Edit**.
+How many emails an agent can send in a day also depends on its sending accounts:
 
-Changes take effect on the next processing cycle. The agent won't interrupt an action already in progress, but will use the new settings for everything going forward.
+- **Each mailbox has a daily sending limit.** The agent rotates across its sending accounts. When every one has reached its limit, the agent shows **Daily email quota reached — resets at midnight** and waits.
+- **Mailboxes marked Do not send** in [sending health](/email/sending-health-and-limits) are skipped for new outreach. If every sending account is marked, the agent waits until one is fixed. Mailboxes marked **Caution** keep sending.
+- **New outreach mailboxes warm up.** [Outreach mailboxes](/email/outreach-mailboxes) Alva sets up for you send no outreach for their first 4 days, and are limited to 5 a day for the first 7 days.
+- **New accounts have an account-wide cap** for their first 30 days: 20 a day in the first week, 50 in the second, then 100. All outreach pauses if the bounce rate goes over 8% or three or more people reply asking to be removed.
 
-## When the budget runs out
+Replies to prospects are never held back by any of these limits. See [Sending health and limits](/email/sending-health-and-limits) for the full rules.
 
-If the agent hits its monthly budget limit:
+## Changing settings on a live agent
 
-1. The agent **pauses automatically**
-2. You receive a notification (if escalation emails are configured)
-3. The agent resumes at the start of the next month, or when you manually increase the budget
+You can edit any of these settings while the agent is running. Go to **Outreach → BDR Agents**, open the agent, then choose **Edit Configuration** from the **⋯** menu.
 
-You can also manually pause and resume agents at any time from the agent detail page.
+Changes take effect from the next cycle. The agent won't interrupt an action already in progress.
+
+You can pause and restart an agent at any time with **Pause Agent** and **Start Agent** on its page.

@@ -1,37 +1,41 @@
 ---
 title: "Call Outcomes & Insights"
-description: "Track how every call went, and let Alva turn the conversation into CRM intelligence."
+description: "Record how every call went, and let Alva turn the conversation into CRM intelligence."
 ---
 
-Logging an outcome takes a second, but it's what keeps your pipeline honest — and it's the trigger for Alva to read the call back and pull out everything that matters. Every recorded call is analysed automatically, so commitments, next steps, and buying signals land in your CRM without you writing a single note.
+Logging an outcome takes a second, but it's what puts the call on your CRM timelines — and every recorded call is analysed afterwards, so commitments, next steps, and buying signals land in your CRM without you writing a single note.
 
 ## Call outcomes
 
-When a call ends, you choose an outcome that describes how it went. Alva comes with a standard set out of the box:
+When a call ends, you choose an outcome that describes how it went. Each outcome has a colour, and some are marked **Positive**. Alva comes with this standard set:
 
-| Outcome | Type |
-|---------|------|
-| No Answer | Negative |
-| Engaged / Busy | Negative |
-| Voicemail | Neutral |
-| Gatekeeper | Neutral |
-| Pitched – Not Interested | Negative |
-| Pitched – Interested | **Positive** |
-| Callback Requested | **Positive** |
-| Not a Relevant Contact | Neutral |
-| Wrong Number | Neutral |
+| Outcome | Colour | Positive |
+|---------|--------|----------|
+| No Answer | Red | |
+| Engaged / Busy | Red | |
+| Voicemail | Amber | |
+| Gatekeeper | Amber | |
+| Pitched - Not Interested | Red | |
+| Pitched - Interested | Green | Yes |
+| Callback Requested | Blue | Yes |
+| Not a Relevant Contact | Grey | |
+| Wrong Number | Grey | |
 
-Outcomes are colour-coded so you can read a call list at a glance, and positive outcomes feed the **Pitches** counter in [calling sessions](/calling/calling-sessions) and your reporting.
+The colours let you read a call list at a glance — they're the dots you see next to completed entries in a [calling session](/calling/calling-sessions). Positive outcomes count towards the **Pitches** figure in your session stats.
 
-Each outcome you log also creates an activity on the contact, company, and (where relevant) deal timeline — so the call shows up in the full history alongside emails and meetings.
+Each outcome you log also creates a call activity on the contact, company, and (where linked) deal timeline, so the call shows up in the full history alongside emails and meetings. A call with no outcome doesn't appear on the timelines.
 
 <Note>
-  Admins manage outcomes in **Settings → Telephony**. You can reset to the standard set at any time.
+  You'll find the outcome list in **Settings → Telephony → Call Outcomes**. An admin can click **Reset to Defaults** to restore the standard set.
 </Note>
+
+### Logging an outcome later
+
+If you closed the call without choosing an outcome, or want to add notes afterwards, ask [Alva](/ai-assistant/talking-to-alva) — for example, "Log my last call with Priya as Pitched - Interested and note she wants pricing by Friday." Alva records the outcome and notes against the call, adds it to the timelines, and completes the entry if the call was part of a calling session.
 
 ## AI call analysis
 
-Whenever a call is recorded and transcribed, Alva analyses the conversation in the background and extracts structured insights from what was actually said.
+When a call is recorded and transcribed, Alva analyses the conversation in the background and pulls out structured insights from what was actually said.
 
 ### What Alva pulls out
 
@@ -45,11 +49,14 @@ Whenever a call is recorded and transcribed, Alva analyses the conversation in t
 
 ### Where the insights appear
 
-The analysis flows straight into the rest of Alva, so the call becomes part of your live pipeline intelligence:
+The analysis flows into the rest of Alva, so the call becomes part of your live pipeline intelligence:
 
 - The **summary** is posted to the contact, company, and deal timelines as a call activity, so anyone on the team can catch up in seconds.
 - **Commitments** become tracked action items on the related deal, company, or contact — and surface in [Focus](/getting-started/focus) so nothing slips.
-- **Buying and risk signals** feed the deal's intelligence, sitting alongside the signals Alva picks up from [email analysis](/email/understanding-email-analysis) for a single view of deal health.
+- **Buying and risk signals** feed the linked deal's intelligence, alongside the signals Alva picks up from [email analysis](/email/understanding-email-analysis).
+- **Objections** and other reusable lessons can be added to your [knowledge base](/email/knowledge-base), so Alva gets better at handling them over time.
+
+You can also ask Alva about any call — "What did Tom say about their budget?" — and it answers from the transcript and analysis.
 
 <Tip>
   Because Alva captures commitments and next steps for you, you can stay fully present on the call instead of scribbling notes — then review what was promised the moment you hang up.
@@ -57,4 +64,4 @@ The analysis flows straight into the rest of Alva, so the call becomes part of y
 
 ## Billing
 
-The AI analysis of each call uses a small amount of credit, shown as a **Call Analysis** line in **Settings → Usage**, alongside the voice, recording, and transcription costs of the call itself.
+The AI analysis of each call uses a small amount of credit, shown as **Call Analysis** in **Settings → Usage**, alongside the voice, recording, and transcription costs of the call itself. See [Understanding credits](/billing/understanding-credits).

@@ -1,74 +1,117 @@
 ---
 title: "Knowledge Base"
-description: "AI-extracted sales knowledge from your email conversations."
+description: "Your living sales playbook: proven answers Alva and your agents reuse in outreach and replies."
 ---
 
-The Knowledge Base is where Alva stores insights extracted from your email conversations — objection handling techniques, product feature discussions, pricing patterns, competitor intelligence, and more. Over time, it becomes a library of what works in your sales process.
-
-## Accessing the Knowledge Base
+The Knowledge Base is your living sales playbook. It holds short, reusable pieces of sales knowledge — how to handle a common objection, a proof point that wins deals, what you will and won't do on price — so Alva and your [BDR agents](/bdr-agents/overview) give answers that match how your business actually sells.
 
 Go to **Knowledge Base** in the sidebar.
 
-## How knowledge is extracted
+## Where knowledge comes from
 
-When Alva [analyses your emails](/email/understanding-email-analysis), it doesn't just look for sentiment and signals — it also extracts **reusable knowledge**. For example:
+Alva builds the Knowledge Base for you from your real conversations:
 
-- A prospect objected to your pricing, and your rep successfully reframed the value → that's an **objection handling** entry
-- A prospect asked about a specific use case, and your rep explained it well → that's a **use case** entry
-- A competitor was mentioned in a deal you won → that's **competitor intel**
+- **Email threads** — when Alva [analyses your emails](/email/understanding-email-analysis), it looks for reusable patterns, such as a prospect's question and the answer that resolved it
+- **Call transcripts** — recorded [calls](/calling/call-outcomes-and-insights) add up to two entries each, such as an objection and how it was handled
+- **Your website** — when your [account is set up](/getting-started/account-setup), Alva adds company FAQs, use cases and pricing points from your site
+- **Alva chat** — ask Alva to add something, such as "Add to the playbook: we never discount more than 15%"
 
-Alva extracts these automatically and adds them to your Knowledge Base as draft entries.
+<Note>
+  **Product features belong in Products, not here.** Descriptions of what your product does go in [Products and competitors](/context/products-and-competitors). The Knowledge Base is for how you *sell* — and Alva keeps product brochure content out of it automatically.
+</Note>
 
 ## Categories
 
-Knowledge entries are organised into six categories:
-
 | Category | What it covers |
-|----------|---------------|
-| **Product Features** | How your team describes and positions features |
-| **Objections** | Common objections and how they were handled |
-| **Use Cases** | Specific use cases and how they were explained |
-| **Pricing** | Pricing discussions, discounting patterns, value framing |
-| **Competitor Intel** | Competitor mentions, comparisons, win/loss context |
-| **Other** | Everything else that doesn't fit the above |
+|----------|----------------|
+| **Objections** | Common concerns and how they were, or could be, handled |
+| **Proof** | Proof points, results, case examples and return-on-investment figures |
+| **Use cases** | Real-world ways customers use what you sell |
+| **Pricing guardrail** | Price boundaries, discount norms and negotiation limits |
+| **Competitor counter** | How to respond when a competitor comes up, and how you differ |
+| **Process** | Next steps, procurement, onboarding — how buying from you works |
+| **Company FAQ** | Short answers about your company that come up in conversation |
+| **Other** | Reusable sales knowledge that doesn't fit elsewhere |
 
-## The review workflow
+Use the category badges at the top of the list to filter, or the search box to find entries by meaning — "pricing objection" finds relevant entries even if they don't use those exact words.
 
-Knowledge entries go through a review process:
+## Entry statuses
 
-<Steps>
-  <Step title="Draft">
-    Alva extracts an insight and saves it as a draft. Drafts need human review before they're considered reliable.
-  </Step>
-  <Step title="Approved">
-    A team member reviews the draft and approves it. Approved entries are trusted knowledge that Alva can reference in future conversations.
-  </Step>
-  <Step title="Archived">
-    Entries that aren't useful or are outdated can be archived. They're removed from active use but kept for reference.
-  </Step>
-</Steps>
+Every entry has a status. Use the tabs to switch between them:
 
-## Reviewing entries
+| Tab | Meaning |
+|-----|---------|
+| **Active** | Trusted knowledge. **Only active entries are used by agents and drafted replies.** |
+| **Provisional** | Newly found and not yet trusted. Waiting to be seen again or checked by a person. |
+| **Disputed** | Clashes with an existing entry. Needs a human look. |
+| **Superseded** | Retired. Kept for reference but no longer used. |
 
-From the Knowledge Base page, use the tabs to switch between **Draft**, **Approved**, and **Archived** entries. For each entry, you can:
+The page header shows how many entries are active against the limit — for example **112/150 active**.
 
-- **Approve** — mark it as reliable knowledge
-- **Archive** — remove it from active use
-- **View the source** — see which deal and email thread it came from
+## How entries become trusted
 
-## Scoring
+### Similar entries merge
 
-Each entry has two scores:
+When Alva finds something that matches an existing entry in the same category, it doesn't add a duplicate. It **reinforces** the existing entry: the evidence is added, and the count of times it's been seen goes up. If a new finding has the same title as an existing entry but says something different, the entry is marked **Disputed** so a person can decide which is right.
 
-- **Confidence score** — how confident Alva is that this is a real insight (not noise)
-- **Effectiveness score** — how successful the approach was (based on deal outcome and email responses)
+### Automatic activation
 
-Entries are sorted by these scores by default, so the most reliable and effective knowledge appears first.
+An entry is activated automatically when Alva can trust it, for example when:
 
-## How Alva uses approved knowledge
+- You've **pinned** it
+- It comes from a trusted source — pricing and FAQs from your website, or something you asked Alva to add — and Alva is confident in it
+- It's a pattern from a **won deal** that clearly worked
+- Alva is highly confident in it **and** has seen it at least twice
 
-Approved knowledge entries feed back into Alva's responses. When you ask Alva for help with an objection, a use case, or competitive positioning, it draws on your Knowledge Base to give advice that's specific to your business — not generic AI-generated suggestions.
+Everything else waits as **Provisional** until it's seen again or you activate it.
+
+### Trust signals on each entry
+
+Each entry card shows:
+
+- **Claim** — the short, usable line, with the detail underneath
+- **Confidence** — how sure Alva is that this is a real insight
+- **Corroboration** — how many times it's been seen (for example **×3 corroboration**)
+- **Evidence** — click to see the conversations it came from
+- **Resolution pattern** — for entries from email threads, the customer's question, your team's response and the outcome, with an effectiveness score where known
+- When it was last reinforced, and who activated it
+
+## Managing entries
+
+On each entry you can:
+
+- **Activate** — make a provisional or disputed entry active
+- **Pin** — keep an entry active and protect it from being retired when the playbook is full
+- **Edit** — change the title, claim or detail
+- **Supersede** — retire an entry. Agents stop using it. There's no delete — superseding keeps the history
+
+### The active limit
+
+The playbook keeps up to about **150 active entries**, so agents work from a focused set rather than everything ever said. When the playbook is full and a new entry is activated, the least-corroborated unpinned entry is superseded to make room. Pin anything you always want kept.
+
+## How your knowledge is used
+
+When Alva or an agent needs an answer, it looks up the most relevant **active** entries:
+
+- **BDR agents** use them when drafting replies to prospects
+- **AI Draft** uses them when you reply to an email in the Inbox
+- **Alva** uses them when you ask for help with an objection, competitor or pricing question, or ask her to write outreach
+
+If nothing relevant is active, Alva says so and offers to add or activate an entry — she won't make one up.
+
+## Ask Alva
+
+Alva can browse and tidy the Knowledge Base for you:
+
+- "How many Knowledge Base entries need review?"
+- "Show me the provisional objection entries"
+- "Activate all provisional pricing entries"
+- "Supersede the competitor entries older than six months"
+- "Pin the entry about our 30-day onboarding"
+- "Add to the playbook: our typical payback period is under six months"
+
+For changes to many entries at once, Alva first shows you which entries will change and whether any active entries would be retired to stay within the limit, then waits for your yes.
 
 <Tip>
-  Review your Knowledge Base drafts regularly — especially after closing deals. The insights extracted from won deals are the most valuable, as they capture what actually worked.
+  Review the **Provisional** and **Disputed** tabs regularly, especially after closing deals. A few minutes activating good entries and superseding stale ones keeps your agents' answers sharp.
 </Tip>

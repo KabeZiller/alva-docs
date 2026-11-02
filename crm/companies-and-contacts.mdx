@@ -1,69 +1,84 @@
 ---
-title: "Companies and Contacts"
+title: "Companies and contacts"
 description: "Add and manage the companies and people in your pipeline."
 ---
 
-Companies and contacts are the foundation of your CRM. Every deal, activity, and email conversation connects back to a company or contact record.
+Companies and contacts are the foundation of your CRM. Every deal, activity, email, and call connects back to a company or contact record.
 
 ## Companies
 
 ### Adding a company
 
-Go to **Companies** and click **New Company** in the top-right corner. Fill in the details you have — at minimum, you need a **company name**.
+Go to **Companies** and click **New Company**. Only the company name is required.
 
-Available fields include:
+| Field | What it's for |
+|---|---|
+| **Company Name** | The company's name (required) |
+| **Domain** | Their website domain, such as `acme.com` |
+| **Industry** | Chosen from a list |
+| **Company Size** | Chosen from a list of size bands |
+| **Location** | Where they're based |
+| **Website** | Their full website address |
+| **Relationship Type** | Customer, vendor, partner, supplier, or competitor (see below) |
+| **LinkedIn URL** | Their LinkedIn company page |
+| **Primary Email** and **Primary Phone** | The main ways to reach the company |
+| **Founded Year** | When the company was founded |
+| **Employee Count Range** | For example, 51–200 |
+| **Owner** | The team member responsible for the company |
+| **Description** | Any notes or context |
 
-- **Name** — the company name (required)
-- **Domain** — their website domain (e.g. `acme.com`)
-- **Website** — full URL
-- **Industry** — what they do
-- **Location** — where they're based
-- **Employee count** and **revenue** — for sizing
-- **Description** — any notes or context
-- **Tags** — for your own categorisation (see [Tags](/crm/tags))
+Any [custom fields](/getting-started/account-setup#tags-and-custom-fields) you've set up for companies appear at the bottom of the form.
+
+When you create a company, Alva checks for possible duplicates in your CRM and in your Discovery results. If it finds any, it shows them so you can open the existing record or click **Create Anyway**.
 
 <Tip>
-  If you have many companies to add at once, use the **Import** button to upload a CSV file. See [Importing Data](/crm/importing-data) for details.
+  To add many companies at once, click **Import** on the Companies page and upload a CSV file. See [Importing data](/crm/importing-data).
 </Tip>
 
 ### Company detail page
 
-Click any company to open its detail page. You'll see:
+Click any company to open its page. Depending on what Alva knows about the company, you'll see:
 
-- **Overview** — name, domain, industry, location, and key stats
-- **Contacts** — everyone linked to this company
-- **Deals** — all deals associated with the company, with stage and value
-- **Activities** — a chronological timeline of calls, meetings, emails, and notes
-- **Emails** — all email conversations involving this company (if email is connected)
-- **Commitments** — things you've promised to do, with due dates
-- **Cadence** — follow-up cadence settings for staying in touch
-- **Discovery activity** — if the company was found via Discovery, shows BDR outreach history and AI agent actions
+- **The header** — industry, size, and other key facts, the company's lifecycle stage, its [tags](/crm/tags), and its enrichment state (**Enrichment queued**, **Enriching…**, **Enriched**, **Complete**, **Enrichment failed**, or **No website**). If enrichment failed, you can retry it
+- **Company Details** — website, location, founding year, LinkedIn, domain, size, and industry, plus the company's **Owner** and its email addresses and phone numbers. You can add more emails and phone numbers, remove them, and choose which is primary
+- **About** — a description from the company's website and LinkedIn
+- **Match details** — if the company came from [Discovery](/discovery/discovery-companies), the criteria it matched and the ones it missed
+- **Signals** (closed beta) — events [Signals](/discovery/signals) found for this company, what they were found through, and the checks they passed
+- **Discovery activity** — BDR outreach and agent actions for this company
+- **Deals** — every deal with the company, with a button to start a new one
+- **Contacts** — everyone linked to the company
+- **Emails** — your email conversations with the company, if your email is connected
+- **Activities** — notes, calls, meetings, and emails, with a form to log a new one
+- **Calls** and **Messages** — call history and text message conversations
+- **Custom Fields** — the values of your custom fields
+- **Commitments** — promises and actions linked to the company. See [Focus](/getting-started/focus)
+- **Relationship cadence** — how often you want to be in touch (see below)
 
-You can edit a company at any time by clicking the **Edit** button.
+Click **Edit** to change the company's details.
 
-### Searching and filtering
+### Searching
 
-The Companies page includes a search bar that filters by **name**, **domain**, or **industry**. Type and press Enter to filter the list.
+The Companies search bar matches **name**, **domain**, or **industry**. Type and press Enter to filter the list.
 
-If you're using the [module switcher](/crm/modules-and-relationships), the companies list automatically filters to show only companies matching the active module's relationship type — for example, switching to VRM shows only vendors.
+If you're using the [module switcher](/crm/modules-and-relationships), the list shows only companies with the active module's relationship type — for example, switching to VRM shows only vendors.
 
 ### Relationship types
 
-Every company can have a relationship type that describes how they relate to your business:
+Every company can have a relationship type that describes how it relates to your business:
 
 | Type | What it means |
 |------|--------------|
 | **Customer** | A company that buys from you |
 | **Vendor** | A company that sells or distributes your products |
 | **Partner** | A company you partner with |
-| **Supplier** | A company that supplies to you |
+| **Supplier** | A company that supplies you |
 | **Competitor** | A direct competitor |
 
-Relationship types are set automatically when companies are imported from [Discovery](/discovery/creating-a-discovery-profile) profiles, or you can set them manually.
+Companies imported from [Discovery](/discovery/creating-a-discovery-profile) get their relationship type automatically. You can also set it on the company form or map it from a column when you [import a CSV](/crm/importing-data).
 
 ### Lifecycle stages
 
-Each relationship type has its own lifecycle stages that describe where the company is in your relationship:
+Each relationship type has its own lifecycle stages:
 
 | Relationship | Stages |
 |-------------|--------|
@@ -72,7 +87,7 @@ Each relationship type has its own lifecycle stages that describe where the comp
 | Partner | Target → Engaging → Negotiating → Partner |
 | Supplier | Target → Evaluating → Negotiating → Supplier |
 
-You can change a company's lifecycle stage from its detail page using the dropdown selector.
+Change a company's stage from the selector on its detail page.
 
 ---
 
@@ -80,56 +95,73 @@ You can change a company's lifecycle stage from its detail page using the dropdo
 
 ### Adding a contact
 
-Go to **Contacts** and click **Add Contact**. You can also add contacts directly from a company's detail page.
+Go to **Contacts** and click **New Contact**, or click **Add Contact** on a company's page.
 
-Available fields include:
+| Field | What it's for |
+|---|---|
+| **First Name** and **Last Name** | The person's name |
+| **Email** and **Phone** | How to reach them |
+| **Job Title** | Their role |
+| **Company** | The company they work for |
+| **LinkedIn URL** and **Twitter Handle** | Their social profiles |
+| **Notes** | Anything else worth knowing |
 
-- **First name** and **Last name**
-- **Email address**
-- **Phone number**
-- **Job title**
-- **Social profiles** (e.g. a professional or social profile URL)
-- **Company** — link them to an existing company
-- **Location**
+Custom fields you've set up for contacts appear at the bottom of the form.
 
 ### Contact detail page
 
 Click any contact to see their full profile:
 
-- **Overview** — name, role, email, phone, social links
-- **Company** — the company they belong to (clickable)
-- **Deals** — deals they're involved in
-- **Activities** — timeline of interactions with this contact
-- **Emails** — all email conversations with this person
-- **Commitments** — promises and action items linked to this contact
-- **Cadence** — follow-up rhythm for staying in touch
+- **Contact Information** — name, role, email, phone, social links, and their company
+- **Notes**
+- **Custom Fields**
+- **Commitments** and **Relationship cadence**
+- **Emails** — every email conversation with this person
+- **Calls** and **Messages**
+- **Activities** — with a form to log a new one
 
-### Linking contacts to companies
+### Revealing contact details (Pro)
 
-Contacts are linked to companies when you create them. A single company can have many contacts, and you can see all linked contacts from the company detail page.
+When Alva knows a contact has an email address or mobile number available that isn't on the record yet, the contact's page shows **Reveal details**. Click it to look up their details. Revealing contact details uses credits and needs the Pro plan. See [Plans and pricing](/billing/plans-and-pricing).
+
+### Searching and filtering contacts
+
+The Contacts search bar matches name, email, phone, company name, and the values of your custom fields — on the contact or on their company.
+
+You can also filter by one custom field. Pick a field and a value — for example, the SDR stored on the company — to see only the matching contacts. Text fields match anything containing your value; dropdowns, numbers, dates, and yes/no fields must match exactly. A company field matches every contact at that company.
+
+You can ask Alva to do the same: "Show me the contacts whose SDR is Priya."
 
 ---
 
 ## Activities
 
-Activities track every interaction you have with companies and contacts. You can log activities from any company, contact, or deal detail page using the **Log Activity** button.
+Activities are the history of your interactions with a company, contact, or deal.
 
-Activity types include:
+### Logging an activity
 
-- **Call** — a phone call
-- **Meeting** — an in-person or virtual meeting
-- **Email** — an email exchange (also logged automatically when email is connected)
-- **Note** — an internal note or observation
-- **Task** — something that needs to be done
+At the top of every **Activities** card, click **Log Activity**, choose **Note**, **Call**, or **Meeting**, and add:
 
-Each activity records the date, a description, and which company, contact, and deal it relates to.
+- A **subject** (optional)
+- A **description** of what happened (required)
+- The **date and time** — this defaults to now, but you can backdate it
+
+### Emails are logged for you
+
+You don't need to log emails by hand. Emails you send from Alva, emails your BDR agents send, and emails picked up from your connected inbox are logged as activities automatically.
+
+---
+
+## Relationship cadence
+
+A cadence is a reminder to stay in touch. Set one on any company or contact — **Weekly**, **Fortnightly**, **Monthly**, **Quarterly**, or a **Custom** number of days. When a relationship goes quiet for longer than its cadence, Alva raises a nudge on your [Focus](/getting-started/focus) page.
 
 ---
 
 ## Deleting records
 
-You can delete a company or contact from their detail page. Deleting a company does **not** automatically delete its linked contacts — they remain in your CRM and can be reassigned.
+You can delete a company or contact from its detail page.
 
 <Warning>
-  Deletion is permanent. Make sure you no longer need the record before deleting it.
+  Deletion is permanent. Deleting a company also deletes its deals, contracts, and activities. Its contacts are kept but are no longer linked to a company. Make sure you no longer need the records before you delete.
 </Warning>

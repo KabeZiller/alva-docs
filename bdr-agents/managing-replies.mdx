@@ -1,89 +1,122 @@
 ---
 title: "Managing Replies and Taking Over"
-description: "How agents escalate genuine interest, draft replies for you, and hand conversations back to a human."
+description: "How agents escalate genuine interest, draft replies for you, and hand conversations to a person."
 ---
 
-An agent's job is to start conversations and spot the moment a human should step in. When a prospect replies with genuine interest, or when you want to take the wheel, the agent gets out of the way. This page covers escalations, draft replies, and taking over.
+An agent's job is to start conversations and spot the moment a person should step in. When a prospect replies with genuine interest, or when you want to take the wheel, the agent gets out of the way. This page covers escalations, draft replies and taking over.
 
 ## Escalations
 
-When a prospect sends a **genuine reply** — real interest, a question, a request to talk — the agent **escalates** the company for your attention. It appears with an alert on the agent's [activity feed](/bdr-agents/reading-the-activity-feed) and on the [Lead Sheet](/discovery/lead-sheet).
+When a prospect sends a **genuine reply** (real interest, a question, a request to talk), the agent **escalates** the company for your attention. It appears on the agent's [activity feed](/bdr-agents/reading-the-activity-feed), on the [Lead Sheet](/discovery/lead-sheet) and in the **Operator queue** of the [Ops Room](/bdr-agents/ops-room).
 
 <Note>
-  The agent only escalates on a **genuine inbound reply**. Out-of-office auto-replies, bounces, and automated acknowledgements don't count and won't trigger an escalation.
+  The agent only escalates on a **genuine reply**. Out-of-office replies, bounces and automated acknowledgements don't count and won't trigger an escalation.
 </Note>
 
-If you've added **escalation notification** recipients to the agent, they're emailed when an escalation happens. Notifications are **owner-first**: if the company has an owner, they're notified; otherwise the agent's configured recipients are.
+### Who gets notified
+
+You choose who hears about escalations on the agent form:
+
+- **Notify Users**: team members who get an in-app notification and an email to their primary account address. If **Escalate to Human** is on, at least one person must be selected before the agent can start.
+- **Escalation Notifications**: extra email addresses outside your team, such as a shared inbox or a colleague without an Alva login. They receive the escalation email.
+
+Notifications to your team are **owner-first**: if the company has an owner, only the owner is notified; otherwise the people under **Notify Users** are. The outside addresses under **Escalation Notifications** receive every escalation either way.
 
 ## Draft replies
 
-When the **Draft Reply** tool is enabled and a prospect replies, the agent writes a **suggested response for your review** rather than sending anything itself. Drafts appear on the [Lead Sheet](/discovery/lead-sheet) under "Drafts to review" and on the company's activity panel. You can:
+When the **Draft Replies** tool is on and a prospect replies, the agent writes a **suggested response for your review** rather than sending anything itself. The company is flagged **Draft Ready** on the [Lead Sheet](/discovery/lead-sheet), and you review the draft on the company's activity tab. You can:
 
-- **Approve and send** — send the draft as written
-- **Edit and send** — adjust it first
-- **Discard** — reject it and reply yourself
+- **Send it as written**
+- **Edit it, then send**
+- **Discard it** and reply yourself
+
+If you've uploaded [attachments](/bdr-agents/setting-up-your-first-agent#attachments) to the agent, it can recommend one to include.
 
 ### Reply as the agent, or as yourself
 
 When you send a reviewed draft, you choose who it comes from:
 
-- **Reply as the agent (default)** — the email is sent from the agent's mailbox, keeping the same persona the prospect has been talking to.
-- **Reply as me** — the email is sent from *your* connected mailbox, so the prospect now talks to you directly. The agent's mailbox is CC'd by default so the conversation stays on record and any future replies are still picked up.
+- **Reply as the agent (default)**: the email is sent from the agent's mailbox, keeping the same persona the prospect has been talking to.
+- **Reply as me**: the email is sent from *your* connected mailbox, so the prospect now talks to you directly. The agent's mailbox is copied in by default so the conversation stays on record and any future replies are still picked up.
 
-Both options let you add CC recipients and, by default, CC the company owner. Replies thread correctly into the existing email conversation and use your mailbox's normal signature.
+Both options let you add CC recipients and, by default, copy in the company owner. Replies thread correctly into the existing conversation and use your mailbox's normal signature.
 
 ## Taking over a conversation
 
-Sometimes you'll want to handle a lead yourself. There are three ways an agent hands a conversation over to a human, and once handed over the agent stops drafting or escalating on that conversation:
+Sometimes you'll want to handle a lead yourself. There are three ways a conversation passes to a person, and once it has, the agent stops drafting or escalating on it:
 
-1. **You reply from your own mailbox.** If you email the prospect directly from your connected inbox, Alva notices and automatically marks the conversation as human-handled — no button needed.
+1. **You reply from your own mailbox.** If you email the prospect directly from your connected inbox, Alva notices and marks the conversation as handled by you. Emails still sitting in your drafts folder don't count; only a sent email does.
 2. **You send a draft as yourself.** Using **Reply as me** (above) hands the conversation over.
-3. **You click Take over.** Use the **Take over** action on the [Lead Sheet](/discovery/lead-sheet) row or the company header to step in manually.
+3. **You click Take over** on the [Lead Sheet](/discovery/lead-sheet) row.
 
-While a conversation is human-handled:
+While a conversation is in human hands:
 
-- The agent won't draft or escalate on further replies in that thread.
-- You still get a calmer "new reply received" notification so you never miss an incoming message.
+- The agent won't draft or escalate on further replies in that thread, and any pending drafts are discarded.
+- You still get a calmer "new reply received" notification, so you never miss an incoming message.
 - The company shows a **Human Handling** indicator.
 
 ### Handing back to the agent
 
-Changed your mind? Use **Hand back to agent** to return the conversation. The agent resumes outreach with a fresh note to pick things up naturally — it won't re-escalate the exchange you already handled.
+Changed your mind? Use **Hand back to agent** to return the conversation. The agent resumes outreach with a note to pick things up naturally, and won't re-escalate the exchange you already handled.
+
+### Returning a lead to outreach
+
+If an escalation turns out not to need you, choose **Return to Outreach** on the Lead Sheet row. The company leaves the Lead Sheet and goes back to the agent, which won't escalate the same exchange again.
+
+## Ask Alva to manage your leads
+
+You can do all of this in chat. Ask [Alva](/ai-assistant/talking-to-alva) to:
+
+- Show what's on your Lead Sheet, most urgent first
+- **Take over** a lead or **hand it back** to the agent
+- Put a company on a **Not Interested** hold, or clear one
+- **Assign an owner** to a company, so escalations go to them
+- Add a **note** that the agent must follow next time it works the company
+
+Alva asks you to confirm before taking over a lead, returning it to outreach or placing a hold.
 
 ## Paused agents still handle replies
 
-Pausing (or archiving) an agent only stops it **sending new outreach and follow-ups**. It does **not** stop it processing genuine replies to outreach it already sent:
+Pausing an agent only stops it **sending new outreach and follow-ups**. It does **not** stop it handling genuine replies to emails it already sent:
 
-- A reply to a paused agent's thread is still escalated so a human is alerted.
-- If the **Draft Reply** tool is on, a draft is still prepared for your review.
+- A reply to a paused agent's email is still escalated, so a person is alerted.
+- If the **Draft Replies** tool is on, a draft is still prepared for your review.
 - Nothing is ever sent to the prospect automatically while the agent is paused.
 
 <Note>
-  This means you can safely pause an agent without going dark on prospects who reply to earlier emails — you'll still be notified and can respond.
+  You can safely pause an agent without going dark on prospects who reply to earlier emails: you'll still be notified and can respond.
 </Note>
 
 ## "Not Interested — try again later"
 
-A "no" today isn't a "no" forever. If a prospect declines, you can put the company on a **timed hold** instead of writing it off:
+A "no" today isn't a "no" forever. If a prospect declines, put the company on a **timed hold** instead of writing it off:
 
-- Choose **Mark Not Interested…** on the [Lead Sheet](/discovery/lead-sheet) row or the company header.
-- Pick how long to hold (3, 6, or 12 months, or a custom period) and optionally a reason.
+- Choose **Mark Not Interested…** on the [Lead Sheet](/discovery/lead-sheet) row or the company page.
+- Pick how long to hold (3, 6 or 12 months, or a custom period) and optionally a reason.
 - The agent stops contacting that company and any pending drafts are discarded.
-- When the hold expires, the company **automatically returns to outreach** with a fresh start — the agent approaches it with new framing and won't reference the earlier decline.
+- When the hold ends, the company **automatically returns to outreach** with a fresh start: the agent approaches it with new framing and won't mention the earlier decline.
 
-The company stays visible with a "Returning {date}" badge, and you can **clear the hold** early at any time.
+The company stays visible with a **Returning {date}** badge, and you can **clear the hold** early at any time.
+
+## "Please remove me"
+
+Prospects who ask never to be contacted again are treated differently from a polite "not now". Their request is honoured permanently and the address won't be emailed again. To block a whole company or domain yourself, use the [Email Block List](/email/email-block-list).
+
+<Warning>
+  On a new account, removal requests count towards the automatic outreach pause: if three or more recent replies ask to be removed, all outreach pauses until our support team resumes it. Keep your targeting tight and your copy relevant. See [Sending health and limits](/email/sending-health-and-limits).
+</Warning>
 
 <Tip>
-  Prefer a timed hold over permanently removing a company. Circumstances change — a hold gives the relationship another chance at the right moment, automatically. For prospects who ask never to be contacted again, that request is honoured separately and permanently.
+  Prefer a timed hold over permanently removing a company. Circumstances change, and a hold gives the relationship another chance at the right moment, automatically.
 </Tip>
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Reading the activity feed" href="/bdr-agents/reading-the-activity-feed" icon="list">
-    Follow every action, status, and decision.
+    Follow every action, status and decision.
   </Card>
   <Card title="Lead Sheet" href="/discovery/lead-sheet" icon="table-list">
-    Where drafts, escalations, and takeovers live.
+    Where escalations, drafts and takeovers live.
   </Card>
 </CardGroup>

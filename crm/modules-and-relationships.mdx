@@ -1,5 +1,5 @@
 ---
-title: "Modules and Relationships"
+title: "Modules and relationships"
 description: "Switch between CRM, PRM, VRM, and SRM to manage different types of business relationships."
 ---
 
@@ -12,7 +12,7 @@ Alva isn't just a customer CRM — it supports four relationship modules, each t
 | **CRM** | Customer Relationship Management | Your customers — companies you sell to |
 | **PRM** | Partner Relationship Management | Partners — companies you collaborate with |
 | **VRM** | Vendor Relationship Management | Vendors — companies that sell or distribute your products |
-| **SRM** | Supplier Relationship Management | Suppliers — companies that supply to you |
+| **SRM** | Supplier Relationship Management | Suppliers — companies that supply you |
 
 ## Switching modules
 
@@ -27,12 +27,14 @@ When you switch modules:
 
 ## CRM module
 
-The default module. Shows your customer pipeline with:
+The default module. Its sidebar section shows:
 
-- Companies, Contacts, Deals
-- Contracts
-- Analytics and Reports
-- Full sidebar with all features
+- **Dashboard** and **Focus**
+- **Companies**, **Contacts**, **Deals**, and **Contracts**
+- **Analytics** and **Reports**
+- **Documents** — the PDFs Alva has written for you. See [Documents](/ai-assistant/documents)
+
+The rest of the sidebar — Discovery, outreach, calling, context, and settings — stays the same whichever module you're in.
 
 ## Relationship modules (PRM, VRM, SRM)
 
@@ -59,15 +61,15 @@ You can move companies through these stages using the pipeline Kanban board or f
 
 Companies are assigned a relationship type in several ways:
 
-1. **Discovery profiles** — when you create an [ICP, IVP, IPP, ISP, or CP profile](/discovery/profile-types-explained), companies found and imported are automatically tagged with the corresponding relationship type
-2. **Manual assignment** — you can set or change a company's relationship type from its detail page
+1. **Search Agents** — when you create an [ICP, IVP, IPP, ISP, or CP Search Agent](/discovery/profile-types-explained), companies found and imported are automatically tagged with the corresponding relationship type
+2. **Manual assignment** — you can set or change a company's relationship type on the company form
 3. **CSV import** — you can map a relationship type column during import
 
 ## Cross-module features
 
 Some features work across all modules:
 
-- **Alva chat** — works in any module, with full context
+- **Alva chat** — works in any module and knows which one you're in, so her answers are scoped to it. Ask "who's in my pipeline?" in VRM and she answers about your vendors; ask in CRM and she answers about your customers
 - **Email** — email analysis applies to all relationship types
 - **Discovery** — different profile types feed into different modules
 - **BDR agents** — can target any profile type (except competitors)

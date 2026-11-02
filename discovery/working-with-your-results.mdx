@@ -1,114 +1,100 @@
 ---
 title: "Working With Your Results"
-description: "Review, filter, and act on the companies Alva finds for you."
+description: "Review the companies your Search Agents find, import the good ones, and discard the rest."
 ---
 
-Once your discovery profile is active, companies start appearing in your results. This page explains how to review them, decide which to keep, and move them into your CRM.
+Once a Search Agent is active, the companies it finds start arriving in your **Discovery Pipeline**. This page explains how to review them, decide which to keep, and move them into your CRM.
 
 ## Where results appear
 
-Discovery results are accessible from several places:
+| Page | What it shows |
+|------|---------------|
+| **Discovery → Companies** (the Discovery Pipeline) | Every company your searches have found. New ones wait at the **Found** stage for review; imported ones move through your pipeline stages |
+| **Discovery → Contacts** | People captured by your searches, such as those found by [People Search](/discovery/people-search) and [Signals](/discovery/signals). See [Discovery Contacts](/discovery/discovery-contacts) |
+| **Outreach → Lead Sheet** | Leads that need a human — replies, drafts, escalations, form fills. See [Lead Sheet](/discovery/lead-sheet) |
 
-- **Discovery → Results** — the full results queue across all profiles, with review workflow
-- **Discovery → Companies** — all discovered companies, regardless of approval status
-- **Discovery → Lead Sheet** — companies that have reached Lead stage (ready for sales engagement)
-- **Discovery → Contacts** — contacts found by BDR agents for discovered companies
+## Reviewing companies at the Found stage
 
-## The results queue
+Go to **Discovery → Companies** and choose a tab — **Customers**, **Vendors**, **Partners**, or **Suppliers** — then click the **Found** card. Found companies are the ones waiting for your decision: they're not in your CRM yet.
 
-Go to **Discovery → Results** to see companies waiting for your review.
+Each company shows:
 
-Each result shows:
+- **Company** — name, location, and website
+- **Match** — its match score as a percentage
+- **Contacts** — how many people were captured with it
+- **Search Agent** — which search found it
+- **Discovered** — when it was found
 
-- **Company name** and website
-- **Location** — where the company is based
-- **Match score** — how closely the company matches your profile (high, medium, or low confidence)
-- **Match category** — whether it's a "match", "partial match", or "weak match"
-- **Profile** — which discovery profile found this company
+Found companies are sorted by **Best Match** first. You can also sort by **Name** or **Date Added**, and use the Search Agent filter to see one search at a time.
 
-### Reviewing results
+### Import or discard one at a time
 
-For each company in the queue, you can:
+Open the menu on any row and choose:
 
-- **Approve** — accept the company as a good match. It stays in your discovery pipeline for further action.
-- **Reject** — dismiss the company. It won't appear again.
-- **Skip** — leave it for later.
+- **Import to CRM** — the company becomes a full CRM record at the first stage of its pipeline (for example **Target** for customers), and [enrichment](/discovery/enrichment) starts.
+- **Discard** — the company is removed from your review list.
+- **View details** — see the company and why it was scored as it was.
 
-You can review companies one at a time or use the bulk review page to work through many at once.
+You can also tick several companies and click **Import Selected**.
 
-### Match confidence
+### Bulk actions by score
 
-Alva scores each discovered company against your profile description:
+The **Bulk Actions** card lets you clear the Found stage in two clicks. Set the **Confidence Threshold** slider, then:
 
-| Category | What it means |
-|----------|--------------|
-| **Match** | Strong alignment with your profile — this company is a good fit |
-| **Partial match** | Some alignment — worth reviewing but may not be perfect |
-| **Weak match** | Limited alignment — probably not what you're looking for |
+- **Import N Above X%** — imports every Found company scoring at or above the threshold
+- **Discard N Below X%** — discards every Found company scoring below it
 
-You can adjust the **match threshold** on each profile to control how strict the filtering is. A higher threshold means fewer but more relevant results.
+The buttons show how many companies each would affect before you click. If you've filtered to one Search Agent, they only act on that search's companies.
 
-## Importing companies into your CRM
+### Review Mode
 
-Once you've approved companies, you need to **import** them to make them full CRM records.
+For a closer look, filter the Found stage to one Search Agent and click **Review Mode**. It shows one company at a time beside your Search Agent's description, so you can:
 
-### Manual import
+- See the company's details and the reasoning behind its score
+- Edit the description to improve future matches
+- Change the match threshold without leaving the page
+- Move quickly with keyboard shortcuts: **J** next, **K** previous, **I** import, **D** discard, **Esc** to exit
 
-From the Discovery Companies page, click the import button on any company. This creates a full company record in your CRM with:
+Area-based Search Agents pause themselves after their first 50 companies and invite you into Review Mode. See [Paused for review](/discovery/creating-a-discovery-profile#paused-for-review).
 
-- Name, website, domain, and location pre-filled
-- Relationship type set automatically based on the profile type
-- Lifecycle stage set to the first stage for that relationship type (e.g. "Target" for customers)
+## Match scores
 
-### Bulk import
+Alva scores each company 0–100 against your Search Agent's description and groups it using the agent's **match threshold**:
 
-You can import multiple approved companies at once from the Discovery Companies page using the bulk action toolbar.
+| Result | What it means |
+|--------|--------------|
+| **Match** | At or above your threshold — a good fit |
+| **Worth a look** | Within about 20 points below your threshold — a partial fit worth checking |
+| **Not a match** | Well below your threshold — probably not what you're after |
 
-You can also ask Alva: "Import all approved companies from my healthcare ICP" — and it will handle the bulk import for you.
+Raise the match threshold on the Search Agent to be stricter, or lower it to see more companies. A higher threshold means fewer but more relevant matches.
 
-### Auto-import
+<Note>
+  For People Search and Funded & high-growth searches, the score only sets priority — no company is held back because of it. On every stage of the Discovery Pipeline, companies open sorted by match score, highest first, with unscored companies at the end.
+</Note>
 
-On each profile, you can enable **auto-import** — this automatically imports high-confidence matches into your CRM without manual review. Useful when you trust the profile description is accurate and want to move fast.
+## Auto-import
+
+On an area-based Search Agent, you can turn on **auto-import**: companies at or above the match threshold go straight into your CRM at the Target stage, and those below it are discarded. Useful when you trust the description and want to move fast. See [Auto-import](/discovery/creating-a-discovery-profile#auto-import).
+
+People Search and Funded & high-growth searches import every company they find automatically, so their companies skip the Found stage.
 
 ## Duplicate detection
 
-Alva checks for duplicates when importing by matching on **domain**. If a discovered company has the same domain as an existing CRM company:
+Alva matches companies on their **domain** when importing. If a company already exists in your CRM, the search result is linked to the existing record instead of creating a second one. You can run several Search Agents and import from all of them without creating duplicates.
 
-- The import is skipped (if duplicates are set to skip)
-- Or the existing record is updated with any new information
+## After import
 
-This means you can run multiple profiles and import from all of them without creating duplicate company records.
+Imported companies move through your pipeline on the Discovery Pipeline — see [Discovery Companies](/discovery/discovery-companies). Once [enrichment](/discovery/enrichment) has finished, a [BDR Agent](/bdr-agents/overview) linked to the Search Agent can start outreach.
 
-## Discovery Companies page
+Companies with no website show a **No website** badge instead of an enrichment status. There's no domain to search for more contacts, but they can still be worked by a BDR Agent using the contact you already have.
 
-**Discovery → Companies** shows all discovered companies across every profile. You can:
+## Costs
 
-- **Search** by name or domain
-- **Filter** by profile, match category, or lifecycle stage
-- View company details and match reasoning
-- Change a company's lifecycle stage
-- Import into your CRM
-
-## The Lead Sheet
-
-**Discovery → Lead Sheet** shows companies that have reached the **Lead** lifecycle stage — meaning they're ready for active sales engagement. Companies get here either by:
-
-- Being manually promoted to Lead stage
-- Being moved to Lead by a BDR agent after successful outreach
-
-The Lead Sheet prioritises by urgency and shows:
-
-- **Action required** — companies needing your immediate attention
-- **Drafts to review** — BDR agent emails waiting for your approval
-- **Escalated** — companies flagged by the agent for human review
-- **Awaiting reply** — companies where outreach has been sent but no response yet
-
-See the [Lead Sheet](/discovery/lead-sheet) section for more detail.
-
-## Per-company costs
-
-Each company discovered uses credits from your balance, at a tiered rate that decreases with volume. Rejected companies are also billed — the cost covers the search and matching, not just the accepted results. See **Settings → Billing** for current pricing.
+Each company a Search Agent finds uses credits, whether you import or discard it — the cost covers the search and the matching. See **Settings → Usage** for a breakdown.
 
 <Tip>
-  Start with a small geography and a well-written profile description. Review the first batch of results, refine your categories if needed, then expand to more locations.
+  Start with a small geography and a well-written description. Review the first batch, refine the description or categories if needed, then expand to more locations.
 </Tip>
+
+You can also ask Alva: *"Import every company above 75% from my healthcare search."* Alva tells you how many companies that would import and waits for your yes before doing it.

@@ -1,83 +1,112 @@
 ---
 title: "Calling Sessions"
-description: "Work through a whole call list in one focused, auto-dialling session."
+description: "Work through a whole call list in one focused session, built from your BDR agents, Lead Sheet, and tags."
 ---
 
-A calling session turns a list of prospects into a single, focused dialling run. Instead of looking up each number and dialling it yourself, you build a list once and Alva walks you through it — surfacing the right script and company context for each call, dialling the next number automatically, and tracking your progress as you go.
+A calling session turns a list of prospects into one focused dialling run. Instead of looking up each number and dialling it yourself, you build a list once and Alva walks you through it — showing the right script and company context for each call, moving you on to the next prospect, and tracking your progress as you go.
 
 <Note>
-  Calling Sessions are a **Pro** feature. The standard dialler, click-to-dial, and call log are available on every plan — sessions add the auto-dialling, scripts, and live stats on top.
+  Calling sessions are a **Pro** feature. The dialler, click-to-dial, and call log are available on every plan. See [Plans and pricing](/billing/plans-and-pricing).
 </Note>
 
 ## Starting a session
 
-Go to **Calls → Calling Sessions** and click **New Session**.
+Click **Call Sessions** in the sidebar, then **New Session**.
 
 ### Build your call list
 
-There are two ways to fill a session:
+Under **Build call list from**, pick one or more sources:
 
-- **From your CRM contacts** — search and select contacts that have a phone or mobile number. Use **Select All** to add everyone matching your search.
-- **From a BDR agent** — pick one of your [BDR agents](/bdr-agents/setting-up-your-first-agent) and Alva loads every company in its outreach pipeline. Contacts with phone numbers become direct entries, and companies without a direct contact are added as a **main line** entry so you can call the switchboard.
+- **BDR Agents** — choose one or more of your [BDR agents](/bdr-agents/overview) to load the companies in their outreach pipeline
+- **Lead Sheet** — tick **All current leads** to load every company on your [Lead Sheet](/discovery/lead-sheet)
+- **Tags** — choose one or more company [tags](/crm/tags)
 
-Each entry in the queue is tagged as either:
+When you pick more than one source, choose how to combine them:
 
-- **Direct** — a named contact's phone or mobile
-- **Main line** — a company's main switchboard number
+| Option | What you get |
+|--------|--------------|
+| **Match any** | Companies that appear in at least one of your sources |
+| **Match all** | Only companies that appear in every source you picked |
 
-### Choose how you dial
+Click **Load contacts**. Each company becomes one or more entries in your list:
+
+- **Direct** — a named contact at the company with a phone or mobile number
+- **Main line** — the company's main switchboard number, used when none of its contacts has a number
+
+You can also pick contacts by hand. Under **Select Contacts**, search by name, phone, or company and tick the people you want, or use **Select All** and **Clear**. Only contacts and companies with a stored phone number can go in a session.
+
+### Session settings
 
 | Setting | What it does |
 |---------|--------------|
-| **Manual** | Alva moves you to the next prospect after each call, and you press **Dial** when you're ready |
-| **Auto-dial** | Alva dials the next prospect automatically a moment after you log your outcome — so you keep moving without touching the keypad |
-| **No-answer timeout** | In auto-dial, how long to let an unanswered call ring before hanging up and moving on (5–60 seconds) |
+| **Session Name (optional)** | A name to find the session by later |
+| **Dialling Mode** | **Manual** — you press **Dial** for each prospect. **Auto-dial** — Alva moves on and dials the next prospect automatically after you log your outcome |
+| **No Answer Timeout (seconds)** | In auto-dial, how long to let an unanswered call ring before moving on (5–60 seconds) |
 
-You can switch between manual and auto-dial at any point during a session.
+Click **Start Session** to open it.
 
 ## Working a session
 
-The session screen is built for speed and gives you everything in one view:
+The session screen gives you everything you need in one view.
 
 ### Your queue
 
-On the left, your full call list with a progress bar showing how many you've completed. The current prospect is highlighted, and you can click any upcoming entry to jump to it. Completed entries show a coloured dot for the outcome you logged.
+On the left is your call list, with a progress bar showing how many entries you've completed. The current prospect is highlighted with a **Direct** or **Main line** badge, and you can click any pending entry to jump to it. Completed entries show a coloured dot for the outcome you logged.
 
 ### Company context and script
 
-In the centre, Alva shows the **company information** for the current prospect — industry, size, location, website, and a short summary — so you're briefed before they pick up. Below it sits your **call script**:
+In the centre, Alva shows the **Company Information** for the current prospect — industry, size, location, website, and a short summary — so you're briefed before they pick up. Click **View full profile** to open the company in a new tab.
 
-- A **pitch script** when you're calling a named contact directly
-- A **discovery script** when you're calling a company main line
+Below it sits your **Call Script**. Each script has two versions, and Alva shows the right one for each entry:
 
-Alva picks the right one for each entry automatically. You can switch scripts from the dropdown if you need a different one. Scripts are written and managed by admins in **Settings → Telephony**.
+- A **Pitch** script when you're calling a named contact directly
+- A **Discovery** script when you're calling a company main line
 
-### Controls and live stats
+Use the dropdown to switch to a different script. Merge fields such as the contact's first name and the company name are filled in for each call. Admins write and manage scripts in **Settings → Telephony → Call Scripts**, and can mark one as the default for new sessions.
 
-On the right, choose which [number](/calling/phone-numbers) you're **calling from** and watch your session stats update live:
+### Calling from and session stats
+
+On the right, choose which [number](/calling/phone-numbers) you're **Calling From**, and watch your **Session Stats** update as you go:
 
 - **Dials** — calls placed
 - **Connects** — calls that connected
 - **Pitches** — calls that ended in a positive outcome
 
-There's a running session timer too, so you can see exactly how productive a block of calling has been.
+The stats also show who's calling, when the session started, and how long it has run.
 
 ## Dialling and outcomes
 
-For each prospect you **Dial**, talk, then log an [outcome](/calling/call-outcomes-and-insights) — exactly as with a normal call. You can also **Skip** an entry to move past it without calling. In auto-dial mode, logging the outcome rolls you straight on to the next prospect.
+For each prospect, click **Dial**, talk, then choose an [outcome](/calling/call-outcomes-and-insights) — exactly as with any other call. Click **Skip** to move past an entry without calling. In auto-dial mode, logging the outcome rolls you straight on to the next prospect.
+
+You can switch between **Manual** and **Auto-dial** at the top of the screen at any point during a session.
 
 Every call in a session is recorded, transcribed, and logged to the CRM just like any other call.
 
-## Pausing and reopening
+## Pausing, ending, and reopening
 
-Sessions move through three states:
+Use the buttons at the top of the session:
 
-- **Active** — you're dialling; pause whenever you need a break
-- **Paused** — resume to pick up where you left off
-- **Completed** — you've worked the whole list
+- **Pause** — take a break; click **Resume** to pick up where you left off
+- **End Session** — mark the session as completed
+- **Reopen Session** — on a completed session, return it to active, keeping all your completed entries so you can carry on with any that remain
 
-Finished a session but want to revisit it? Open it and click **Reopen Session** — it returns to active and keeps all your completed entries, so you can carry on dialling any that remain.
+The **Call Sessions** page lists all your sessions with their progress, mode, caller, created date, and status.
 
 <Tip>
-  Build your list straight from a BDR agent to call the exact companies your outreach is already warming up — your emails and your calls hit the same accounts, which lifts answer and conversion rates.
+  Build your list from a BDR agent to call the exact companies your outreach is already warming up — your emails and your calls reach the same accounts, which lifts answer and conversion rates.
 </Tip>
+
+## Using Alva
+
+You can ask [Alva](/ai-assistant/talking-to-alva) to set up and manage sessions in chat. For example: "Build me a calling session from the healthcare agent and everything tagged Priority."
+
+Alva can:
+
+- Build a session from the same sources as the **New Session** page — BDR agents, the Lead Sheet, and tags, combined with match any or match all — plus contacts or companies you name
+- Preview how many named contacts and company main lines would be in the list before creating it
+- Attach a call script and choose manual or auto-dial
+- Tell you a session's progress and results, and what's left to call
+- Pause, resume, or complete a session, rename it, or change its mode, timeout, or script
+- Skip an entry
+
+Alva never places calls. Once the session is ready, open it from **Call Sessions** and dial each entry yourself.

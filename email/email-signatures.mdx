@@ -1,40 +1,65 @@
 ---
 title: "Email Signatures"
-description: "Set up the signature Alva uses when sending emails on your behalf."
+description: "Create signatures, choose which one each mailbox sends, and pick HTML or plain text."
 ---
 
-Email signatures are appended to every email Alva sends — whether from the chat panel, a BDR agent, or a manual compose. You can create multiple signatures and set a default.
+Signatures are added to emails sent from a mailbox — by you, by Alva, or by a [BDR agent](/bdr-agents/overview). You can keep several signatures and choose which one each mailbox uses.
+
+Signatures live in **Settings → Email Connections**, in the **Email Signatures** section.
 
 ## Creating a signature
 
-Go to **Settings → Email Connections** and scroll down to the **Signatures** section. Click **New Signature**.
+Click **New Signature** and give it a **Signature Name**. Every signature has two versions, each on its own tab:
 
-The signature editor supports:
-
-- **Rich text formatting** — bold, italic, links, images, and custom HTML
-- **Visual editor** — a WYSIWYG editor for designing your signature
-- **HTML view** — switch to raw HTML for precise control
-- **Preview** — see exactly how the signature will look
+- **HTML** — the designed version, with formatting, links and images such as a logo
+- **Plain text** — a text-only version, created from the HTML automatically. Edit it if you want different wording, or click **Regenerate from HTML** to start again
+- **Preview** — shows both versions as they'll appear
 
 ## Merge fields
 
-You can insert merge fields that are replaced automatically when the email is sent:
+Insert these fields so one signature works on every mailbox:
 
 | Field | What it inserts |
-|-------|----------------|
-| `{{sender.name}}` | The display name configured for the email connection |
-| `{{sender.email}}` | The email address of the connection |
+|-------|-----------------|
+| `{{sender.name}}` | The mailbox's **Sender Name** |
+| `{{sender.email}}` | The mailbox's email address |
 
-Click the merge field buttons below the editor to insert them at your cursor position.
+Click the merge field buttons under the editor to insert them where your cursor is.
 
-## Setting a default
+## The default signature
 
-Toggle the **Default** switch on any signature to make it the default. The default signature is used automatically when Alva sends emails. You can only have one default at a time.
+Click **Set Default** on a signature, or turn on **Default Signature** while editing it. The default is attached automatically to mailboxes you connect from then on, including new [outreach mailboxes](/email/outreach-mailboxes) Alva sets up for you. You can have one default at a time.
 
-## Testing your signature
+Mailboxes connected before you chose a default keep whatever they had. Assign a signature to them yourself, or ask Alva.
 
-Click **Send Test Email** to send a test message to yourself with the signature attached. This lets you verify the formatting looks correct in your email client before using it in real outreach.
+## Choosing a signature for each mailbox
 
-## Multiple signatures
+Under **Connected Accounts**, each mailbox has a **Signature** row:
 
-You can create multiple signatures for different purposes — for example, a formal signature for initial outreach and a shorter one for follow-ups. When creating BDR agents or drafting emails, the default signature is used unless you specify otherwise.
+1. Pick the signature from the list, or **No signature**
+2. Choose **HTML** or **Plain text** — which version this mailbox sends
+3. Use the switch to turn signatures on or off for the mailbox. Turn it off if you'd rather your email app adds its own signature
+
+<Tip>
+  **Use plain text for cold outreach mailboxes.** A logo and several links on a short first email look like bulk mail to spam filters, especially on a new domain. Keep the plain-text version to your name, title, company and at most one link. HTML is fine for your personal mailbox and for replies once a conversation is under way. Outreach mailboxes Alva sets up use plain text by default.
+</Tip>
+
+Signatures count towards the [spam score](/email/sending-health-and-limits#spam-score-on-every-email) of every agent email. If an agent's emails score badly because of the signature, switching that mailbox to plain text usually fixes it.
+
+## Testing a signature
+
+Send yourself a real email to check how a signature looks in your inbox:
+
+- While editing a signature, click **Send Test**, choose the mailbox to send from, the recipient, and the **Signature version** (HTML or plain text)
+- On a mailbox under **Connected Accounts**, click **Test** to send its current signature
+
+## Ask Alva to design one
+
+Alva can design a signature for you, using your company name, logo and website:
+
+- "Create an email signature for our outreach mailboxes"
+- "Make the plain-text version shorter — just name, title and website"
+- "Put the new signature on all three getacme.com mailboxes, plain text"
+- "Which mailboxes don't have a signature?"
+
+Alva describes the layout and checks with you before saving. Before assigning a signature, she lists each mailbox and what it has now, and asks which ones should change.

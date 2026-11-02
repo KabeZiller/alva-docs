@@ -1,9 +1,9 @@
 ---
 title: "API Reference"
-description: "Integrate Alva into your own tools and workflows using the REST API."
+description: "Connect Alva to your own tools and workflows with the REST API."
 ---
 
-Alva provides a RESTful API for integrating with external applications, automation platforms (e.g. Zapier), and custom workflows.
+Alva provides a REST API for connecting your CRM data to other applications, automation platforms such as Zapier, and your own workflows.
 
 ## Overview
 
@@ -15,7 +15,7 @@ Alva provides a RESTful API for integrating with external applications, automati
 
 ## Authentication
 
-All API requests require a Bearer token. Create API keys at **Settings → Developer**.
+Every request needs an API key, sent as a Bearer token. Admins create keys in **Settings → Developer**.
 
 ```bash
 curl -H "Authorization: Bearer alva_sk_your_key_here" \
@@ -24,13 +24,21 @@ curl -H "Authorization: Bearer alva_sk_your_key_here" \
 
 ### API key format
 
-Keys follow the format: `alva_sk_{32 hex characters}`
+Keys follow the format `alva_sk_` followed by 32 hexadecimal characters.
 
-The full key is shown **once** on creation. Store it securely — it cannot be retrieved later.
+The full key is shown **once**, when you create it. Store it securely — it can't be retrieved later.
+
+### What a key can do
+
+A key never grants more than the person who created it can do in Alva. On every request, Alva checks the creator's current permissions on the account as well as the key's scopes:
+
+- If the creator has since become read-only on the account, write requests return `403`.
+- If the creator no longer has access to the account, the key stops working.
+- When creating a key, you can only choose scopes you're allowed to perform yourself; the others are shown but disabled.
+
+A key's scopes are a ceiling, not a guarantee.
 
 ### Scopes
-
-API keys have granular scopes that control what they can access:
 
 | Scope | What it allows |
 |-------|---------------|
@@ -43,8 +51,18 @@ API keys have granular scopes that control what they can access:
 | `activities:read` | List and get activities |
 | `activities:write` | Create and update activities |
 | `pipeline:read` | List pipeline stages and methodologies |
+| `custom_fields:read` | List and get custom field definitions |
+| `custom_fields:write` | Create, update, and delete custom field definitions |
+| `email_templates:read` | List and get email templates and template groups |
+| `email_templates:write` | Create, update, and delete email templates and template groups |
 
-## Available endpoints
+## Paths
+
+Lists and creates use the **plural** path (for example `/api/v1/companies`). Operations on one existing record use the **singular** path with the record's id (for example `/api/v1/company/:id`).
+
+A create sent to the singular path without an id (for example `POST /api/v1/company`) also works. A `GET`, `PATCH`, or `DELETE` on a singular path without an id returns `404`.
+
+## Endpoints
 
 ### Companies
 
@@ -52,9 +70,11 @@ API keys have granular scopes that control what they can access:
 |--------|------|-------------|
 | `GET` | `/api/v1/companies` | List companies (paginated) |
 | `POST` | `/api/v1/companies` | Create a company |
-| `GET` | `/api/v1/companies/:id` | Get a company |
-| `PATCH` | `/api/v1/companies/:id` | Update a company |
-| `DELETE` | `/api/v1/companies/:id` | Delete a company |
+| `GET` | `/api/v1/company/:id` | Get a company |
+| `PATCH` | `/api/v1/company/:id` | Update a company |
+| `DELETE` | `/api/v1/company/:id` | Delete a company |
+
+List filters: `search` (company name), `industry`, `lifecycleStage`.
 
 ### Contacts
 
@@ -62,9 +82,13 @@ API keys have granular scopes that control what they can access:
 |--------|------|-------------|
 | `GET` | `/api/v1/contacts` | List contacts (paginated) |
 | `POST` | `/api/v1/contacts` | Create a contact |
-| `GET` | `/api/v1/contacts/:id` | Get a contact |
-| `PATCH` | `/api/v1/contacts/:id` | Update a contact |
-| `DELETE` | `/api/v1/contacts/:id` | Delete a contact |
+| `GET` | `/api/v1/contact/:id` | Get a contact |
+| `PATCH` | `/api/v1/contact/:id` | Update a contact |
+| `DELETE` | `/api/v1/contact/:id` | Delete a contact |
+
+List filters: `search`, `companyId`.
+
+A new contact needs at least a first name, a last name, or an email address. If a contact with the same email address already exists on the account, the request returns `409 Conflict`.
 
 ### Deals
 
@@ -72,9 +96,11 @@ API keys have granular scopes that control what they can access:
 |--------|------|-------------|
 | `GET` | `/api/v1/deals` | List deals (paginated) |
 | `POST` | `/api/v1/deals` | Create a deal |
-| `GET` | `/api/v1/deals/:id` | Get a deal (includes methodology data) |
-| `PATCH` | `/api/v1/deals/:id` | Update a deal |
-| `DELETE` | `/api/v1/deals/:id` | Delete a deal |
+| `GET` | `/api/v1/deal/:id` | Get a deal (includes methodology data) |
+| `PATCH` | `/api/v1/deal/:id` | Update a deal |
+| `DELETE` | `/api/v1/deal/:id` | Delete a deal |
+
+List filters: `search`, `stage`, `companyId`, `ownerId`, `methodology`.
 
 ### Activities
 
@@ -82,42 +108,128 @@ API keys have granular scopes that control what they can access:
 |--------|------|-------------|
 | `GET` | `/api/v1/activities` | List activities (paginated) |
 | `POST` | `/api/v1/activities` | Create an activity |
-| `GET` | `/api/v1/activities/:id` | Get an activity |
-| `PATCH` | `/api/v1/activities/:id` | Update an activity |
+| `GET` | `/api/v1/activity/:id` | Get an activity |
+| `PATCH` | `/api/v1/activity/:id` | Update an activity |
+
+Activity types are `call`, `meeting`, `email`, `note`, and `task`. List filters: `type`, `companyId`, `contactId`, `dealId`. Activities can't be deleted through the API.
+
+### Custom fields
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/custom-fields` | List custom field definitions |
+| `POST` | `/api/v1/custom-fields` | Create a custom field definition |
+| `GET` | `/api/v1/custom-field/:id` | Get a custom field definition |
+| `PATCH` | `/api/v1/custom-field/:id` | Update a custom field definition |
+| `DELETE` | `/api/v1/custom-field/:id` | Delete a custom field definition |
+
+Custom fields are defined for companies or contacts. List filters: `entity` (`company` or `contact`) and `includeArchived=true`.
+
+Each definition has a `key`, used in merge tags such as `{{company.custom.account_tier}}` or `{{contact.custom.<key>}}`. If you don't supply a key, it's created from the label. The key, record type, and field type can't be changed after creation; the label, options, default, help text, and required setting can.
+
+To retire a field without losing its stored values, update it with `isArchived: true` instead of deleting it.
+
+Set field values on companies and contacts through the `customFields` object on those records. Values are checked against the definitions — unknown keys and values of the wrong type are rejected — and a `PATCH` updates only the keys you send.
+
+<Tip>
+  When you're signed in to the API Console, the company and contact examples are filled in with your account's own custom field keys.
+</Tip>
+
+### Email templates and template groups
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/email-templates` | List templates (paginated) |
+| `POST` | `/api/v1/email-templates` | Create a template |
+| `GET` | `/api/v1/email-template/:id` | Get a template |
+| `PATCH` | `/api/v1/email-template/:id` | Update a template |
+| `DELETE` | `/api/v1/email-template/:id` | Delete a template |
+| `GET` | `/api/v1/email-template-groups` | List template groups |
+| `POST` | `/api/v1/email-template-groups` | Create a template group |
+| `GET` | `/api/v1/email-template-group/:id` | Get a template group |
+| `PATCH` | `/api/v1/email-template-group/:id` | Update a template group |
+| `DELETE` | `/api/v1/email-template-group/:id` | Delete a template group |
+
+Template groups use the `email_templates:read` and `email_templates:write` scopes. Deleting a group leaves its templates in place, ungrouped.
+
+Template list parameters:
+
+| Parameter | What it does |
+|-----------|--------------|
+| `search` | Matches template name or subject |
+| `groupId` | Only templates in this group |
+| `rootOnly=true` | Only original templates, not variations of another template |
+
+A template needs a `name`, `subject`, and `body`, and can take a `groupId` and `usageGuidance`. Write merge tags literally in the subject and body — for example `{{contact.firstName}}` or `{{company.custom.signal_line}}`. They're stored as written and filled in when the template is used in Alva. Get custom field keys from `GET /api/v1/custom-fields`. For more on templates, see [Email templates](/email/email-templates).
+
+<Note>
+  The API manages templates only. You can't send email through the API.
+</Note>
 
 ### Metadata
 
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/api/v1/pipeline/stages` | List pipeline stages and methodologies |
-| `GET` | `/api/v1/me` | Get current API key and account info |
+| `GET` | `/api/v1/me` | Get the current API key and account info (works with any scope) |
+
+## Pagination and sorting
+
+List endpoints take:
+
+- `page` — page number (default `1`)
+- `limit` — items per page (default `25`, maximum `100`)
+- `sort` — field and direction, for example `sort=createdAt:desc`
+
+## Errors
+
+Errors share one format:
+
+```json
+{
+  "error": "Error Type",
+  "message": "Human-readable description",
+  "details": { "field": ["Validation message"] }
+}
+```
+
+Validation errors return `422` with a `details` entry for each field that failed.
 
 ## Rate limiting
 
-All responses include rate limit headers:
+Every response includes rate limit headers:
 
 | Header | Description |
 |--------|------------|
 | `X-RateLimit-Limit` | Maximum requests per minute |
-| `X-RateLimit-Remaining` | Remaining requests in the current window |
+| `X-RateLimit-Remaining` | Requests remaining in the current window |
 | `X-RateLimit-Reset` | When the limit resets (Unix timestamp) |
 
-If you exceed the limit, you'll receive a `429 Too Many Requests` response with a `Retry-After` header.
+If you go over the limit, you receive `429 Too Many Requests` with a `Retry-After` header.
 
 ## Managing API keys
 
 Go to **Settings → Developer** (admin only) to:
 
-- Create new keys with a name, selected scopes, and optional expiry
-- View active keys with their prefix, scopes, and last-used time
-- Revoke keys that are no longer needed
+- Create keys with a name, the scopes you need, and an optional expiry date
+- See active keys with their prefix, scopes, and when they were last used
+- Revoke keys you no longer need
+
+You can also ask [Alva](/ai-assistant/talking-to-alva) to list or revoke your API keys. To create a key, Alva sends you to **Settings → Developer**, because the key is shown only once on screen.
+
+## API Console
+
+The interactive API Console at [app.alvahq.com/developers/api-reference](https://app.alvahq.com/developers/api-reference) documents every endpoint and lets you send test requests. You can also open it from **API Console** in **Settings → Developer**.
+
+- **Anyone** can read the documentation. To send a test request without signing in, paste a full API key.
+- **Signed in**, you pick one of your existing keys instead of pasting it. Test requests run with that key's scopes and your permissions, and the key itself is never shown in the console.
 
 ## OpenAPI specification
 
 The full OpenAPI 3.1 specification is available at:
 
 ```
-GET /api/v1/openapi
+GET https://app.alvahq.com/api/v1/openapi
 ```
 
-You can use this to auto-generate client libraries, import into Postman, or power other API tools.
+Use it to generate client libraries, import the API into Postman, or power other API tools. To connect Alva to Zapier or a similar platform, use a webhook or custom request step with your base URL and an API key.

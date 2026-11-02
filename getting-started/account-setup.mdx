@@ -1,42 +1,62 @@
 ---
-title: "Account Setup"
-description: "Invite your team, assign roles, and configure your account settings."
+title: "Account setup"
+description: "Invite your team, assign roles, add email-only members, and configure your account."
 ---
 
-Your Alva account supports multiple team members with different levels of access — you control who can do what from **Settings → Team**.
+Your Alva account supports a whole team, each with the access they need. You manage who's on it from **Settings → Team**. Only admins can invite people or change roles.
 
 ## Roles
 
-Every team member is assigned one of four roles:
+Every team member has one of four roles:
 
 | Role | What they can do |
 |---|---|
-| **Admin** | Full access to everything, including billing, team management, and all settings |
-| **Manager** | Full CRM access with limited settings access |
-| **Sales Rep** | CRM access; no admin or billing |
-| **VC** | Read-only access to the VC portal only |
+| **Administrator** | Full access to all settings and data, including billing and team management |
+| **Manager** | Manage the team and view all data |
+| **Sales Representative** | Standard CRM access for day-to-day sales work |
+| **VC (Read-Only)** | Read-only access for investors. Investors don't count towards your bill |
 
 ## Inviting team members
 
 1. Go to **Settings → Team**.
-2. Click **Invite member**.
-3. Enter the person's **email address** and select their **role**.
-4. Click **Send invitation** — they'll receive an email with a link to join.
+2. Click **Invite Team Member**.
+3. Enter their **Email Address** and choose a **Role**.
+4. Check the **Billing Impact** panel, which shows how the invite changes your monthly bill before you send it.
+5. Click **Send Invitation**. They get an email with a link to join.
 
-Invitations expire after **7 days**. If someone hasn't accepted in time, you can resend the invitation from the same page.
+Invitations expire after seven days. Pending invitations are listed on the same page, where you can **Resend** or **Cancel** them.
+
+## Email-only members
+
+Some people, such as a founder, only want to brief Alva by email. You can add them straight away, with no invitation to accept and no login:
+
+1. Click **Invite Team Member** and enter their email address.
+2. Tick **Add straight away, email only** and choose their role.
+3. Click **Add Member**.
+
+They get a welcome email explaining how to brief Alva by emailing your account's Alva address. If they ever need the app, open the menu next to their name and choose **Send Sign-in Link** — or they can ask Alva for one. Email-only members show an **Email only** badge in the team list.
+
+<Note>
+  The email-only option appears only when [Alva by Email](/ai-assistant/alva-by-email) is switched on for your account. It's not for someone who already has a login — they get a normal invitation instead. You can also ask Alva to add an email-only member for you.
+</Note>
 
 ## Managing your team
 
-From **Settings → Team** you can:
+From **Settings → Team**, an admin can open the menu next to any member to:
 
-- **Change a team member's role** — admin only.
-- **Remove a team member** — this revokes their access immediately.
-- **Cancel a pending invitation** before it's been accepted.
+- **Change Role**
+- **Allow Strategy Edit** or **Revoke Strategy Edit** — lets a manager or sales rep edit your [strategy documents](/context/strategy-documents). Admins can always edit them. Members with this permission show a **Strategy** badge.
+- **Remove from Team** — revokes their access immediately
 
-## Tags
+## Running more than one company
 
-Tags help you categorise companies and contacts in your CRM. You can create and manage your tag list under **Settings → Tags**.
+If you work across several organisations, open the account switcher and choose **Create new company**. Enter the **Company name** and **Company website**, and Alva reads the site and sets up the new account the same way as a new sign-up. You can switch between your companies at any time from the same menu.
+
+## Tags and custom fields
+
+- **Settings → Tags** — create the colour-coded tags you use to categorise companies. See [Tags](/crm/tags).
+- **Settings → Custom Fields** — add your own fields to company and contact records, such as the SDR who owns an account. Custom fields appear on record forms and detail pages, can be used to filter your contacts, and work as merge fields in email templates and call scripts. Admins manage the field list.
 
 <Tip>
-  Set up your tags before you start adding companies and contacts — it's much easier to apply them consistently from the start than to go back and tag everything later.
+  Set up your tags and custom fields before you import or add lots of records. It's much easier to fill them in consistently from the start.
 </Tip>

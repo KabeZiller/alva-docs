@@ -1,72 +1,118 @@
 ---
 title: "Connecting an Email Account"
-description: "Link your inbox so Alva can read and analyse your business conversations."
+description: "Link your inbox so Alva can read your sales conversations and send email on your behalf."
 ---
 
-Connecting your email is one of the most impactful things you can do in Alva. Once connected, Alva reads your conversations and automatically surfaces commitments, sentiment, buying signals, risks, and next steps — keeping your CRM up to date without manual data entry.
+Connect your email so Alva can read your business conversations, keep your CRM up to date, and send email for you and your [BDR agents](/bdr-agents/overview). Everything starts in **Settings → Email Connections**.
 
-## Supported providers
+## Ways to connect
 
-Alva supports connecting email via:
+The **Connect Email Account** card offers these options:
 
-- **Google (Gmail / Google Workspace)** — OAuth connection
-- **Microsoft 365 (Outlook)** — OAuth connection
-- **IMAP** — for other email providers (manual configuration)
+| Button | Use it for | How it works |
+|--------|-----------|--------------|
+| **Connect Gmail** | Gmail and Google Workspace accounts | Sign in with Google and approve access. Alva never sees your password. |
+| **Connect Outlook** | Microsoft 365 and Outlook accounts, where the button is shown | Sign in with Microsoft and approve access. |
+| **Other (IMAP/SMTP)** | Any other provider, or a Google account using an app password | Enter your mail server details and password in a short form. |
 
-## How to connect
+If a button appears greyed out as **Not Configured**, that sign-in option isn't available on your workspace yet — use **Other (IMAP/SMTP)** instead.
 
-Go to **Settings → Email Connections** and click **Connect Account**.
+<Tip>
+  Need dedicated mailboxes for cold outreach, separate from your main domain? Alva can buy and set them up for you. See [Outreach mailboxes](/email/outreach-mailboxes).
+</Tip>
 
-### Google or Microsoft
+### Gmail or Outlook
 
-1. Click **Connect Google** or **Connect Microsoft**
-2. You'll be redirected to sign in with your email provider
-3. Grant Alva permission to read and send emails
-4. You're redirected back to Alva — the connection is live
+1. Click **Connect Gmail** or **Connect Outlook**
+2. Sign in with your email provider
+3. Allow Alva to read and send email
+4. You come back to Alva with the account listed under **Connected Accounts**
 
-### IMAP
+### Other providers (IMAP/SMTP)
 
-For other providers, click **Connect via IMAP** and enter:
+1. Click **Other (IMAP/SMTP)**
+2. Pick your provider from the **Email Provider** list — common providers fill in the server settings for you. Choose **Custom / Other** to enter them yourself
+3. Enter your **Email Address**, an optional **Display Name**, and your password
+4. Click **Test Connection**, then **Connect Account**
 
-- IMAP server address and port
-- SMTP server address and port
-- Your email address and password
+Many providers, including Gmail, ask for an **app password** here rather than your normal password. The form explains how to create one when your provider needs it.
+
+<Note>
+  IMAP and SMTP are simply the standard settings mail apps use to receive and send email. If you're not sure of yours, your email provider or IT team can tell you.
+</Note>
+
+## Mailbox settings
+
+Each connected account has its own row of settings under **Connected Accounts**:
+
+- **Sender Name** — the name recipients see in the "From" line. It also fills the `{{sender.name}}` merge field in [signatures](/email/email-signatures) and [templates](/email/email-templates).
+- **Daily Send Limit** — the most emails BDR agents can send from this mailbox each day (up to 500). Outreach mailboxes have lower caps while they warm up — see [Sending health and limits](/email/sending-health-and-limits).
+- **Signature** — which signature this mailbox attaches, and whether it uses the HTML or plain-text version.
+- **Sending health** — a **Ready**, **Caution** or **Do not send** badge for outreach mailboxes, grouped by domain.
+
+## Who can use which mailbox
+
+- **Gmail and Outlook accounts connected by signing in** are private to the person who connected them. Only they can send from them.
+- **Mailboxes connected with a password, including outreach mailboxes Alva set up**, are shared. Anyone on the team can send from them and assign them to BDR agents.
+
+Admins see every connection on the account and can reassign a mailbox to another team member. Other team members see only their own.
 
 ## What Alva reads
 
-Once connected, Alva syncs your email conversations and analyses them for:
+Once connected, Alva syncs your inbox and sent mail, matches each email to your contacts, companies and deals, and analyses it for sentiment, intent, buying signals, risks, open questions and commitments. Results appear on deal, contact and company pages. See [Understanding email analysis](/email/understanding-email-analysis).
 
-- **Sentiment** — is the conversation positive, negative, or neutral?
-- **Intent** — what is the sender trying to do? (request, question, commitment, etc.)
-- **Urgency** — how time-sensitive is this?
-- **Buying signals** — phrases that indicate purchase intent
-- **Risk signals** — phrases that indicate the deal might be in trouble
-- **Questions** — prospect questions that need answers
-- **Commitments** — things someone has promised to do
-
-This analysis happens automatically in the background. Results appear on deal, contact, and company detail pages.
+Draft emails you're still writing are never imported.
 
 ## What Alva can send
 
-With a connected email account, Alva can:
+With a connected account, you can:
 
-- Send emails drafted in the chat panel
-- Send outreach emails via [BDR agents](/bdr-agents/setting-up-your-first-agent)
+- Send and reply from the **Inbox**, including AI-drafted replies
+- Let [BDR agents](/bdr-agents/setting-up-your-first-agent) send outreach and follow-ups
 - Attach your [email signature](/email/email-signatures) automatically
 
 ## Managing connections
 
-From **Settings → Email Connections**, you can:
+From **Settings → Email Connections** you can:
 
-- View all connected accounts (admins see all team members' connections)
-- See sync status and last sync time
-- Disconnect an account
-- Re-authenticate if the connection has expired
+- See when each account last synced, and click **Sync Now** to fetch new mail
+- Click **Reconnect** when a sign-in has expired
+- Disconnect an account — emails already synced stay in your CRM
 
-<Tip>
-  You don't need to connect your email right away, but the sooner you do, the more Alva can help. Most AI features — deal health scoring, risk detection, email intelligence — work best with email connected.
-</Tip>
+Alva also syncs connected accounts automatically every 15 minutes.
+
+<Warning>
+  Email sync pauses when your credit balance reaches zero, and starts again automatically once you [add credits](/billing/buying-credits). The account stays connected in the meantime.
+</Warning>
+
+## Ask Alva
+
+Alva can help with most mailbox housekeeping in chat:
+
+- "Which mailboxes are connected?"
+- "Change the sender name on sarah@getacme.com to Sarah Jones"
+- "My emails aren't showing — can you sync my mailbox?"
+- "Lower the daily limit on that mailbox to 5"
+
+Alva can't connect a Gmail or Outlook account for you (you need to sign in yourself), disconnect a mailbox, or raise a daily limit. She'll take you to **Settings → Email Connections** for those.
 
 ## Privacy
 
-Alva only reads emails associated with your business conversations. Email content is processed for analysis and the results (sentiment, signals, entities) are stored — but raw email content is not shared with anyone outside your account. All data is isolated to your account.
+Email content is processed to produce the analysis, and the results are stored in your account. Your data is isolated to your account and isn't shared outside it. To stop Alva analysing mail from particular senders, add them to the **Email Ignore List** in **Settings → AI Settings**.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Outreach mailboxes" href="/email/outreach-mailboxes" icon="inbox">
+    Get separate domains and mailboxes for cold outreach.
+  </Card>
+  <Card title="Sending health and limits" href="/email/sending-health-and-limits" icon="shield-check">
+    Keep your domains out of spam folders.
+  </Card>
+  <Card title="Email signatures" href="/email/email-signatures" icon="signature">
+    Set up the signature each mailbox sends.
+  </Card>
+  <Card title="Email block list" href="/email/email-block-list" icon="ban">
+    Stop outreach to people or companies.
+  </Card>
+</CardGroup>

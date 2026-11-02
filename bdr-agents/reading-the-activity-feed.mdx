@@ -1,115 +1,139 @@
 ---
 title: "Reading the Activity Feed"
-description: "Follow everything your BDR agent has done, is doing, and plans to do next."
+description: "Follow what your BDR agent has done, why it's idle, and how its emails are performing."
 ---
 
-Every BDR agent has a detailed activity feed that shows a chronological log of every action it has taken. This is your window into what the agent is doing and how it's performing — and it works the same for both [Template and Personalised](/bdr-agents/overview) agents.
+Every BDR agent has a detail page with live stats, email performance and a feed of every action it has taken. It's your window into what the agent is doing and how it's performing, and it works the same for [Template and Personalised](/bdr-agents/overview) agents.
 
 ## The agent detail page
 
-Go to **Discovery → AI Agents** and click an agent's name. The detail page shows:
+Go to **Outreach → BDR Agents** and click an agent's name. At the top of the page you'll find the agent's status, its controls and an **Ops Room** button that opens the live [Ops Room](/bdr-agents/ops-room) in a new tab.
 
-### Stats overview
+### Stats
 
-At the top, you'll see key performance metrics:
+Five cards sit at the top of the page:
 
-- **Emails sent** — total outreach emails dispatched
-- **Budget spent** — how much of the monthly budget has been used (with remaining amount)
-- **Companies processed** — how many companies the agent has worked on
+| Card | What it shows |
+|------|---------------|
+| **Companies Evaluated** | How many companies the agent has worked on, out of the total in scope |
+| **Leads Generated** | Companies escalated to you with genuine interest |
+| **Emails Sent** | Total outreach emails sent |
+| **Replies Received** | Genuine replies, with the reply rate |
+| **Budget (MTD)** | Spend this month, with a bar showing how much of the monthly limit is used |
 
 ### Agent status
 
-The current state of the agent:
-
 | Status | What it means |
 |--------|--------------|
-| **Active** | Running and processing companies on schedule |
-| **Paused** | Manually paused or budget-exhausted — not sending new outreach (but [still handles replies](/bdr-agents/managing-replies#paused-agents-still-handle-replies)) |
-| **Completed** | All target companies have been processed |
+| **Active** | Working through companies every 10 minutes during its operating hours |
+| **Paused** | Not sending new outreach or follow-ups, but [still handling replies](/bdr-agents/managing-replies#paused-agents-still-handle-replies) |
+| **Completed** | All target companies have been worked |
 
-If the agent is active but idle, you'll see the **idle reason** — this tells you why it's waiting (e.g. "outside operating hours", "no companies to process", "budget limit reached").
+### Why an agent is idle
 
-<Note>
-  An agent in [simulation mode](/bdr-agents/how-the-agent-works#simulation-mode) (no connected email account) shows the same feed, but "Send Email" entries record what it *would* have sent rather than a real send.
-</Note>
+An active agent that isn't doing anything right now shows **Agent is live but currently idle**, with the reason:
 
-## The activity feed
+| Idle reason | What to do |
+|-------------|------------|
+| **Outside operating hours — next window: …** | Nothing. The agent picks up when the next window opens. See [Operating hours](/bdr-agents/configuring-budgets-and-hours#operating-hours). |
+| **No companies to process right now** | Wait for your Search Agents to find more companies, link another Search Agent, or check your minimum match score. |
+| **Daily email quota reached — resets at midnight** | Nothing, or add more sending accounts to the agent. |
+| **All sending accounts are marked do-not-send — fix sending health** | Review your mailboxes in **Settings → Email Connections**. See [Sending health and limits](/email/sending-health-and-limits). |
 
-Below the stats, the activity feed shows every action in reverse chronological order. Each entry includes:
+When an agent has used its monthly budget, it stays **Active** but skips its work until the budget resets: check the **Budget (MTD)** card.
 
-- **Timestamp** — when the action happened
-- **Action type** — what the agent did (see below)
-- **Company** — which company the action was for
-- **Status** — success, failed, or pending
-- **AI reasoning** — the agent's explanation of why it took that action
+### Mailbox banners
 
-### Action types
+The page warns you about the agent's sending accounts:
 
-| Action | What it means |
-|--------|--------------|
-| **Send Email** | The agent sent an outreach email to a contact |
-| **Create Contact** | Saved a person as a contact in the CRM |
-| **Update Status** | Changed the outreach status for a company |
-| **Escalate** | Flagged a company for human review after a genuine reply |
-| **Draft Reply** | Drafted a reply to a prospect's response, for your review |
+- **A sending account is marked do not send**: that mailbox is skipped for new outreach until its sending health is fixed. Click **Review**.
+- **A sending account needs caution**: Caution doesn't block sending. Click **Review**, or **Remind me in 14 days** to hide the banner.
+- **A sending account has no email signature**: outbound emails from that mailbox go without a sign-off. Click **Fix** to add one.
 
-### AI reasoning
+If your account needs the Pro plan to send outreach, a **Sending outreach needs the Pro plan** banner appears too.
 
-For each action, the agent records its reasoning — why it chose this action, why it picked this contact, or why it's escalating. This transparency lets you understand the agent's decision-making and adjust your instructions or [playbook](/bdr-agents/personalised-outreach#the-playbook) if needed.
+## Email performance
+
+Once the agent has sent its first email, the **Email Performance** card shows:
+
+| Metric | What it shows |
+|--------|---------------|
+| **Open Rate** | The share of emails opened. Shows **N/A — not tracked** when the agent's **Track opens** setting is off (the default). |
+| **Reply Rate** | The share of emails that got a genuine reply (bounces and out-of-office replies don't count) |
+| **Bounce Rate** | The share of emails that bounced permanently. A temporary delivery delay isn't a bounce. |
+| **OOO** | How many out-of-office replies came back |
+
+Click any of these to open the **list of emails** behind the figure: recipient, contact or company, subject, when it was sent, and when it was opened, replied to, bounced or got an out-of-office reply. Click an address to go to the contact or company.
+
+Below the metrics you'll see the **average spam score** across the agent's scored emails (100 is clean; emails below 70 are blocked before sending). If the agent writes to generic inboxes such as info@, a comparison shows reply and opt-out rates for generic inboxes against named contacts.
+
+## Configuration and pipeline
+
+The **Configuration** card summarises the agent's instructions, generic-address setting, target Search Agents, allowed tools, template groups, operating hours, open tracking and previously-contacted setting.
+
+The **Outreach Pipeline** card shows how the agent's companies are spread across outreach stages.
 
 ## The outreach lifecycle
 
-Each company the agent works on moves through a series of outreach statuses. These drive which companies the agent picks up next and how they appear on the [Lead Sheet](/discovery/lead-sheet).
+Each company the agent works on moves through these stages. They drive which companies the agent picks up next and how they appear on the [Lead Sheet](/discovery/lead-sheet).
 
-| Status | What it means | Still worked by the agent? |
-|--------|--------------|----------------------------|
-| **Target** | Imported and ready, not yet contacted | Yes |
-| **Prospecting** | Initial email sent, awaiting a reply or follow-up | Yes |
+| Stage | What it means | Still worked by the agent? |
+|-------|--------------|----------------------------|
+| **Target** | Ready, not yet contacted | Yes |
+| **Prospecting** | First email sent, awaiting a reply or follow-up | Yes |
 | **Engaged** | The prospect replied and the agent is mid-conversation | Yes |
-| **Lead** | Escalated to a human — genuine interest detected | No |
+| **Lead** | Escalated to a person: genuine interest detected | No |
 | **Human handling** | You've [taken over](/bdr-agents/managing-replies#taking-over-a-conversation) the conversation | No |
-| **Disqualified** | Bounced, opted out, or marked Not Interested | No |
+| **Disqualified** | Bounced, opted out or marked Not Interested | No |
 
-### Following one company's journey
+## The activity feed
 
-For any company, you can see the progression:
+The **Recent Activity** card lists every action, newest first, with **Previous** and **Next** buttons and a choice of how many to **Show** per page. Each entry shows:
 
-1. **Contact selection** — the agent evaluates contacts, prioritising economic buyers and senior decision-makers
-2. **Outreach** — it sends an initial email
-3. **Follow-up** — if there's no reply, it follows up on your cadence
-4. **Response handling** — when a prospect replies, the agent classifies the intent and decides whether to escalate
+- **What the agent did**, for example **Send Email**, **Create Contact**, **Update Status**, **Escalate**, **Draft Reply** or **Email Safety Check**
+- **The company**, linked to its record
+- **Whether it succeeded**, with details of the result (for a sent email, who it went to and the subject)
+- **The agent's reasoning**, in its own words
+- **When** it happened
 
-### Response classification
+The agent's reasoning explains why it chose this action, why it picked this contact, or why it's escalating. Use it to understand the agent's decisions and adjust your instructions or [playbook](/bdr-agents/personalised-outreach#the-playbook) if needed.
 
-When a prospect replies, the agent works out their intent:
+### How the agent reads replies
 
-| Intent | What it means |
-|--------|--------------|
-| **Interested** | Genuine interest — the agent escalates and the company can move to Lead |
-| **Not interested** | A decline — you can put the company on a [timed hold](/bdr-agents/managing-replies#not-interested-try-again-later) |
-| **Out of office** | An auto-reply — the agent waits and retries later |
-| **Bounce** | The email bounced — the address is treated as undeliverable |
-| **Question / other** | The agent escalates or drafts a reply for you |
+When a prospect replies, the agent works out what kind of reply it is:
 
-## Escalations, drafts and takeovers
-
-When a prospect replies, the agent either escalates the company, drafts a reply for your review, or steps aside if you've taken over. These all surface in the activity feed and on the [Lead Sheet](/discovery/lead-sheet).
-
-See [Managing replies and taking over](/bdr-agents/managing-replies) for the full detail on handling escalations, reviewing and sending drafts (as the agent or as yourself), taking over a conversation, and putting a company on a Not-Interested hold.
+| Reply | What happens |
+|-------|--------------|
+| **Genuine interest or a question** | The agent escalates, and drafts a reply if **Draft Replies** is on |
+| **Not interested** | Escalated so you can decide; you can put the company on a [timed hold](/bdr-agents/managing-replies#not-interested-try-again-later) |
+| **Out of office** | Counted under **OOO**; the agent waits and tries again later |
+| **Bounce** | The address is treated as undeliverable and won't be emailed again |
 
 ## Blocked emails
 
-If a safety check ever blocks an outbound email (for example, it spotted a problem with the content), the feed records it with a **View Full Email** button. This opens the exact email the agent tried to send and the reason it was held back, so you have a complete audit trail. The agent automatically has another go at composing a corrected email.
+If the [spam-score check](/bdr-agents/how-the-agent-works#the-spam-score-check) or another safety check blocks an email, the feed shows an **Email Safety Check** entry with the score, the subject, a preview, and the issues that stopped it. Click **View Full Email** to read the exact email the agent tried to send.
+
+The agent rewrites a blocked email straight away using those findings. If a company's emails are blocked **three times**, the agent pauses outreach to that company for **7 days** and leaves a note asking for a human review.
+
+## Cost by Company
+
+The **Cost by Company** card lists the companies the agent has spent the most on, with the AI cost, tool cost and total for each.
 
 ## Controls
 
-From the agent detail page, you can:
+At the top of the agent page:
 
-- **Pause** — stop the agent sending new outreach (it still handles replies)
-- **Resume** — restart a paused agent
-- **Edit** — change instructions, templates or playbook, budget, or other settings
-- **Delete** — permanently remove the agent and all its activity history
+- **Start Agent**: start a paused agent. On newer accounts without Pro this shows **Upgrade to Pro to start**.
+- **Pause Agent**: stop sending new outreach (the agent still handles replies).
+- **Ops Room**: open the live [Ops Room](/bdr-agents/ops-room).
+
+From the **⋯** menu:
+
+- **Run Now (5 companies)**: process a batch straight away, inside or outside operating hours
+- **Edit Configuration**: change instructions, templates or playbook, budget or other settings
+- **Reset Monthly Budget**: set this month's spend back to zero
+- **Delete Agent**: permanently remove the agent and all its outreach records, email threads and activity history
 
 <Tip>
-  Review escalations and draft replies regularly — these are the moments where human judgement makes the biggest difference. The agent handles the volume; you handle the nuance.
+  Review escalations and draft replies regularly: these are the moments where human judgement makes the biggest difference. The agent handles the volume; you handle the nuance.
 </Tip>

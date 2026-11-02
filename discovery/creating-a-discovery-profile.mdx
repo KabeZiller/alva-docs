@@ -3,23 +3,25 @@ title: "Creating a Search Agent"
 description: "The three ways to search — local businesses, funded companies, and people — and how to set up an area-based company search."
 ---
 
-A **Search Agent** tells Alva what to go and find. You describe what you're looking for, and the agent works through the search automatically, importing matches into your CRM ready for outreach.
+A **Search Agent** tells Alva what to go and find. You describe the companies or people you're after, and the agent works through the search in the background, bringing matches into Discovery ready for review and outreach.
 
 ## Choose how you want to search
 
-When you click **Create New Search Agent** (under **Discovery → Search Agents**), you first choose *how* to search. There are three options:
+Go to **Discovery → Search Agents** and click **Create Search Agent**. You first choose *what* to find:
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="Find companies" icon="building">
-    Search for companies, then find the right contacts within them. Splits into two engines — see below.
+    Search for companies, then find the right contacts within them. There are two engines — see below.
   </Card>
   <Card title="Find people" icon="user">
-    Search for people by job title, regardless of company. See [People Search](/discovery/people-search).
-  </Card>
-  <Card title="Add Enrichment Profile" icon="user-gear">
-    Reusable contact-targeting for companies you import yourself. See [Enrichment Profiles](/discovery/enrichment-profiles).
+    Search for people by job title, whatever sector their company is in. See [People Search](/discovery/people-search).
   </Card>
 </CardGroup>
+
+The Search Agents page also has two other buttons:
+
+- **Add Enrichment Profile** — reusable contact targeting for companies you import yourself. It doesn't search for anything. See [Enrichment Profiles](/discovery/enrichment-profiles).
+- **Suggest Profiles** — Alva looks for patterns in your existing companies and deals and proposes Search Agents to match. It works best once you have some customers or deals in your CRM.
 
 ### Two ways to find companies
 
@@ -27,8 +29,8 @@ If you choose **Find companies**, a toggle lets you pick the right engine for yo
 
 | Engine | Best for | How it matches |
 |--------|----------|----------------|
-| **Local & service businesses** | Local, service, and bricks-and-mortar firms found by area — trades, shops, care homes, agencies (e.g. "roofers in Surrey") | Reads each company's website against your description, searching location by location |
-| **Funded & high-growth companies** | Funded, tech, or high-growth companies found by profile (e.g. "Series B fintechs in London") | Structured filters — industry, funding stage, size, growth, listing status. See [Finding Funded & High-Growth Companies](/discovery/company-intelligence) |
+| **Local & service businesses** | Local, service, and bricks-and-mortar firms found by area — trades, shops, care homes, agencies (e.g. "roofers in Surrey") | Reads each company's website against your description, working location by location |
+| **Funded & high-growth companies** | Funded, tech, or high-growth companies found by profile (e.g. "Series B fintechs in London") | Structured filters — industry, funding stage, size, growth, listing status. See [Finding funded & high-growth companies](/discovery/company-intelligence) |
 
 <Tip>
   Not sure which? If your targets might be small or local, use **Local & service businesses**. If you're targeting companies by funding, growth, or size band, use **Funded & high-growth companies**. You can also just ask Alva — it picks the right one for you.
@@ -38,19 +40,17 @@ The rest of this page covers the **Local & service businesses** engine.
 
 ## What an area-based Search Agent needs
 
-- **Profile type** — what kind of relationship these companies are (customers, vendors, partners, suppliers, or competitors). See [Profile Types Explained](/discovery/profile-types-explained).
-- **Description** — a natural language description of your ideal target
-- **Geography** — which regions, countries, or cities to search in
-- **Match threshold** — how closely a company needs to match to be included
+- **Profile type** — what kind of relationship these companies are (customers, vendors, partners, suppliers, or competitors). See [Profile types explained](/discovery/profile-types-explained).
+- **Description** — a plain-English description of your ideal target
+- **Geography** — which countries, regions, or towns to search
+- **Match threshold** — how closely a company needs to match to count as a match
 
-Alva uses your description to work out what to search for, then systematically works across your chosen geography to find matching companies.
+Alva uses your description to work out what to search for, then works systematically across your chosen geography.
 
 ### Step 1: Choose your profile type
 
-Select one of the five profile types:
-
-| Type | Code | What it finds |
-|------|------|--------------|
+| Type | Short name | What it finds |
+|------|------------|---------------|
 | Ideal Customer Profile | ICP | Potential customers for your products |
 | Ideal Vendor Profile | IVP | Companies that could sell or distribute your products |
 | Ideal Partner Profile | IPP | Strategic or channel partners |
@@ -59,97 +59,116 @@ Select one of the five profile types:
 
 ### Step 2: Describe what you're looking for
 
-Write a short, natural language description of the type of company you're looking for. Keep it to **1–2 sentences** (50 words max).
+Write a short, plain-English description of the type of company you want. Keep it to **1–2 sentences** (50 words at most).
 
-The key principle: **describe what the company IS, not what it needs or why it would buy from you.** Alva finds companies by reading what a company says about itself on its own website — so your description should match the kind of language a company would use on its own About page.
+The key principle: **describe what the company IS, not what it needs or why it would buy from you.** Alva judges each company by what it says about itself on its own website — so your description should use the kind of language a company would put on its About page.
 
 <CardGroup cols={2}>
   <Card title="Good descriptions" icon="check">
     - "Architectural firms working on residential or commercial projects"
     - "Marketing agencies serving B2B technology companies"
     - "Plumbing and heating contractors serving residential customers"
-    - "Mid market SaaS companies serving the healthcare sector"
+    - "Mid-market SaaS companies serving the healthcare sector"
     - "Enterprise software companies in the financial services industry"
   </Card>
-  <Card title="Bad descriptions" icon="xmark">
-    - "Companies that need CRM software" — needs/pain points aren't on websites
-    - "Companies with 50–100 employees" — specific headcount numbers aren't on websites (but broad tiers like "mid market" or "enterprise" are fine)
+  <Card title="Descriptions that won't work" icon="xmark">
+    - "Companies that need CRM software" — needs and pain points aren't on websites
+    - "Companies with 50–100 employees" — exact headcounts aren't on websites (broad tiers like "mid-market" or "enterprise" are fine)
     - "Companies using a particular software tool" — internal tech stacks aren't on websites
     - "Businesses that are currently recruiting" — hiring status isn't on websites
-    - "SaaS companies with £10m+ annual revenue" — specific revenue figures aren't on websites
+    - "SaaS companies with £10m+ annual revenue" — revenue figures aren't on websites
   </Card>
 </CardGroup>
 
-**Broader is better.** A broader description finds more companies — you can always filter and refine the results later. An overly specific description will reject most companies, even good prospects.
+**Broader is better.** A broader description finds more companies, and you can filter the results afterwards. An overly specific description rejects most companies, including good prospects.
 
 <Tip>
-  Think of it this way: "Would a company matching my description have these words on their About Us page?" If yes, it's a good description. If no, simplify it.
+  Ask yourself: "Would a company matching my description have these words on its About page?" If yes, it's a good description. If not, simplify it.
 </Tip>
 
-When you enter your description, Alva runs a **validation check** that flags any criteria that can't be matched — such as pain points, technology needs, or employee counts — and suggests an improved version.
+When you leave the description field, Alva checks it. If it contains something a website can't show — pain points, technology, headcount, funding — you'll see a warning explaining why, plus a suggested rewrite you can apply with **Use this instead**. You can't create the Search Agent until the description can be matched.
 
 <Note>
-  Targeting by **funding stage, growth, or exact size band** can't be judged from a website — that's exactly what the [Funded & high-growth companies](/discovery/company-intelligence) engine is for. Use that engine when those attributes matter.
+  Targeting by **funding stage, growth, or exact size band** can't be judged from a website — that's what the [Funded & high-growth companies](/discovery/company-intelligence) engine is for.
 </Note>
+
+<Tip>
+  If your account has [Signals](/discovery/signals) and your description asks for something that has just happened — a funding round, a new hire, an expansion, a launch — the warning also offers **Create a signal instead**. A signal searches the news every day for that kind of event.
+</Tip>
 
 ### Step 3: Choose your geography
 
-Select the regions and locations to search across. Alva's database covers over **4.3 million locations** worldwide.
+Choose the places to search. Alva's location database covers around **4.4 million locations** in more than 200 countries.
 
 You can select:
+
 - Entire countries
 - Regions (e.g. South East England, California)
 - Individual cities or towns
 
-Alva spreads its search across your chosen locations rather than concentrating on one area, so results come through with good geographic diversity.
+Alva spreads its search across your chosen locations rather than exhausting one area first, so results arrive with a good geographic mix.
 
 ### Step 4: Review categories
 
-After you submit your description, Alva works out the specific **categories** it will search for. You'll see these listed on the Search Agent page and can:
+After you submit your description, Alva works out the specific **categories** of business it will search for. You'll see them on the Search Agent's page, where you can:
 
 - **Delete individual categories** that don't look right
-- **Re-extract categories** if you've updated your description
+- **Re-extract categories** after changing your description
 - **Reset to draft** to start over
 
-### Step 5: Choose who to enrich
+### Step 5: Choose who to find at each company
 
-Tell enrichment **who to find** at each matched company — the job functions to prioritise and your ideal economic buyer — in the **People** section. You can also opt into deeper contact sourcing. See [Enrichment](/discovery/enrichment#controlling-who-enrichment-targets).
+In the **People** section, tell enrichment **who to look for** at each matched company — the job functions to prioritise and your ideal economic buyer. See [Enrichment](/discovery/enrichment#controlling-who-enrichment-targets).
 
 ## Search Agent statuses
 
 | Status | What it means |
 |--------|--------------|
 | **Draft** | Created but not yet activated. You can still edit the description and categories. |
-| **Active** | Alva is actively searching. New results appear in your queue. |
-| **Paused** | Searching is temporarily stopped. You can resume at any time. |
-| **Completed** | All searches have been executed across the chosen geography. |
+| **Active** | Alva is searching. New companies appear in your [Discovery Pipeline](/discovery/discovery-companies). |
+| **Paused** | Searching has stopped for now. You can resume at any time. |
+| **Paused (review)** | Alva has paused automatically after the first batch so you can check the results. See below. |
+| **Completed** | Every search across your chosen geography has run. |
 
 ## Activating a Search Agent
 
-Once you're happy with the description, categories, and geography, click **Activate** to start the search. Alva begins finding companies immediately. Activation is what starts spending credits — creating a draft agent doesn't.
+When you're happy with the description, categories, and geography, click **Activate Search**. Alva starts finding companies straight away. Activation is what starts spending credits — creating a draft doesn't.
+
+## Paused for review
+
+A new area-based Search Agent **pauses itself after its first 50 companies**. Its page then shows a **Paused for Review** card, so you can check the search is finding the right kind of business before it spends more.
+
+Click **Review Results in Focus Mode** to open **Review Mode**, where you can:
+
+- Review each company against your Search Agent's description
+- Edit the description to improve future matches
+- Adjust the match threshold without leaving the page
+- Move quickly with keyboard shortcuts: **J** next, **K** previous, **I** import, **D** discard, **Esc** to exit
+
+When you're happy, click **Resume** on the Search Agent's page and searching continues.
 
 ## How searching works
 
-When you activate an area-based agent, Alva searches across your chosen geography automatically in the background — you don't need to do anything. You can watch progress on the Search Agent detail page, including how many searches have run and the overall completion percentage. Alva works through your geography systematically, spreading results across locations rather than exhausting one area before moving to the next.
+Once active, an area-based Search Agent searches your chosen geography in the background — you don't need to do anything. The Search Agent's page shows progress, including how many searches have run and the overall percentage complete.
 
 ## Managing active Search Agents
 
-From the Search Agent detail page, you can:
+From the Search Agents list and each agent's page, you can:
 
-- **Pause** — temporarily stop searching (useful if you need to review results before more come in)
-- **Resume** — restart a paused agent
-- **Edit** — change the description or settings (while in draft)
-- **Delete** — remove the agent and all its results
-- **Adjust match threshold** — change how strictly companies need to match
-- **Adjust throttle speed** — control how fast searches run
-- **Toggle auto-import** — automatically import high-confidence matches into your CRM
+- **Pause** and **Resume** searching
+- **Adjust the match threshold** — how strictly companies need to match
+- **Adjust throttle speed** — how fast searches run
+- **Turn on auto-import** — see below
+- **Delete** — a Search Agent with no results is deleted permanently. One that has found companies is archived: it leaves your list, and the companies it found are kept.
 
-## Per-company billing
+### Auto-import
 
-Each company discovered uses credits from your balance. The cost per company decreases at higher volumes — the more you discover, the less each company costs.
+With **auto-import** on, every company at or above your match threshold is added to your CRM automatically at the **Target** stage, and every company below it is discarded. Turn it on once you trust the description and want to move fast. With it off, new companies wait at the **Found** stage for you to [review](/discovery/working-with-your-results).
 
-You can see your discovery costs broken down in **Settings → Usage**. For current pricing, visit **Settings → Billing** or [alvahq.com](https://alvahq.com).
+## Costs
+
+Each company the Search Agent finds uses credits, whether you import it or not — the cost covers the search and the matching. See **Settings → Usage** for a breakdown and [Understanding credits](/billing/understanding-credits) for how billing works.
 
 <Tip>
-  You can also create Search Agents by asking Alva: "Set up an ICP for marketing agencies in the UK." Alva walks you through the options conversationally, picks the right search type, and checks that your description will work.
+  You can also create Search Agents by asking Alva: "Set up a search for marketing agencies in the UK." Alva picks the right type of search, checks that your description will work, and walks you through the rest.
 </Tip>

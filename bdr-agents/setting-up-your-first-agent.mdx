@@ -1,121 +1,197 @@
 ---
 title: "Setting Up Your First Agent"
-description: "Create a Template or Personalised BDR agent and send your first autonomous outreach."
+description: "Create a Template or Personalised BDR agent, connect its sending accounts and start your first autonomous outreach."
 ---
 
 This page walks through creating an agent in either mode. If you haven't yet, read [How BDR agents work](/bdr-agents/overview) first to decide between **Template** and **Personalised**.
 
 <Note>
-  **Personalised agents should be set up through [Alva](/ai-assistant/talking-to-alva), not built from scratch in the UI.** Jump to [Personalised agents](#personalised-agents) below. Template agents can be set up either way.
+  **Personalised agents should be set up through [Alva](/ai-assistant/talking-to-alva), not built from scratch in the form.** Jump to [Personalised agents](#personalised-agents) below. Template agents can be set up either way.
 </Note>
 
 ## What every agent needs
 
-Whatever the mode, an agent needs:
-
 <Steps>
-  <Step title="At least one active Discovery profile">
-    The agent needs companies to target. Create and activate an [ICP or other discovery profile](/discovery/creating-a-discovery-profile) first, and wait for some results to come through. This includes both company searches and [People Searches](/discovery/people-search).
+  <Step title="At least one Search Agent with results">
+    The agent needs companies to target. Create and run a [Search Agent](/discovery/creating-a-discovery-profile) first, and wait for some results to come through. Company searches, [People Searches](/discovery/people-search) and, if your account has them, [Signals](/discovery/signals) all work.
   </Step>
-  <Step title="A connected email account">
-    The agent needs an inbox to send from. [Connect your email](/email/connecting-an-email-account) in Settings → Email Connections.
-
-    Leave this unset to run the agent in [simulation mode](/bdr-agents/how-the-agent-works#simulation-mode) — it evaluates companies and logs what it *would* do, but sends nothing. A great way to test.
+  <Step title="At least one sending account">
+    The agent needs a mailbox to send from. [Connect your email](/email/connecting-an-email-account) in **Settings → Email Connections**, or ask Alva to set up dedicated [outreach mailboxes](/email/outreach-mailboxes). An email agent can't be saved without at least one sending account.
   </Step>
 </Steps>
 
 Then, depending on mode:
 
 - **Template** also needs **at least one [email template](/email/email-templates) group** for the agent to send from.
-- **Personalised** also needs a completed **playbook** and a successful **preview** — see [Personalised outreach](/bdr-agents/personalised-outreach).
+- **Personalised** also needs a completed **playbook** and a **preview** whose sample emails pass the spam check. See [Personalised outreach](/bdr-agents/personalised-outreach).
 
 ## Template agents
 
-Template agents send your approved templates verbatim, with merge fields filled in per company and contact. You can create one from **Discovery → AI Agents → Create Agent**, or simply ask Alva.
+Template agents send your approved templates word for word, with merge fields filled in per company and contact. Go to **Outreach → BDR Agents** (the page is titled **AI BDR Agents**) and click **Create Agent**, or click **Suggest Agents** to pick a Search Agent and have Alva build one with you. You can also simply ask Alva.
 
-### Name and instructions
+### Basic information
 
-Give your agent a descriptive name (e.g. "Healthcare Agency Prospector") and write **instructions** that guide its decision-making:
+Give your agent a descriptive **Agent Name** (for example "Healthcare Agency Prospector") and write **Agent Instructions** that guide its decision-making:
 
-- **Who to prioritise** — which roles or personas (e.g. "Focus on CTOs and VP Engineering")
-- **When to escalate** — what situations should be flagged for human review
+- **Who to prioritise**: which roles or personas (for example "Focus on CTOs and VP Engineering")
+- **When to escalate**: what situations should be flagged for human review
+
+Then choose the **Outreach mode**: **Template** or **Personalised**.
 
 <Note>
-  In Template mode, don't put messaging guidance in the instructions — the agent uses your email templates for the words. The instructions are about *who* and *when*, not *what to say*. (Personalised agents handle *what to say* through the [playbook](/bdr-agents/personalised-outreach) instead.)
+  In Template mode, don't put messaging guidance in the instructions: the agent uses your email templates for the words. The instructions are about *who* and *when*, not *what to say*. Personalised agents handle *what to say* through the [playbook](/bdr-agents/personalised-outreach) instead.
 </Note>
 
 ### Target profiles
 
-Select which discovery profiles the agent should work from. The agent takes companies from these profiles and begins outreach.
+Select which Search Agents the agent should work from. Signal profiles carry a **Signal** badge and show how many companies they've found.
 
-#### Minimum match score
+**Minimum match score** is optional (1–100). When set, the agent ignores companies scoring below it, even ones already imported, and works through the rest best fit first. Companies not yet scored are still worked. This is most useful with a [People Search](/discovery/people-search), where contacts are imported *before* their companies are scored. See [How the agent chooses who to work on](/bdr-agents/how-the-agent-works#minimum-match-score).
 
-Optionally set a **minimum match score** (1–100). When set, the agent ignores companies scoring below that threshold — even ones already imported — and works through the rest best-fit first. This is most useful with a [People Search](/discovery/people-search), where contacts are imported *before* their companies are scored for fit. See [How the agent chooses who to work on](/bdr-agents/how-the-agent-works#minimum-match-score).
+**Generic addresses** controls how the agent treats shared inboxes such as info@ and sales@:
 
-### Email templates
+| Option | What it does | Default for |
+|--------|--------------|-------------|
+| **Restricted** | Skips generic inboxes at companies over roughly 200 staff. Only uses info, hello, contact, enquiries, sales, partnerships, hi, team and office. At most one follow-up to a generic inbox. | Customer prospecting (ideal customer and competitor Search Agents) |
+| **Open** | Allows generic inboxes, because for partners and suppliers they're often the right channel. | Partner, vendor and supplier Search Agents |
 
-Choose which **template groups** the agent can use. The agent selects the most appropriate template for each prospect and fills in the merge fields.
+Operational addresses such as postmaster@, noreply@, HR and support inboxes are never emailed, whichever option you choose. The form recommends an option based on the Search Agents you've selected.
 
-<Warning>
-  A Template agent with no template groups cannot send any emails. Assign at least one before going live.
-</Warning>
+### Budget
 
-### Email connection
-
-Select which connected email account the agent should send from. This determines the sender address and signature. Leave it unset to run in [simulation mode](/bdr-agents/how-the-agent-works#simulation-mode).
+Set the **Monthly Budget Limit** and, optionally, **Per-Company Budget Tiers** by match score. See [Configuring budgets and hours](/bdr-agents/configuring-budgets-and-hours).
 
 ### Allowed tools
 
-By default all tools are enabled. You can restrict which actions the agent may take:
+By default all tools are switched on. You can restrict which actions the agent may take:
 
-| Tool | What it does | Cost |
-|------|-------------|------|
-| **Send Email** | Send outreach emails | Free |
-| **Create Contact** | Save contacts to your CRM | Free |
-| **Update Status** | Update outreach status on a company | Free |
-| **Escalate** | Flag a company for human review | Free |
-| **Draft Reply** | Draft a reply to a prospect's response, for your review | Free |
+| Tool | What it does |
+|------|-------------|
+| **Send Email** | Send outreach emails from your sending accounts |
+| **Create Contact** | Save new contacts to your CRM |
+| **Update Status** | Update the outreach status of a company |
+| **Escalate to Human** | Flag a company for human review when a prospect shows genuine interest |
+| **Draft Replies** | Draft a reply to a prospect's response, for your review before anything is sent |
 
-### Escalation notifications
+All of these actions are free. The agent's budget covers the thinking behind them, not the actions themselves.
 
-Optionally add email addresses to notify when the agent escalates a company for human review. See [Managing replies](/bdr-agents/managing-replies).
+<Warning>
+  If **Escalate to Human** is on, select at least one person under **Notify Users** (below). The agent can't start until someone is set to receive escalations.
+</Warning>
+
+### Email template groups
+
+Choose which **template groups** the agent can use. The agent picks the most appropriate template for each prospect and fills in the merge fields.
+
+<Warning>
+  A Template agent with no template groups can't send any emails. Assign at least one before going live.
+</Warning>
+
+### Follow-up cadence
+
+Switch follow-ups on or off. When on, set the minimum days between follow-ups, the maximum number per contact, and optionally which template groups to use for follow-ups. See [Follow-up cadence](/bdr-agents/configuring-budgets-and-hours#follow-up-cadence).
+
+### Attachments
+
+Once the agent is saved, you can upload files (up to 25 MB each) with a description of when each should be used. The agent can recommend attaching them to the [draft replies](/bdr-agents/managing-replies#draft-replies) it prepares for you.
+
+### Operating hours and run pace
+
+Optionally restrict the days and hours the agent works, and set how many companies it evaluates each cycle. See [Configuring budgets and hours](/bdr-agents/configuring-budgets-and-hours).
+
+### Sending accounts
+
+Select **one or more** connected email accounts this agent can send from. The agent **rotates across** the selected accounts to spread the volume and protect deliverability. At least one is required before the agent can be saved.
+
+Each account in the list shows how many emails it has sent today against its daily limit, and a **No signature** label if it has no email signature. Add [signatures](/email/email-signatures) in **Settings → Email Connections** before you go live.
+
+Once a prospect has been emailed from one mailbox, every later email to that address (from this agent or any other) comes from the same mailbox, so the prospect always hears from the same person. If that mailbox isn't one of this agent's sending accounts, the agent skips the address rather than switch sender.
+
+Below the account list are two switches:
+
+| Setting | Default | What it does |
+|---------|---------|--------------|
+| **Track opens** | Off | Adds a tracking pixel so the agent can report an open rate. Off is recommended for cold outreach: tracking pixels lower inbox placement on new sending domains, and open figures are unreliable because some email apps open images automatically. Reply rate is the dependable measure. |
+| **Don't send to previously contacted emails** | On | The agent won't email an address another BDR agent on your account has already written to. It can still email other people at the same company. When off, those addresses stay available and the agent continues the earlier conversation from the same mailbox. |
+
+### Notify Users
+
+Choose which **team members** hear about escalations. Each gets an in-app notification and an email to their primary account address. See [Managing replies](/bdr-agents/managing-replies#who-gets-notified).
+
+### Escalation Notifications
+
+Add **email addresses outside your team**, for example a shared inbox or a colleague without an Alva login. They receive the escalation email too.
+
+Click **Create Agent** to save.
 
 ## Personalised agents
 
-Personalised agents write original copy from a playbook instead of sending fixed templates — a more powerful but more involved setup.
+Personalised agents write original copy from a playbook instead of sending fixed templates: a more powerful but more involved setup.
 
 <Warning>
-  **Set up Personalised agents by asking Alva.** Alva is fully briefed on the correct way to configure one: it builds the playbook with you, runs sample **previews** so you can see the copy before anything is sent, and only lets the agent go live once the [activation checklist](/bdr-agents/personalised-outreach#going-live) passes.
+  **Set up Personalised agents by asking Alva.** Alva builds the playbook with you, runs sample **previews** so you can read the copy before anything is sent, and only lets the agent go live once the [activation checklist](/bdr-agents/personalised-outreach#going-live) passes.
 
-  Creating a Personalised agent from scratch in the Agent Creation UI is **not encouraged** — the playbook and preview steps are easy to get wrong by hand. Once the agent exists, **small tweaks** in the UI afterwards (adjusting the budget, hours, or an offer) are perfectly fine.
+  Creating a Personalised agent from scratch in the form is **not encouraged**: the playbook and preview steps are easy to get wrong by hand. Once the agent exists, **small tweaks** in the form (budget, hours, an offer) are perfectly fine.
 </Warning>
 
 To get started, open Alva and say something like:
 
-> "Set up a Personalised BDR agent for my healthcare ICP."
+> "Set up a Personalised BDR agent for my healthcare Search Agent."
 
-Alva will walk you through the [playbook](/bdr-agents/personalised-outreach#the-playbook), show you [previews](/bdr-agents/personalised-outreach#previewing-before-you-launch), and confirm the agent is ready before it goes live. Full details are on the [Personalised outreach](/bdr-agents/personalised-outreach) page.
+Alva will walk you through the [playbook](/bdr-agents/personalised-outreach#the-playbook), show you [previews](/bdr-agents/personalised-outreach#previewing-before-you-launch), and confirm the agent is ready before it goes live.
 
 <Tip>
-  If you just say "set up a BDR agent", Alva will ask whether you want **Template** or **Personalised** before doing anything — it won't guess.
+  If you just say "set up a BDR agent", Alva will ask whether you want **Template** or **Personalised** before doing anything.
 </Tip>
+
+## Before you start sending
+
+### Plan
+
+On newer accounts, starting an agent needs the Pro plan. You can build, edit and preview without it; the **Start Agent** button shows **Upgrade to Pro to start** until you upgrade. See [Plans and pricing](/billing/plans-and-pricing).
+
+### New outreach mailboxes warm up
+
+[Outreach mailboxes](/email/outreach-mailboxes) that Alva sets up for you need time to build a sending reputation:
+
+- **No outreach for the first 4 days** after the mailbox is connected. Replies and emails you write yourself are fine straight away.
+- **5 emails a day for the first 7 days.** After that you can raise the limit, up to 10 a day.
+
+The agent won't send new outreach from a mailbox until its 4-day hold has ended.
+
+### New accounts have extra limits
+
+For a new account's first 30 days, outreach across **all** your mailboxes is capped per day: **20 a day** in the first week, **50** in the second, then **100** until day 30. The cap can rise a week early when reply rates are healthy, and is held back while bounces or complaints are high.
+
+All outreach pauses automatically if, across your recent sends, the **bounce rate goes over 8%** or **three or more people reply asking to be removed**. You'll get a notice, and our support team will need to resume sending. Replies to prospects are never held or counted.
+
+Full details are on [Sending health and limits](/email/sending-health-and-limits).
 
 ## Launching the agent
 
-However you created it, a new agent starts **Paused**. Review its configuration, then click **Start** when you're ready.
+However you created it, a new agent starts **Paused**. Review its configuration, then click **Start Agent** when you're ready.
 
-When active, the agent processes companies on a regular schedule (controlled by its [run pace](/bdr-agents/configuring-budgets-and-hours#run-pace)). For each company it checks enrichment, chooses a contact, sends outreach, tracks responses, follows up, and escalates when human judgement is needed. See [How the agent chooses who to work on](/bdr-agents/how-the-agent-works) for the ordering.
+The agent won't start while anything is missing:
+
+- **Configuration issues** (no template groups, an incomplete playbook or preview, or no one to notify about escalations) are listed on the agent card with a **Fix →** link, and **Start Agent** stays greyed out.
+- Starting is also refused if the agent has **no target Search Agents**, or if **every** sending account is marked **Do not send** in [sending health](/email/sending-health-and-limits).
+
+When active, the agent evaluates companies every 10 minutes, at the [run pace](/bdr-agents/configuring-budgets-and-hours#run-pace) you've set. For each company it checks enrichment, chooses a contact, sends outreach, tracks responses, follows up and escalates when human judgement is needed.
 
 ## What happens after launch
 
-The agent appears on the **Discovery → AI Agents** page with live stats:
+The **AI BDR Agents** page shows totals across all your agents (**Total Agents**, **Active**, **Budget Spent (MTD)** and **Leads Generated**) and, for each agent, its pipeline, emails sent, conversion rate and monthly budget used.
 
-- **Emails sent** — total outreach emails dispatched
-- **Budget spent** — how much of the monthly budget has been used
-- **Status** — active, paused, or completed
+Click an agent to open its detail page, which shows five live stats:
 
-Click any agent to open its detail page with the [activity feed](/bdr-agents/reading-the-activity-feed), outreach breakdown, and performance metrics.
+- **Companies Evaluated**: how many companies the agent has worked on, out of the total in scope
+- **Leads Generated**: companies escalated to you with genuine interest
+- **Emails Sent**: total outreach emails sent
+- **Replies Received**: genuine replies, with the reply rate
+- **Budget (MTD)**: spend this month against the monthly limit
+
+Below them you'll find email performance, the outreach pipeline and the [activity feed](/bdr-agents/reading-the-activity-feed).
 
 <Tip>
-  Start with a small budget and a slow run pace (1 company per run). Watch the agent's first few actions, review what it sends, and adjust before ramping up. For Personalised agents, run in [simulation mode](/bdr-agents/how-the-agent-works#simulation-mode) or review previews with Alva first.
+  Start with a small budget and a run pace of 1 company per cycle. Watch the agent's first few actions, review what it sends and adjust before ramping up. For Personalised agents, review [previews](/bdr-agents/personalised-outreach#previewing-before-you-launch) with Alva first.
 </Tip>

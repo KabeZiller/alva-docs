@@ -1,49 +1,77 @@
 ---
-title: "AI Settings"
-description: "Configure how Alva's AI features work for your account."
+title: "AI settings"
+description: "Choose which background AI features run, how often, what each feature may spend each month, and which senders Alva ignores."
 ---
 
-AI Settings let you control which AI features are active, how often they run, and how much they're allowed to spend. These are account-wide settings managed by admins.
+**Settings → AI Settings** controls Alva's automatic work for your whole account: which background features run and how often, monthly budgets for the features that spend the most, and email addresses Alva should leave alone. Changes apply to everyone on the account.
 
-## Accessing AI settings
+## Features
 
-Go to **Settings → AI Settings**.
-
-## Feature toggles
-
-You can enable or disable individual AI features:
+Each feature has its own switch.
 
 | Feature | What it does |
-|---------|-------------|
-| **Deal health scoring** | Automatically scores every deal from 0–100 |
-| **Risk detection** | Flags deals that show risk signals |
-| **Notifications** | Sends in-app alerts when risks are detected |
-| **Email analysis** | Analyses email conversations for sentiment, signals, and evidence |
-| **Background insights** | Generates periodic AI insights about your pipeline |
+|---------|--------------|
+| **Background Processing** | The master switch for scheduled AI work. When it's off, none of the scheduled jobs below run and the frequency settings are greyed out |
+| **Deal Health Scoring** | Scores the health of every deal automatically |
+| **Opportunity Detection** | Looks for upsell and cross-sell opportunities |
+| **Risk Alerts** | Spots at-risk deals and alerts you |
+| **Email Notifications** | Emails you about important AI insights |
+| **Event-Driven Updates** | Refreshes insights when a deal is updated |
 
-Turning off a feature stops it from running and consuming credits. Existing data (health scores, insights) remains — it just won't be updated.
+Turning a feature off stops it running and spending credit. Anything it has already produced, such as existing health scores, stays where it is — it just isn't updated.
 
-## Budget controls
+## Spelling
 
-Set limits on how much AI features can spend:
+**AI Spelling Convention** sets whether Alva and every AI feature write in **UK English** or **US English**.
 
-- **Daily budget cap** — maximum credits AI background features can use per day
-- **Monthly budget cap** — maximum credits for the billing period
+## Scheduling
 
-When a budget cap is reached, background AI features pause automatically. Interactive chat with Alva continues to work — budgets only apply to automated background processing.
-
-## Processing frequency
-
-Control how often background features run:
+With **Background Processing** on, choose how often the scheduled jobs run:
 
 | Setting | Options |
 |---------|---------|
-| **Health score refresh** | Hourly, every 6 hours, daily, or weekly |
-| **Risk detection** | Hourly, daily, or weekly |
-| **Email analysis** | As emails arrive, or batched daily |
+| **Health Score Frequency** | Manual Only, Hourly, Daily or Weekly |
+| **Opportunity Scan Frequency** | Manual Only, Daily or Weekly |
 
-Less frequent processing uses fewer credits but means data is less current. For most accounts, the default settings strike a good balance.
+Running less often uses less credit, but scores and opportunities are less up to date.
+
+## Rate limits
+
+Two limits stop background work getting out of hand:
+
+- **Max Jobs Per Hour** — the most background jobs Alva may start in an hour.
+- **Max Concurrent Jobs** — the most that may run at the same time.
+
+Click **Save Changes** when you've finished with features, spelling, scheduling and limits.
+
+## Feature budgets
+
+**Feature Budgets** set a monthly spending limit for the features that do the most work on their own:
+
+| Feature | What it covers |
+|---------|----------------|
+| **Search Agents** | Discovery searches that find companies matching your Search Agents |
+| **AI BDR Agents** | Agents that evaluate and reach out to discovered companies |
+| **Pulse** | Daily industry news, tracked websites and suggested outreach angles |
+
+For each one you can switch on a monthly limit, set it in your billing currency, and choose the percentage of the limit at which you're warned. The card shows what each feature has spent so far this month.
+
+When a feature reaches its limit, it pauses until the start of next month. Chatting with Alva is never paused by a feature budget. Budgets reset at the start of each calendar month. Click **Save Budget Settings** to keep your changes.
 
 <Tip>
-  If you're on a limited plan, set background features to daily or weekly rather than hourly. This significantly reduces credit usage while still keeping your data reasonably current.
+  Each BDR agent also has its own monthly budget. See [Configuring budgets and hours](/bdr-agents/configuring-budgets-and-hours).
 </Tip>
+
+## Email Ignore List
+
+Alva reads your synced email to keep the CRM up to date — see [Understanding email analysis](/email/understanding-email-analysis). Add an address to the **Email Ignore List** and Alva ignores mail from it completely: no analysis, no knowledge extraction and no CRM updates. It's ideal for newsletters, system notifications and anyone whose email you don't want analysed. You can add addresses one at a time or paste a list.
+
+The Email Ignore List is about analysis only. To stop BDR agents emailing someone, use the [Email Block List](/email/email-block-list).
+
+## Changing these settings through Alva
+
+You can ask Alva to change any of these for you — "turn on risk alerts", "score deal health daily", "set a monthly budget for Pulse". She reads the current settings first and changes only what you ask. Anyone can ask what the settings are; Alva makes changes only for admins.
+
+## Alva's own agenda
+
+Alva's scheduled work — reminders, reviews and the weekly report — has its own daily and per-run credit caps. You'll find those at **Settings → Alva Agenda**. See [Agenda and weekly report](/ai-assistant/agenda-and-weekly-report).

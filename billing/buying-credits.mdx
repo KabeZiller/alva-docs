@@ -1,41 +1,70 @@
 ---
-title: "Buying Credits"
-description: "Top up your credit balance to keep Alva running."
+title: "Buying credits"
+description: "Top up your balance by hand, or let auto top-up keep it topped up within a monthly limit you set."
 ---
 
-If your monthly allocation runs out before the end of the billing cycle, you can purchase additional credits at any time.
+There are two ways to add credit: buy it when you need it, or switch on **auto top-up** so your balance never runs dry. Credit you buy **never expires**.
 
-## How to buy credits
+## Buying credit now
 
-1. Go to **Settings → Billing**
-2. Click **Buy Credits**
-3. Select the amount you'd like to purchase
-4. Complete the secure checkout
+<Steps>
+  <Step title="Open billing">
+    Go to **Settings → Billing & Subscription**.
+  </Step>
+  <Step title="Click Purchase Credits">
+    Click **Purchase Credits** on the **Credit Balance** card.
+  </Step>
+  <Step title="Choose an amount">
+    Pick a preset or use the slider. The cost in your billing currency is shown before you pay.
+  </Step>
+  <Step title="Pay">
+    Complete payment on the secure card page. The credit is added to your balance straight away, and your card is saved so auto top-up can use it.
+  </Step>
+</Steps>
 
-## One-off credits vs monthly allocation
+## Auto top-up
 
-| | Monthly allocation | One-off purchase |
-|---|-------------------|------------------|
-| **Included in plan** | ✅ Yes | ❌ Purchased separately |
-| **Refreshes** | Every billing cycle | Never — they persist |
-| **Expires** | At end of billing cycle | Never |
-| **Used first** | ✅ Monthly credits are used before one-off credits | Used after monthly credits are exhausted |
+Auto top-up buys credit for you whenever your balance runs low, so Search Agents, BDR agents and Alva keep working. You set three things on the **Auto Top-Up** card at **Settings → Billing & Subscription**:
 
-One-off credits **never expire** — they remain in your balance until used. This makes them a safe way to ensure you always have credits available, especially if your usage is unpredictable.
+| Setting | What it does |
+|---------|--------------|
+| **Top up when balance falls below** | The balance that triggers a top-up |
+| **Top-up amount** | How much is charged each time |
+| **Maximum monthly auto top-up spend** | The most auto top-up can charge in a calendar month. Once it's reached, auto top-up stops until next month |
 
-## When to buy credits
+The card sums it up in one sentence — when your balance drops below one amount, a set amount is charged to your card, up to your monthly limit — and shows what auto top-up has spent so far this month. The monthly limit must be at least as much as one top-up.
 
-Common scenarios for buying additional credits:
+### Switching it on
 
-- **You're mid-month and running low** — your BDR agents are active and using credits faster than expected
-- **You have a big discovery search planned** — searching across many locations will use credits quickly
-- **You're onboarding a new team member** — more people means more AI conversations
-- **You want a safety buffer** — keep a reserve so features never stop working unexpectedly
+Auto top-up needs a saved card.
+
+- **No card saved yet:** choose your amounts, then click **Save card and switch on**. You save your card on the secure card page, and auto top-up is switched on with the amounts you chose. Your card is used only for these top-ups, never for more than your monthly limit. Only admins can do this.
+- **Card already saved:** use the switch at the top of the card, adjust the amounts and click **Save Settings**.
+
+If your balance is already below the threshold when you save, the first top-up is charged straight away. If this month's limit has been used, the card says so; top-ups resume next month, or as soon as you raise the limit and save.
+
+<Tip>
+  Auto top-up is the simplest way to run Alva on Pay as you go: spend follows your activity, and the monthly limit keeps it predictable.
+</Tip>
+
+## Buying credit through Alva
+
+Ask Alva — "top up our credit" or "raise our auto top-up limit" — and she:
+
+- tells you what's available and what it costs, and buys it after your yes. With a saved card, it's charged straight away; without one, she sends you to the secure card page.
+- changes your auto top-up amounts after your yes. If there's no saved card, she explains how to add one.
+- by email, sends admins a one-time billing link that opens the card and auto top-up setup. Billing links expire after an hour. See [Alva by Email](/ai-assistant/alva-by-email#action-links).
 
 ## Checking your balance
 
-Your current credit balance is always visible at **Settings → Billing**. The Usage page (**Settings → Usage**) shows a detailed breakdown of where credits are being spent.
+Your balance, in your billing currency, is always on the **Credit Balance** card at **Settings → Billing & Subscription**. The card shows:
 
-<Tip>
-  If you find yourself buying one-off credits regularly, it might be more cost-effective to upgrade your plan — higher tiers come with larger monthly allocations and better per-credit rates.
-</Tip>
+- what's **available** — or, on a new account, how much **starter credit** is left
+- on Pro, your monthly credit and when it renews
+- any credit you've **purchased** on top
+
+For a breakdown of where credit goes, see [Understanding credits](/billing/understanding-credits#seeing-where-credit-goes).
+
+<Note>
+  If you're buying credit every month and your spending is steady, Pro may work out cheaper. Ask Alva "would Pro save us money?" — see [Plans and pricing](/billing/plans-and-pricing#is-pro-worth-it-for-you).
+</Note>

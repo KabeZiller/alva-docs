@@ -1,0 +1,79 @@
+---
+title: "Ops Room"
+description: "A full-screen, live control room showing what your BDR agents, Search Agents, enrichment and mailboxes are doing right now."
+---
+
+The **Ops Room** is a full-screen, live view of everything your outreach machine is doing right now: which company each agent is evaluating, every check an email passes before it sends, why an agent is idle, how your mailboxes are holding up, and what's waiting on you.
+
+The agent pages show totals. The Ops Room shows the work as it happens.
+
+<Note>
+  The Ops Room is **experimental**. Its layout and panels may change, and figures can lag the BDR Agents pages by up to 30 seconds.
+</Note>
+
+## Opening the Ops Room
+
+Click **Ops Room** on the **BDR Agents** page, on any agent's page, or on your dashboard. The first time, a short notice explains what the room is; tick **Don't show this again** to skip it in future, then click **Open Ops Room ↗**.
+
+The room opens in a **new tab**, so you can leave it running on a second screen. **Back to BDR Agents** in the header takes you back.
+
+It's read-only: nothing you do in the Ops Room changes your agents.
+
+<Tip>
+  The Ops Room **never invents activity**. Everything you see is real work on your account. When your agents are quiet (outside operating hours, out of companies or paused), the room is quiet too.
+</Tip>
+
+## What's on the wall
+
+| Panel | What it shows |
+|-------|---------------|
+| **Agent units** | Each BDR agent's state and the reason for it, a countdown to when it resumes or its window closes, its last and next cycle, a heartbeat of recent cycles, and its counters |
+| **Sector radar** | Companies in your pipeline as blips. The closer to the centre, the better the match score; colour shows which agent owns it. Evaluations flare and new leads pulse. |
+| **Send gauntlet** | The checks an email passes on its way out (enrichment, choosing a contact, operating hours, domain, block list, daily quota, writing, content and spam-score checks, sending), with the result and time taken at each. A blocked email stops in red, with the finding and the fix. |
+| **Mailbox fleet** | Each sending account's health, today's quota, any warm-up hold, average spam score, bounce rate and which agents send from it |
+| **Inbound classifier** | Replies as they're classified (interest, not interested, out of office and so on), with how confident the classification is. Bounces and temporary delays are shown separately. |
+| **Search agents · coverage** | A grid of each Search Agent's searches by region and query, with failures and their reasons, the found → matched → imported funnel, and how many searches are queued |
+| **Enrichment conveyor** | Companies moving through enrichment (pending, enriching, enriched, no results, failed) and recent changes |
+| **Operating windows** | A world map with day and night. Company headquarters light up when they're inside their agent's working hours. |
+| **Spend telemetry** | Live credit deductions, spend this month, cost per evaluation and per lead, and each agent's budget |
+| **Operator queue** | Escalations waiting for a person, oldest first, with how long each has been waiting |
+| **Event log** | One line per event across everything above. Filter by agents, inbound, search and enrichment, or system. Agent decisions expand to show the agent's reasoning. |
+| **Timeline** | Activity over the last 24 hours |
+
+### Agent states
+
+| State | What it means |
+|-------|---------------|
+| **Active** | Working through companies |
+| **Holding** | Outside operating hours, with a countdown to the next window |
+| **Starved** | Every sending account is marked **Do not send** or has used today's quota |
+| **Budget cap** | The agent has used its monthly budget |
+| **Paused** | Paused by you |
+
+## Controls
+
+| Control | What it does |
+|---------|--------------|
+| **Maximise a panel** | Focus on one panel. Press **Esc** to return to the full wall. |
+| **Big screen** (or press **F**) | Hides the controls, goes full screen and cycles through the panels every 20 to 45 seconds: made for a TV on the office wall |
+| **Speaker** | Optional sound cues, off by default |
+| **Timeline** | Drag back to **replay** the last 24 hours. Press play and the room runs forward at four times speed until it catches up with live. |
+
+## Ask Alva instead
+
+You don't need the wall open to know what's going on. Ask [Alva](/ai-assistant/talking-to-alva):
+
+> "What are my agents doing right now?"
+
+Alva gives you the same live picture: each agent's state and why, when it next runs, its mailboxes, anything waiting on you, which Search Agents are running and this month's spend. You can also ask "why is my agent idle?" or "is anything waiting on me?", or ask Alva to open the Ops Room for you.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Reading the activity feed" href="/bdr-agents/reading-the-activity-feed" icon="list">
+    The full history of one agent.
+  </Card>
+  <Card title="Managing replies" href="/bdr-agents/managing-replies" icon="reply">
+    Act on what's in the operator queue.
+  </Card>
+</CardGroup>

@@ -1,45 +1,43 @@
 ---
 title: "Discovery Contacts"
-description: "View contacts found during enrichment for discovered companies."
+description: "The people your searches and signals have captured, and which of them are already in your CRM."
 ---
 
-When companies are imported from discovery, Alva automatically [enriches](/discovery/enrichment) them — finding contacts, email addresses, and ranking them by seniority. The Discovery Contacts page shows all of these contacts in one place.
+**Discovery → Contacts** lists the people your searches have captured — for example everyone a [People Search](/discovery/people-search) has found, and people named in the news a [Signal](/discovery/signals) picked up. Use it to see who's been found, how to reach them, and whether they're in your CRM yet.
 
-## Accessing the page
+## Opening the page
 
-Go to **Discovery → Contacts** in the sidebar.
+Go to **Discovery → Contacts** in the sidebar. To see one search's people, click **View Results** on a People Search in your Search Agents list.
 
-## What you see
+## The stats
 
-Each contact shows:
+Across the top you'll see:
 
-- **Name** — first and last name
-- **Job title** — their role at the company
-- **Email address** — if found during enrichment
-- **Company** — which company they belong to
-- **Seniority ranking** — how they rank compared to other contacts at the same company (1 = most senior)
-- **Economic buyer** — whether they match the economic buyer role defined in your discovery profile
-- **Status** — whether they've been contacted, replied, or are pending
+| Stat | What it counts |
+|------|----------------|
+| **Total Contacts** | Everyone captured by your searches |
+| **With Email** | Contacts with at least one email address |
+| **With Phone** | Contacts with at least one phone number |
+| **Imported to CRM** | Contacts that are already CRM contacts |
 
-## How contacts are found
+## What each contact shows
 
-Contacts are discovered automatically as part of the [enrichment process](/discovery/enrichment) that runs when a company is imported into your CRM:
+- **Name**, with an **Imported** badge if the person is already in your CRM
+- **Seniority** and **job title**
+- **Company** they work for
+- **Search Agent** that found them
+- **Email**, **phone**, or a **LinkedIn** link, where known
 
-1. **Email and contact search** — Alva searches for people and email addresses associated with the company's domain
-2. **Data cleansing** — AI reviews the results, removing placeholder or nonsensical records and merging duplicates
-3. **Seniority ranking** — each contact is ranked by decision-making authority and relevance, so the most valuable contacts are prioritised
-4. **Economic buyer flagging** — if your discovery profile specifies an economic buyer role (e.g. "CEO", "Head of Operations"), matching contacts are highlighted
+Use the search box to find people by name, job title, or company, and sort by name, job title, or date added. People whose company you've discarded aren't listed.
 
-This all happens before a [BDR agent](/bdr-agents/setting-up-your-first-agent) begins outreach, so the agent starts with clean, ranked data.
+## How contacts reach your CRM
+
+People Search imports the people it finds automatically, so its contacts show as **Imported** straight away. Other captured contacts come into your CRM with their company: when you import a company from the **Found** stage of the [Discovery Pipeline](/discovery/discovery-companies), its captured contacts are imported with it.
+
+## Where enrichment contacts go
+
+The contacts [enrichment](/discovery/enrichment) finds at an imported company go **straight into your CRM** as contacts on that company — they don't wait here. You'll find them on the company's page, ranked by seniority with economic buyers highlighted, and in your main **Contacts** list.
 
 <Note>
-  Contacts can also arrive from a [People Search](/discovery/people-search), which finds people by job title and imports them with a verified email already attached — no domain enrichment step needed. Those contacts appear here alongside contacts found for company-led searches.
+  A [BDR Agent](/bdr-agents/overview) works from the contacts on each company's CRM record. To see an agent's emails to a person, open the person or their company and look at its activity.
 </Note>
-
-## Linking to CRM contacts
-
-When enrichment creates a contact, it's automatically saved as a CRM contact record linked to the company. You can view and manage them from the company's detail page as well as from this central contacts view.
-
-## Viewing outreach history
-
-Click any contact to see their outreach history — emails sent by a BDR agent, responses received, and the current status of the conversation.

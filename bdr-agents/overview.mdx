@@ -1,15 +1,17 @@
 ---
 title: "How BDR Agents Work"
-description: "Autonomous outreach workers that prospect, send, follow up, and hand off — in two modes: Template and Personalised."
+description: "Autonomous outreach workers that prospect, send, follow up and hand off, in two modes: Template and Personalised."
 ---
 
-AI BDR agents are autonomous outreach workers. You give an agent a target audience, a way to write, and a budget — and it works through companies on its own: choosing who to contact, writing the email, following up, spotting genuine replies, and handing the conversation to you when a human touch is needed.
+BDR agents are autonomous outreach workers. You give an agent a target audience, a way to write and a budget, and it works through companies on its own: choosing who to contact, writing the email, following up, spotting genuine replies and handing the conversation to you when a human touch is needed.
 
-Every agent is linked to one or more [Discovery profiles](/discovery/creating-a-discovery-profile) and only ever works on companies from those profiles.
+You'll find them under **Outreach → BDR Agents** in the sidebar.
+
+Every agent is linked to one or more [Search Agents](/discovery/creating-a-discovery-profile) and only ever works on companies those Search Agents found. If your account has [Signals](/discovery/signals), you can link signal profiles too, and the agent uses each company's recent event as the reason to get in touch.
 
 ## Enrichment comes first
 
-Before an agent touches a company, that company is automatically [enriched](/discovery/enrichment): Alva finds contacts and email addresses, cleans up the data, and ranks contacts by seniority. The agent only sees companies that have finished enrichment, so it can focus on what it does best — outreach — rather than data gathering.
+Before an agent touches a company, that company is automatically [enriched](/discovery/enrichment): Alva finds contacts and email addresses, cleans up the data and ranks contacts by seniority. The agent only sees companies that have finished enrichment, so it can focus on outreach rather than data gathering.
 
 ## Two modes: Template and Personalised
 
@@ -17,48 +19,60 @@ Every agent runs in one of two modes. You choose the mode when you create the ag
 
 | | **Template** | **Personalised** |
 |--|--------------|------------------|
-| **How it writes** | Sends your [email templates](/email/email-templates), with merge fields filled in per company and contact | Writes freestyle copy from a **playbook** you define — tone, offers, and guardrails — grounded in what it knows about the prospect |
+| **How it writes** | Sends your [email templates](/email/email-templates), with merge fields filled in per company and contact | Writes its own copy from a **playbook** you define (tone, offers and guardrails), grounded in what it knows about the prospect |
 | **Best for** | Consistent, approved messaging at scale | High-value prospecting where tailored, human-sounding outreach wins |
-| **What you provide** | At least one template group | A completed playbook, plus a successful preview |
-| **Follow-ups** | Reuse your templates or a constrained variation | Can introduce new angles and offers across the sequence |
-| **Setup** | Agent Creation UI **or** Alva | **Alva** (strongly recommended) |
+| **What you provide** | At least one template group | A completed playbook, plus a preview that passes the spam check |
+| **Follow-ups** | Your follow-up templates, or short follow-ups the agent writes itself | Can introduce new angles and offers across the sequence |
+| **Setup** | The agent form **or** Alva | **Alva** (strongly recommended) |
 | **Effort** | Quick to launch | More setup, higher payoff |
 
 <Note>
-  **Template** is the default and the simplest place to start. **Personalised** is an opt-in, more powerful mode — it writes original copy rather than sending fixed templates.
+  **Template** is the default and the simplest place to start. **Personalised** is an opt-in, more powerful mode: it writes original copy rather than sending fixed templates.
 </Note>
 
 ### When to use which
 
-- **Choose Template** when you have messaging you're happy to send verbatim, want tight control over every word, or just want to get an agent running quickly.
+- **Choose Template** when you have messaging you're happy to send word for word, want tight control over every word, or just want to get an agent running quickly.
 - **Choose Personalised** when the prospect deserves a tailored approach, you want the agent to vary its angle across follow-ups, and you're willing to invest a little more in setup for a much stronger result.
 
 ## Set up Personalised agents through Alva
 
 <Warning>
-  Personalised agents are powerful and have a lot of moving parts — the playbook, prospect research, previews, and an activation checklist. **We strongly recommend setting one up by asking [Alva](/ai-assistant/talking-to-alva).** Alva is fully briefed on how to configure a Personalised agent correctly: it builds the playbook with you, runs sample previews so you can see the copy before anything sends, and only lets the agent go live once everything is in place.
+  Personalised agents have a lot of moving parts: the playbook, prospect research, previews and an activation checklist. **We strongly recommend setting one up by asking [Alva](/ai-assistant/talking-to-alva).** Alva builds the playbook with you, runs sample previews so you can read the copy before anything sends, and only lets the agent go live once everything is in place.
 
-  Building a Personalised agent from scratch in the Agent Creation UI is **not encouraged** — it's easy to miss a step. Once the agent exists, making **small tweaks** in the UI afterwards is perfectly fine.
+  Building a Personalised agent from scratch in the agent form is **not encouraged**, because it's easy to miss a step. Once the agent exists, making **small tweaks** in the form is perfectly fine.
 </Warning>
 
-Template agents can be set up either way — through Alva or directly in the Agent Creation UI.
+Template agents can be set up either way: through Alva or directly in the agent form.
 
 ## What an agent does, step by step
 
 Once active, an agent works through its companies on a schedule you control. For each company it:
 
-1. **Checks enrichment** — confirms the company has contacts and emails ready
-2. **Chooses who to contact** — prioritising economic buyers and senior decision-makers
-3. **Writes and sends** — a template (Template mode) or original copy from your playbook (Personalised mode)
-4. **Follows up** — on the cadence you set, if there's no reply
-5. **Watches for replies** — and escalates genuine interest to you
-6. **Hands over** — steps back the moment you take over a conversation
+1. **Checks enrichment**: confirms the company is ready to work on
+2. **Chooses who to contact**: prioritising economic buyers and senior decision-makers
+3. **Writes and checks the email**: a template (Template mode) or original copy from your playbook (Personalised mode), spam-scored before it goes out
+4. **Sends**: from one of the sending accounts you've given it, rotating across them
+5. **Follows up**: on the cadence you set, if there's no reply
+6. **Watches for replies**: and escalates genuine interest to you
+7. **Hands over**: steps back the moment you take over a conversation
 
 See [How the agent chooses who to work on](/bdr-agents/how-the-agent-works) for the details of ordering and prioritisation.
 
-## Try it safely first
+## Plans
 
-An agent **without a connected email account runs in simulation mode**: it evaluates companies and records exactly what it *would* do, but never sends a real email. This is the safest way to watch a new agent — especially a Personalised one — before letting it send for real. See [Simulation mode](/bdr-agents/how-the-agent-works#simulation-mode).
+You can build, edit and preview agents on any account. On newer accounts, **starting** an agent so it sends outreach needs the Pro plan. If that applies to you, the BDR Agents pages show a **Sending outreach needs the Pro plan** banner and the **Start Agent** button becomes **Upgrade to Pro to start**. See [Plans and pricing](/billing/plans-and-pricing).
+
+## Seeing the copy before it sends
+
+Every email agent needs at least one connected sending account before it can be saved, so there's no "dry run" mode. To see what an agent would write before it sends anything:
+
+- **Personalised agents**: ask Alva for a **preview**. Alva writes sample emails for real companies from your Search Agent, scores them for spam, and sends nothing. See [Personalised outreach](/bdr-agents/personalised-outreach#previewing-before-you-launch).
+- **Template agents**: you already know the words, because they're your templates. Start with a slow [run pace](/bdr-agents/configuring-budgets-and-hours#run-pace) of 1 company per cycle and watch the [activity feed](/bdr-agents/reading-the-activity-feed).
+
+## Watch your agents live
+
+The **Ops Room** button on the BDR Agents pages opens a full-screen, live view of everything your agents are doing right now, from which company is being evaluated to every check an email passes before it sends. See [Ops Room](/bdr-agents/ops-room).
 
 ## Where to go next
 
@@ -67,12 +81,18 @@ An agent **without a connected email account runs in simulation mode**: it evalu
     Create a Template or Personalised agent.
   </Card>
   <Card title="Personalised outreach" href="/bdr-agents/personalised-outreach" icon="wand-magic-sparkles">
-    Build a playbook, preview copy, and go live.
+    Build a playbook, preview copy and go live.
   </Card>
   <Card title="Budgets and hours" href="/bdr-agents/configuring-budgets-and-hours" icon="sliders">
-    Control spending, scheduling, and pace.
+    Control spending, scheduling and pace.
   </Card>
   <Card title="Managing replies" href="/bdr-agents/managing-replies" icon="reply">
-    Escalations, drafts, and taking over.
+    Escalations, drafts and taking over.
+  </Card>
+  <Card title="Activity feed" href="/bdr-agents/reading-the-activity-feed" icon="list">
+    Stats, idle reasons and every action.
+  </Card>
+  <Card title="Ops Room" href="/bdr-agents/ops-room" icon="satellite-dish">
+    A live control room for your agents.
   </Card>
 </CardGroup>

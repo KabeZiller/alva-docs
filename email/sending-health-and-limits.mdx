@@ -1,0 +1,161 @@
+---
+title: "Sending Health and Limits"
+description: "How Alva protects your domains: health badges, warm-up rules, sending caps, spam scoring and automatic safeguards."
+---
+
+Cold outreach only works if your emails reach the inbox. Alva watches the health of every outreach domain and mailbox, holds new mailboxes back while they warm up, scores every agent email for spam risk, and stops sending automatically if something goes wrong. This page explains each safeguard and what you can do about it.
+
+<Note>
+  **Replies are never held.** None of the limits on this page stop you or an agent replying to a prospect.
+</Note>
+
+## Sending health badges
+
+In **Settings → Email Connections**, mailboxes are grouped under their domain. Each domain, and each mailbox, shows one of three badges:
+
+| Badge | Meaning |
+|-------|---------|
+| **Ready** | Everything checks out. Agents send as normal. |
+| **Caution** | Something could hurt delivery. Agents still send, but it's worth fixing. |
+| **Do not send** | A serious problem. BDR agents skip this mailbox for new campaign emails until it's fixed. |
+
+Under each domain, **Why this domain is ready** (or why it isn't) lists the reasons in plain words.
+
+### What Alva checks
+
+| Check | What it means |
+|-------|---------------|
+| **SPF, DKIM and DMARC** | Records on your domain that prove your emails are genuinely from you. Mail without them is far more likely to be treated as spam. |
+| **MX records** | Whether the domain can receive mail, including replies. |
+| **Domain age** | Brand-new domains are trusted less by inbox providers. |
+| **Blocklists** | Whether the domain appears on the public lists that spam filters use. |
+| **Web presence** | Whether the domain has a working, secure website. |
+| **Bounce rate** | How many of the mailbox's recent campaign emails failed to deliver. |
+| **Inbox placement** | Results of a placement test, if you've run one. |
+| **Spam score** | The average spam score of the mailbox's recent emails. |
+
+Domain checks run automatically every day. Click **Re-check** on a domain to run them again straight away — for example, after you've fixed a DNS record.
+
+### What triggers each badge
+
+**Do not send** — the domain hasn't been checked yet, SPF is missing, DMARC is missing, DKIM is missing on a domain Alva set up for you, or the domain is on a major blocklist. A single mailbox is also marked **Do not send** if its placement test shows more than 30% going to spam, or if its connection has an error.
+
+**Caution** — for example: the domain is less than 30 days old, DKIM is missing on your own company domain, DMARC is set to monitor only, the website has no secure (HTTPS) version, the domain is on a minor blocklist, the mailbox is still warming up, a placement test showed less than 70% reaching the inbox, the average spam score is below 85, no placement test has been run yet, or the bounce rate is high.
+
+When a domain changes to **Do not send**, account owners and admins get an email and an in-app notification. If every mailbox on a BDR agent is marked **Do not send**, the agent can't be started.
+
+### High bounce rate
+
+A mailbox is marked **Caution** when **3% or more** of its last 200 campaign emails bounced. Alva only judges this once the mailbox has sent 200 campaign emails, so a few early bounces don't count against it.
+
+A high bounce rate is a warning only — **it never stops sending**. The usual cause is out-of-date or guessed email addresses, so clean your lists first. Then click **Reset bounce rate** so that only emails sent from then on are counted.
+
+Individual addresses that bounce are blocked from future outreach automatically, whatever the mailbox's bounce rate.
+
+### Inbox placement test
+
+A placement test sends a test email from one of the domain's mailboxes to a set of test inboxes and reports how many landed in the inbox and how many went to spam. Results usually arrive within an hour.
+
+Click **Run placement test** on a domain to run one. The test is charged from your credits, and the button shows the price before you click. When you ask Alva to run a test, she tells you the cost and waits for your yes.
+
+When a new outreach domain finishes its warm-up hold, Alva runs one test on it automatically, as long as you have credits.
+
+## New mailbox warm-up
+
+Brand-new mailboxes have no sending history, so inbox providers watch them closely. [Outreach mailboxes Alva sets up](/email/outreach-mailboxes) follow these warm-up rules automatically:
+
+| Period | Campaign emails | Daily send limit |
+|--------|-----------------|------------------|
+| Days 1–4 | **None** — BDR agents can't send campaign emails from the mailbox yet | 5 |
+| Days 5–7 | Allowed | 5, and can't be raised |
+| From day 8 | Allowed | Can be raised to **10**, and no higher |
+
+You can send individual emails and replies from a new mailbox straight away, and you can always lower a limit. The mailbox shows the date campaign sending starts and when you can raise the limit.
+
+<Note>
+  The same rules apply to Google mailboxes you connect yourself with an app password. Gmail and Outlook accounts connected by signing in aren't affected.
+</Note>
+
+Alva can't raise a daily limit for you. If you ask, she'll explain the warm-up rules and when the next step is due.
+
+## Sending limits for new accounts
+
+For their first 30 days, new accounts that aren't on a paid plan have an extra daily limit on outreach, shared across **all** of their mailboxes:
+
+| Account age | Outreach emails per day, across all mailboxes |
+|-------------|------------------------------------------------|
+| First week | 20 |
+| Second week | 50 |
+| Third and fourth weeks | 100 |
+| After 30 days | No account-wide limit |
+
+- Each step up waits while your bounce or complaint rate is high, so keep your lists clean.
+- When bounces and complaints stay low and prospects are replying well, a step can arrive a week early.
+- The count resets at midnight (UTC) each day.
+
+These limits sit on top of each mailbox's own daily limit. **Settings → Email Connections** shows your current limit at the top of the page under **New account sending limits**, and Alva can tell you how many emails have gone today and when the limit rises.
+
+### Send from your own domain
+
+During the same 30 days, outreach must come from a mailbox on your **own company domain** or from an [outreach mailbox Alva set up](/email/outreach-mailboxes). Personal webmail addresses, such as a free Gmail or Outlook address, can't send outreach.
+
+### Automatic pause
+
+To protect your domains, Alva pauses all outreach for a new account if, across its recent sends:
+
+- More than **8%** of emails bounce, or
+- **Three** prospects reply asking to be removed or unsubscribed
+
+When this happens, admins see **Outreach sending is paused** in **Settings → Email Connections** and in their notifications, with the reason. Replies to prospects still send. Only Alva support can resume sending, so contact support once you've cleaned up the list that caused it.
+
+## Spam score on every email
+
+Before a BDR agent sends an email, Alva scores it from 0 to 100 for how likely it is to reach the inbox. The score covers the email exactly as it will go out, including the signature and any open-tracking.
+
+| Score | What happens |
+|-------|--------------|
+| **85–100** | Sends — likely to reach the inbox |
+| **70–84** | Sends, with warnings about spam risk |
+| **Below 70** | **Blocked.** The agent gets a list of what to fix and rewrites the email, which is scored again |
+
+A few problems always block, whatever the score — for example, shortened links, a fake "Re:" on a first email, or look-alike characters used to dodge filters.
+
+If a problem is in the mailbox's signature or the agent's settings rather than in the email itself — such as a logo and several links in the signature — the agent can't fix it by rewriting. Switch the mailbox to its plain-text [signature](/email/email-signatures), or turn off open-tracking on the agent.
+
+[Email templates](/email/email-templates) get the same check when you save them, and a Personalised agent can't be switched on while its preview emails average below 70.
+
+## Who agents won't email
+
+Some addresses are skipped automatically to protect your sender reputation:
+
+- **Company addresses on the wrong domain.** If a shared company address (such as `info@`) is on a different domain from the company's website, it's almost certainly a guess and would bounce, so agents never send to it. A named contact on a different domain can still be emailed, but agents prefer one on the company's own domain.
+- **Generic addresses.** By default, agents prospecting new customers avoid shared inboxes such as `info@` or `sales@` at larger companies (over about 200 staff), prefer them at very small companies (under about 20 staff), and in between only when there's no named contact. They send at most one follow-up to a shared inbox. Agents working with partners, vendors or suppliers can use shared inboxes freely. You can change this setting on each agent.
+- **Operational addresses** such as `noreply@`, `postmaster@`, `support@` or `hr@` are never emailed.
+- **Bounced addresses and remove-me replies.** An address that bounces, or a person who asks not to be contacted, is blocked from future outreach automatically.
+- **Your block list.** Anyone on your [Email Block List](/email/email-block-list).
+
+## Ask Alva
+
+- "How healthy are my sending domains?"
+- "Why is getacme.com marked Caution?"
+- "Re-check the domain getacme.com"
+- "Run a placement test on sarah@getacme.com"
+- "Reset the bounce rate on that mailbox"
+- "How many emails can we send today?"
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Outreach mailboxes" href="/email/outreach-mailboxes" icon="inbox">
+    Separate domains for cold outreach.
+  </Card>
+  <Card title="Email block list" href="/email/email-block-list" icon="ban">
+    Stop outreach to people or whole companies.
+  </Card>
+  <Card title="Budgets and hours" href="/bdr-agents/configuring-budgets-and-hours" icon="sliders">
+    Control how much each agent sends.
+  </Card>
+  <Card title="Outreach reporting" href="/reporting/outreach-reporting" icon="chart-line">
+    Track bounces, replies and results.
+  </Card>
+</CardGroup>

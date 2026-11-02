@@ -1,0 +1,95 @@
+---
+title: "Landing pages"
+description: "Have Alva draft a landing page that matches your website, publish it, and turn every form submission into a CRM lead."
+---
+
+A landing page gives your offer room to breathe: a clear promise, a few proof points and a form, all in your own branding. Alva drafts the page in chat, you preview it in Alva, and when you publish it Alva hosts it for you. Every form submission becomes a contact in your CRM.
+
+Landing pages are available on every account. Use them on their own, or as the destination for a LinkedIn [website-visit campaign](/advertising/creating-a-campaign#lead-form-or-website-visit).
+
+## Drafting a page
+
+You create and change pages by talking to Alva. **Advertising → Landing pages** is where you preview, publish and manage them.
+
+<Steps>
+  <Step title="Ask for a page">
+    Tell Alva what the page is for. If you have an example page you like, give Alva the link.
+  </Step>
+  <Step title="Agree the brief">
+    Alva reads your company profile and website, then proposes a short brief: the headline, who it's for, the single offer, the form fields, the form button, the thank-you line and the picture. It suggests the best-matching image from your [image library](/advertising/ad-images) and asks whether to use it or create a new one.
+  </Step>
+  <Step title="Alva builds the draft">
+    Once you agree, Alva writes the page and gives you a link to open it.
+  </Step>
+  <Step title="Revise until it's right">
+    Ask for changes in plain words: "shorter headline", "less salesy", "the button should say Get Quote". Alva confirms each change before making it.
+  </Step>
+</Steps>
+
+### What the page looks like
+
+The page uses your website's logo, navigation and footer, with links pointing back to your real pages, and follows your site's colours and type. The middle of the page is the offer and the form, laid out for direct response: the promise, one action, the form high up on a phone, a few proof points, a short FAQ and a second call to action. If you point Alva at someone else's page, it borrows the structure and tone but not their header or footer.
+
+The default form asks for name, email and company, with an optional phone number. For consumer offers Alva can drop the company field; a personal email or a phone number is enough.
+
+### Versions
+
+Every change is saved as a version. Open the page under **Advertising → Landing pages** and use **Restore** in the **Versions** list to go back to an earlier one.
+
+## Previewing
+
+Open a page from **Advertising → Landing pages** to see it as visitors will, on desktop and mobile. The preview form works, so you can test it.
+
+<Warning>
+  Submitting the form on a preview creates a real contact in your CRM.
+</Warning>
+
+## Publishing
+
+Click **Publish** on the page, or ask Alva. The page goes live at a public address on pages.alvahq.com. **Unpublish** takes it down and keeps the draft.
+
+### Using your own domain
+
+To show the page on your own subdomain, such as go.yourcompany.com, click **Use your own domain** on the page, save the subdomain, then add the CNAME record shown in the dialog wherever you manage your domain's DNS. Leave the record in place; the dialog shows when your subdomain is serving the page.
+
+A path on your existing website, such as yourcompany.com/offer, can't use a CNAME. Add a redirect from that path to the page's public address on your own site.
+
+### Hosting allowance
+
+Your plan includes a number of published pages. Drafts don't count. Each published page above that allowance is billed monthly as an add-on until you unpublish or delete it. Before publishing, Alva tells you whether the page fits inside your allowance or adds to the charge. See [Add-ons](/billing/add-ons).
+
+## Leads from your page
+
+When someone submits the form, Alva:
+
+- Creates a **contact**, or adds a note to the existing one if the same email or phone was used before.
+- Creates or matches a **company** only if the visitor gave a company name.
+- Adds the lead to the [Lead Sheet](/discovery/lead-sheet), unless you turn **Add leads to the Lead Sheet** off. A named company with no stage yet becomes a Lead; a person with no company is listed as themselves.
+
+The visitor stays on your page and sees your thank-you message. Spam submissions are filtered out and don't create contacts.
+
+### Who hears about it
+
+Under **Where leads go**, choose who to notify in **Email these people**. Each person gets an email and a bell notification. With nobody chosen, the account still gets a bell notification but no email.
+
+### Sending leads to another system
+
+Under **Also send a copy**, add a **Webhook URL** (https only). Each new lead is still saved in Alva, and a signed copy is sent to that address. The signing secret is shown on the page for your developer.
+
+## Page performance
+
+The **Landing pages** list shows each page's views and conversion rate for the last 30 days, next to its all-time lead count. Open a page for **Last 30 days** figures: **Views**, **Unique visitors**, **Leads**, **Conversion** and **Form starts**, plus a split by **Source** and **Device**. Only the published page is counted, not the preview.
+
+## Deleting and restoring
+
+**Delete** hides a page and stops serving it. Its versions and leads are kept, and a deleted page no longer counts towards your hosting allowance. Deleted pages are listed under **Deleted** at the bottom of **Landing pages**, where **Restore** puts a page back exactly as it was, including published.
+
+## Ask Alva
+
+- "Draft a landing page for our free site survey offer."
+- "Use acme.com/offer as the example."
+- "Make the headline shorter and change the button to Book a call."
+- "Restore the previous version."
+- "Publish the site survey page on go.ourcompany.com."
+- "Email Sam and Priya when someone fills in the form."
+- "How is the site survey page doing this month?"

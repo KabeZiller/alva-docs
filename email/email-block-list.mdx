@@ -1,0 +1,82 @@
+---
+title: "Email Block List"
+description: "Stop BDR agents contacting specific people or whole companies."
+---
+
+The Email Block List is your do-not-contact list. Anyone on it never receives outreach from your [BDR agents](/bdr-agents/overview). Use it for existing customers, competitors, partners, or anyone who has asked not to be contacted.
+
+Go to **Settings → Email Block List**. The list applies to your account only.
+
+## Addresses and domains
+
+Each entry is either a full email address or a bare domain:
+
+| Entry | What it blocks |
+|-------|----------------|
+| `jane@acme.com` | Jane only. Other people at Acme can still be contacted. |
+| `acme.com` | Everyone with an `@acme.com` address. |
+
+Each entry is labelled as an **Address** or a **Domain** in the list. Company pages also flag any company email address that's blocked, whether directly or because its domain is blocked.
+
+## Block one entry
+
+1. Click **Block entry**
+2. Enter an **Email address or domain** — Alva works out which it is
+3. Optionally add a **Reason**, such as "Existing client" or "Asked not to be contacted"
+4. Click **Block address**
+
+## Import a list
+
+To block many people at once — for example your customer list or a do-not-contact file:
+
+1. Click **Import list**
+2. Paste addresses and domains, one per line, or click **Upload CSV/TXT**. In a spreadsheet, Alva finds the email column for you
+3. Check the summary of how many addresses and domains were found
+4. Optionally turn on **Also block domains from these email addresses**
+5. Add a **Reason** if you like, then click **Import**
+
+You can import up to 10,000 entries at a time. Entries already on the list are skipped.
+
+<Tip>
+  **Also block domains from these email addresses** is off by default. Uploading `jane@acme.com` blocks only Jane. Turn the option on to block everyone at every company in the file — useful for a customer list, where you don't want agents emailing anyone at those companies.
+</Tip>
+
+## Removing an entry
+
+Find the entry using the search box, then remove it. Agents can contact that address or domain again straight away.
+
+## Blocked automatically
+
+You don't need to add these yourself — Alva blocks them from future outreach on its own:
+
+- **Bounced addresses** — any address where an email permanently failed to deliver
+- **Remove-me replies** — anyone who replies asking to be removed, to unsubscribe, or not to be contacted again
+
+These are handled separately and don't appear on your Email Block List page.
+
+## Block list or ignore list?
+
+Alva has two lists that sound alike but do different jobs:
+
+| | **Email Block List** | **Email Ignore List** |
+|--|----------------------|-----------------------|
+| **Where** | **Settings → Email Block List** | **Settings → AI Settings** |
+| **What it stops** | Outreach *to* these people | Analysis of email *from* these senders |
+| **Use it for** | Customers, competitors, do-not-contact requests | Newsletters, personal contacts, automated senders you don't want analysed |
+
+The Email Ignore List doesn't stop outreach, and the Email Block List doesn't stop analysis. See [Understanding email analysis](/email/understanding-email-analysis#ignoring-senders).
+
+## Ask Alva
+
+Alva can add, remove or check a handful of entries for you:
+
+- "Block acme.com — they're an existing client"
+- "Add jane@example.com to the block list"
+- "Is globex.com on our block list?"
+- "Unblock john@initech.com"
+
+For a CSV or a longer list, Alva takes you to **Settings → Email Block List** and asks you to use **Import list**.
+
+<Note>
+  To pause outreach to a company that said "not now" rather than "never", ask Alva to put it on hold instead. Outreach to that company pauses and starts again after the time you choose.
+</Note>

@@ -1,41 +1,56 @@
 ---
 title: "Scheduled Report Delivery"
-description: "Set up reports to be delivered to your inbox automatically on a schedule."
+description: "Have a custom report run and emailed to you or your team automatically, as a CSV attachment."
 ---
 
-You can schedule any report — standard or custom — to be delivered to your inbox automatically. This is useful for weekly pipeline reviews, monthly win/loss summaries, or any report you check regularly.
+You can schedule any [custom report](/reporting/building-a-custom-report) to run automatically and arrive by email. It's an easy way to get a weekly pipeline list or a monthly new-contacts list without having to remember to check.
 
 ## Setting up a schedule
 
-1. Open the report you want to schedule
-2. Click **Schedule Delivery**
-3. Configure the schedule:
+Open the report from the **Reports** page. Beside the results you'll see the **Schedule Report** card.
+
+<Steps>
+  <Step title="Switch on scheduling">
+    Turn on the switch at the top of the **Schedule Report** card.
+  </Step>
+  <Step title="Choose when it runs">
+    Set the options below.
+  </Step>
+  <Step title="Add recipients">
+    Type an email address under **Email Recipients** and press **Enter** or click **+**. Add as many addresses as you like — they don't need to be Alva users. Click the **×** on an address to remove it.
+  </Step>
+  <Step title="Save">
+    Click **Save Schedule**. You need at least one recipient to save a schedule.
+  </Step>
+</Steps>
 
 | Setting | Options |
 |---------|---------|
-| **Frequency** | Daily, weekly, or monthly |
-| **Day of week** | For weekly reports — which day to send |
-| **Day of month** | For monthly reports — which date to send |
-| **Recipients** | One or more email addresses |
+| **Frequency** | **Daily**, **Weekly**, or **Monthly** |
+| **Day of Week** | For weekly reports — which day to send |
+| **Day of Month** | For monthly reports — which date to send |
+| **Time (24-hour format)** | The time the report runs, for example `09:00` |
 
-4. Save the schedule
+Once saved, the card shows the **Next scheduled run**.
 
 ## What gets delivered
 
-The scheduled email contains:
+Each scheduled email is titled **Scheduled Report:** followed by the report name, and carries the report's results as a **CSV attachment** you can open in Excel or Google Sheets. The report runs fresh each time, so the attachment always reflects your latest data.
 
-- A summary of the report's key metrics
-- The full report data, either inline or as a CSV attachment
-- A link to view the report in Alva with the latest data
+<Note>
+  If a report has no matching records when it runs, no email is sent.
+</Note>
 
-## Managing schedules
+## Changing or stopping a schedule
 
-Go to **Reports** and look for the schedule icon next to any report that has delivery configured. Click it to edit the frequency, recipients, or to disable the schedule.
+Open the report and update the **Schedule Report** card — change the frequency, time, or recipients — then click **Save Schedule**. To stop the emails, turn off the switch and click **Save Schedule**.
 
-## Who can set up schedules
+Deleting a report also deletes its schedule.
 
-Any user can schedule reports for their own inbox. Admins and managers can add other team members as recipients.
+## Using Alva
+
+You can ask [Alva](/ai-assistant/talking-to-alva) to manage schedules in chat — for example, "Email the open deals report to me and Sam every Monday at 8am." Alva can set up, change, or pause a report's schedule, and can email a report as a CSV straight away if you need it now.
 
 <Tip>
-  A weekly pipeline report delivered every Monday morning is a great way to start the week with a clear picture of your business — without having to remember to check.
+  A weekly pipeline report delivered every Monday morning is a great way to start the week with a clear picture of your business. For outreach figures, Alva's [weekly business development report](/reporting/outreach-reporting#the-weekly-business-development-report) does the same job.
 </Tip>
