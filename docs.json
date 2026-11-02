@@ -3,9 +3,18 @@
   "theme": "mint",
   "name": "Alva",
   "colors": {
-    "primary": "#3B82F6",
-    "light": "#60A5FA",
-    "dark": "#2563EB"
+    "primary": "#00796e",
+    "light": "#00c4b3",
+    "dark": "#00796e"
+  },
+  "background": {
+    "color": {
+      "light": "#f7fbfa",
+      "dark": "#0a1312"
+    }
+  },
+  "fonts": {
+    "family": "Geist"
   },
   "favicon": "/favicon.svg",
   "logo": {
@@ -188,7 +197,10 @@
   },
   "seo": {
     "metatags": {
-      "canonical": "https://docs.alvahq.com"
+      "canonical": "https://docs.alvahq.com",
+      "og:image": "https://docs.alvahq.com/images/og-image.png",
+      "twitter:image": "https://docs.alvahq.com/images/og-image.png",
+      "twitter:card": "summary_large_image"
     }
   }
 }

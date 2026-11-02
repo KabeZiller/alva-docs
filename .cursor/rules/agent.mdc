@@ -31,6 +31,13 @@ Founders, sales leaders and BDR managers. Non-technical. They do not know what a
 - Prices or any amount System Admin can change (plan prices, starter credit, multipliers, add-on prices). Link to alvahq.com for pricing.
 - Closed beta features that are not announced. Today that is LinkedIn messaging and the LinkedIn BDR agent. Signals is closed beta but documented, marked as closed beta and Pro.
 
+## Brand
+
+The brand lives in `/Users/andrecox/Development/alva-brand`. Read its `AGENTS.md` ("Docs site") before changing colours, fonts, the logo or the favicon, and copy those values and files from it; never pick a colour or redraw the logo here. Its `guidelines/voice.md` applies to every page.
+
+- Alva is "it", never "she" or "her": "Alva writes", "ask Alva", "it replies". Never "the Alva".
+- No exclamation marks, hype words or emoji.
+
 ## Tone and format
 
 - UK English. Second person, active voice, sentence-case headings, **bold** for UI labels.
