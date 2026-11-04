@@ -8,7 +8,7 @@ User documentation for [Alva](https://alvahq.com), published at [docs.alvahq.com
 | Navigation, theme, links | `docs.json` |
 | Writing rules for agents | `.cursor/rules/agent.mdc` |
 | Source of truth | The product repository (`KabeZiller/crm`): `docs/features/`, `CHANGELOG.md` and the code |
-| API endpoint pages | Generated from `https://app.alvahq.com/api/v1/openapi` (the same document as the in-app API Console). A docs deploy is required after the production API changes |
+| API endpoint pages | Generated from `https://app.alvahq.com/api/v1/openapi` (the same document as the in-app API Console). Pushing `main` redeploys the site and refetches that specification |
 
 ## Preview locally
 
