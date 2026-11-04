@@ -55,6 +55,8 @@ A key's scopes are a ceiling, not a guarantee.
 | `custom_fields:write` | Create, update, and delete custom field definitions |
 | `email_templates:read` | List and get email templates and template groups |
 | `email_templates:write` | Create, update, and delete email templates and template groups |
+| `bdr_agents:read` | List BDR agents |
+| `bdr_agents:write` | Assign a company to a BDR agent |
 
 ## Paths
 
@@ -62,116 +64,7 @@ Lists and creates use the **plural** path (for example `/api/v1/companies`). Ope
 
 A create sent to the singular path without an id (for example `POST /api/v1/company`) also works. A `GET`, `PATCH`, or `DELETE` on a singular path without an id returns `404`.
 
-## Endpoints
-
-### Companies
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/v1/companies` | List companies (paginated) |
-| `POST` | `/api/v1/companies` | Create a company |
-| `GET` | `/api/v1/company/:id` | Get a company |
-| `PATCH` | `/api/v1/company/:id` | Update a company |
-| `DELETE` | `/api/v1/company/:id` | Delete a company |
-
-List filters: `search` (company name), `industry`, `lifecycleStage`.
-
-### Contacts
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/v1/contacts` | List contacts (paginated) |
-| `POST` | `/api/v1/contacts` | Create a contact |
-| `GET` | `/api/v1/contact/:id` | Get a contact |
-| `PATCH` | `/api/v1/contact/:id` | Update a contact |
-| `DELETE` | `/api/v1/contact/:id` | Delete a contact |
-
-List filters: `search`, `companyId`.
-
-A new contact needs at least a first name, a last name, or an email address. If a contact with the same email address already exists on the account, the request returns `409 Conflict`.
-
-### Deals
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/v1/deals` | List deals (paginated) |
-| `POST` | `/api/v1/deals` | Create a deal |
-| `GET` | `/api/v1/deal/:id` | Get a deal (includes methodology data) |
-| `PATCH` | `/api/v1/deal/:id` | Update a deal |
-| `DELETE` | `/api/v1/deal/:id` | Delete a deal |
-
-List filters: `search`, `stage`, `companyId`, `ownerId`, `methodology`.
-
-### Activities
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/v1/activities` | List activities (paginated) |
-| `POST` | `/api/v1/activities` | Create an activity |
-| `GET` | `/api/v1/activity/:id` | Get an activity |
-| `PATCH` | `/api/v1/activity/:id` | Update an activity |
-
-Activity types are `call`, `meeting`, `email`, `note`, and `task`. List filters: `type`, `companyId`, `contactId`, `dealId`. Activities can't be deleted through the API.
-
-### Custom fields
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/v1/custom-fields` | List custom field definitions |
-| `POST` | `/api/v1/custom-fields` | Create a custom field definition |
-| `GET` | `/api/v1/custom-field/:id` | Get a custom field definition |
-| `PATCH` | `/api/v1/custom-field/:id` | Update a custom field definition |
-| `DELETE` | `/api/v1/custom-field/:id` | Delete a custom field definition |
-
-Custom fields are defined for companies or contacts. List filters: `entity` (`company` or `contact`) and `includeArchived=true`.
-
-Each definition has a `key`, used in merge tags such as `{{company.custom.account_tier}}` or `{{contact.custom.<key>}}`. If you don't supply a key, it's created from the label. The key, record type, and field type can't be changed after creation; the label, options, default, help text, and required setting can.
-
-To retire a field without losing its stored values, update it with `isArchived: true` instead of deleting it.
-
-Set field values on companies and contacts through the `customFields` object on those records. Values are checked against the definitions — unknown keys and values of the wrong type are rejected — and a `PATCH` updates only the keys you send.
-
-<Tip>
-  When you're signed in to the API Console, the company and contact examples are filled in with your account's own custom field keys.
-</Tip>
-
-### Email templates and template groups
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/v1/email-templates` | List templates (paginated) |
-| `POST` | `/api/v1/email-templates` | Create a template |
-| `GET` | `/api/v1/email-template/:id` | Get a template |
-| `PATCH` | `/api/v1/email-template/:id` | Update a template |
-| `DELETE` | `/api/v1/email-template/:id` | Delete a template |
-| `GET` | `/api/v1/email-template-groups` | List template groups |
-| `POST` | `/api/v1/email-template-groups` | Create a template group |
-| `GET` | `/api/v1/email-template-group/:id` | Get a template group |
-| `PATCH` | `/api/v1/email-template-group/:id` | Update a template group |
-| `DELETE` | `/api/v1/email-template-group/:id` | Delete a template group |
-
-Template groups use the `email_templates:read` and `email_templates:write` scopes. Deleting a group leaves its templates in place, ungrouped.
-
-Template list parameters:
-
-| Parameter | What it does |
-|-----------|--------------|
-| `search` | Matches template name or subject |
-| `groupId` | Only templates in this group |
-| `rootOnly=true` | Only original templates, not variations of another template |
-
-A template needs a `name`, `subject`, and `body`, and can take a `groupId` and `usageGuidance`. Write merge tags literally in the subject and body — for example `{{contact.firstName}}` or `{{company.custom.signal_line}}`. They're stored as written and filled in when the template is used in Alva. Get custom field keys from `GET /api/v1/custom-fields`. For more on templates, see [Email templates](/email/email-templates).
-
-<Note>
-  The API manages templates only. You can't send email through the API.
-</Note>
-
-### Metadata
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/v1/pipeline/stages` | List pipeline stages and methodologies |
-| `GET` | `/api/v1/me` | Get the current API key and account info (works with any scope) |
+The endpoint pages on this tab are generated from the live specification at `https://app.alvahq.com/api/v1/openapi`. That is the same document as the API Console in Alva. When the API changes in production, these pages change with the next docs deploy.
 
 ## Pagination and sorting
 

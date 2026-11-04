@@ -171,10 +171,17 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Reference",
+            "group": "Overview",
             "pages": [
               "api-reference/introduction"
             ]
+          },
+          {
+            "group": "Endpoints",
+            "openapi": {
+              "source": "https://app.alvahq.com/api/v1/openapi",
+              "directory": "api-reference/endpoints"
+            }
           }
         ]
       }
